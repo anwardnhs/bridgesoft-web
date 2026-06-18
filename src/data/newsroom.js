@@ -1,0 +1,125 @@
+// ─── Categories ─────────────────────────────
+// ──────────────────────────────────
+import murigiImg from "@/assets/images/murigi.png";
+import ovieImg from "@/assets/images/ovie.png";
+import meetimg from '@/assets/images/meeting.jpg'
+export const categories = [
+  { id: "all", label: "All" },
+  { id: "corporate", label: "Corporate" },
+  { id: "product", label: "Product" },
+  { id: "ventures", label: "Ventures" },
+  { id: "investors", label: "Investors" },
+]
+
+// ─── Featured Story ───────────────────────────────────────────────────────────
+export const featuredStory = {
+  id: "cloud-mandate",
+  tag: "Corporate",
+  category: "corporate",
+  date: "Jun 10, 2026",
+  title: "Bridgesoft Cloud secures five-year government infrastructure mandate.",
+  desc: "Bridgesoft has been selected as the exclusive cloud infrastructure provider for a major government initiative, ensuring secure, scalable, and compliant digital services for citizens across multiple regions.",
+  image: "https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=1632&auto=format&fit=crop",
+  href: "/newsroom/cloud-mandate",
+  readTime: "4 min read",
+}
+
+// ─── All Stories ──────────────────────────────────────────────────────────────
+export const stories = [
+  {
+    id: "bi-beta",
+    tag: "Product",
+    category: "product",
+    date: "May 24, 2026",
+    title: "BridgeIntelligence enters private beta rollout begins across East Africa.",
+    desc: "The enterprise AI suite is now live for a select group of institutional clients, with general availability expected in Q3 2026.",
+    image: "https://images.unsplash.com/photo-1611348524140-53c9a25263d6?q=80&w=873&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/newsroom/bi-beta",
+    readTime: "3 min read",
+    featured: false,
+  },
+  {
+    id: "swiftpay-unicorn",
+    tag: "Ventures",
+    category: "ventures",
+    date: "Apr 12, 2026",
+    title: "Portfolio company SwiftPay reaches unicorn valuation following Series C.",
+    desc: "SwiftPay, an early Bridgesoft Ventures investment, has closed a $120M Series C at a $1.2B valuation.",
+    image: "https://images.unsplash.com/photo-1634936016780-65f6a77ebdd4?q=80&w=739&auto=format&fit=crop",
+    href: "/newsroom/swiftpay-unicorn",
+    readTime: "2 min read",
+    featured: false,
+  },
+  {
+    id: "q1-results",
+    tag: "Investors",
+    category: "investors",
+    date: "Mar 30, 2026",
+    title: "Bridgesoft reports strong Q1 2026 performance with 14% YoY revenue growth.",
+    desc: "Group revenue for Q1 2026 reached $1.02B, driven by continued expansion of Bridgesoft Cloud and strong enterprise software renewals.",
+    image: ovieImg,
+    href: "/newsroom/q1-results",
+    readTime: "5 min read",
+    featured: false,
+  },
+  {
+    id: "kiprop-chairman",
+    tag: "Corporate",
+    category: "corporate",
+    date: "Jan 15, 2026",
+    title: "Former Accenture MD Murigi Kiprop appointed as Bridgesoft Non-Executive Chairman.",
+    desc: "The board has appointed former Accenture East Africa MD Murigi Kiprop as Non-Executive Chairman, succeeding co-founder Anwar Alhassan.",
+    image: murigiImg, // <--- Use the imported variable here, NO QUOTES
+    href: "/newsroom/kiprop-chairman",
+    readTime: "3 min read",
+    featured: false,
+  },
+  {
+    id: "kigali-ai",
+    tag: "Product",
+    category: "product",
+    date: "Dec 4, 2025",
+    title: "Bridgesoft opens expanded AI Research Centre in Kigali.",
+    desc: "The Kigali facility now houses over 120 AI and ML engineers focused on localised LLM development for African enterprise markets.",
+    image: "https://images.unsplash.com/photo-1648708511872-5426c0f29c27?q=80&w=931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    href: "/newsroom/kigali-ai",
+    readTime: "4 min read",
+    featured: false,
+  },
+  {
+    id: "nimc-renewal",
+    tag: "Corporate",
+    category: "corporate",
+    date: "Oct 22, 2025",
+    title: "Bridgesoft Data renews NIMC national digital ID infrastructure contract.",
+    desc: "The renewal extends Bridgesoft's mandate to host and maintain the database core linking over 160 million Nigerian citizens to the national digital identity system.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxV3Kws973euW9-aNN90csO3qGs5h5OsL4uriSp3Kwrg&s=10",
+    href: "/newsroom/nimc-renewal",
+    readTime: "3 min read",
+    featured: false,
+  },
+  {
+    id: "eastafrica-jv",
+    tag: "Ventures",
+    category: "ventures",
+    date: "Sep 8, 2025",
+    title: "Bridgesoft Ventures acquires 35% stake in EastAfrica Cloud government JV.",
+    desc: "The $28M strategic investment positions Bridgesoft as a key partner in Kenya's sovereign cloud infrastructure programme.",
+    image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?q=80&w=2670&auto=format&fit=crop",
+    href: "/newsroom/eastafrica-jv",
+    readTime: "2 min read",
+    featured: false,
+  },
+  {
+    id: "fy2025-results",
+    tag: "Investors",
+    category: "investors",
+    date: "Feb 20, 2026",
+    title: "Bridgesoft reports record FY2025 results — revenue reaches $3.80B.",
+    desc: "Full year revenue grew 14.5% to $3.80B, with recurring subscriptions accounting for 61% of group revenue. Market capitalisation reached $28.5B.",
+    image: meetimg,
+    href: "/newsroom/fy2025-results",
+    readTime: "6 min read",
+    featured: false,
+  },
+]
