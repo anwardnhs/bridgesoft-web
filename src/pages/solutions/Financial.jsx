@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   RiArrowRightLine,
   RiShieldKeyholeLine,
@@ -9,23 +9,23 @@ import {
   RiSmartphoneLine,
   RiFileList3Line,
   RiWallet3Line,
-} from "react-icons/ri"
-import { getSolutionBySlug } from "@/data/solutions"
-import { cn } from "@/lib/utils"
-import TrustStrip from "@/components/solutions/TrustStrip"
+} from "react-icons/ri";
+import { getSolutionBySlug } from "@/data/solutions";
+import { cn } from "@/lib/utils";
+import TrustStrip from "@/components/solutions/TrustStrip";
 
-import bankImage from "@/assets/images/bank.jpg"
-import dashboardGraphic from "@/assets/images/dashboard.svg"
-import phoneOne from "@/assets/images/fiphone.svg"
-import phoneTwo from "@/assets/images/fiphone2.svg"
-import phoneThree from "@/assets/images/fiphone3.svg"
-import featureOne from "@/assets/images/ficon.svg"
-import featureTwo from "@/assets/images/ficon2.svg"
-import featureThree from "@/assets/images/ficon3.svg"
-import recordGraphic from "@/assets/images/record.svg"
-import cloudGraphic from "@/assets/images/cloud.svg"
+import bankImage from "@/assets/images/bank2.jpg";
+import dashboardGraphic from "@/assets/images/dashboard.svg";
+import phoneOne from "@/assets/images/fiphone.svg";
+import phoneTwo from "@/assets/images/fianacedb.svg";
+import phoneThree from "@/assets/images/fiphone3.svg";
+import featureOne from "@/assets/images/ficon.svg";
+import featureTwo from "@/assets/images/person2.svg";
+import featureThree from "@/assets/images/ficon3.svg";
+import recordGraphic from "@/assets/images/record3.avif";
+import cloudGraphic from "@/assets/images/bank4.avif";
 
-const data = getSolutionBySlug("financial")
+const data = getSolutionBySlug("financial");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -34,24 +34,24 @@ const fadeUp = {
     y: 0,
     transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
   },
-}
+};
 
 const stagger = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.08 } },
-}
+};
 
 function SectionLabel({ children, className }) {
   return (
     <p
       className={cn(
-        "text-[11px] font-semibold uppercase tracking-[0.32em] text-[#635BFF]",
+        "text-[11px] font-semibold uppercase tracking-[0.32em] text-[#0A2540]",
         className,
       )}
     >
       {children}
     </p>
-  )
+  );
 }
 
 function PrimaryButton({ children, href = "/contact", className }) {
@@ -65,7 +65,7 @@ function PrimaryButton({ children, href = "/contact", className }) {
     >
       {children}
     </Link>
-  )
+  );
 }
 
 function SecondaryButton({ children, href = "/products", className }) {
@@ -80,7 +80,7 @@ function SecondaryButton({ children, href = "/products", className }) {
       {children}
       <RiArrowRightLine className="h-4 w-4" />
     </Link>
-  )
+  );
 }
 
 function UseCaseCard({ title, description, image, eyebrow }) {
@@ -98,27 +98,27 @@ function UseCaseCard({ title, description, image, eyebrow }) {
         />
       </div>
       <div className="p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8898AA]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A2540]">
           {eyebrow}
         </p>
         <h3 className="mt-3 text-[20px] font-semibold tracking-tight text-[#0A2540]">
           {title}
         </h3>
-        <p className="mt-3 text-[15px] leading-[1.75] text-[#425466]">
+        <p className="mt-3 text-[15px] leading-[1.75] text-[#0A2540]">
           {description}
         </p>
       </div>
     </motion.article>
-  )
+  );
 }
 
 function InfoPill({ icon: Icon, children }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
-      <Icon className="h-4 w-4 text-[#635BFF]" />
+      <Icon className="h-4 w-4 text-[#0A2540]" />
       {children}
     </div>
-  )
+  );
 }
 
 function SimpleFeature({ icon: Icon, title, body, asset }) {
@@ -128,7 +128,7 @@ function SimpleFeature({ icon: Icon, title, body, asset }) {
       className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#635BFF]">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
           <Icon className="h-5 w-5" />
         </div>
         <div>
@@ -136,38 +136,38 @@ function SimpleFeature({ icon: Icon, title, body, asset }) {
         </div>
       </div>
       <div className="mt-5 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <p className="text-[15px] leading-[1.75] text-[#425466]">{body}</p>
+        <p className="text-[15px] leading-[1.75] text-[#0A2540]">{body}</p>
         <div className="overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC] p-4">
           <img src={asset} alt="" className="h-36 w-full object-contain" />
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
 
 export default function FinancialSolution() {
-  const { hero, trustBar } = data
+  const { hero, trustBar } = data;
 
   const useCases = [
     {
       eyebrow: "Commercial banks",
-      title: "Keep daily banking simple and reliable.",
+      title: "A steadier system for payments and operations.",
       description:
-        "Give your teams a steadier system for payments, customer accounts, and daily operations.",
+        "Keep customer work, internal operations, and payments flowing without the usual friction.",
       image: bankImage,
     },
     {
       eyebrow: "Fintech and neobanks",
-      title: "Launch faster, without building everything yourself.",
+      title: "Move from idea to launch without the usual headaches.",
       description:
-        "Move from idea to launch with a setup that can handle growth without turning into a mess.",
+        "Get to market faster with a platform that handles the complexity for you.",
       image: phoneOne,
     },
     {
-      eyebrow: "Insurance teams",
-      title: "Keep records clear and easy to find.",
+      eyebrow: "Insurance and claims",
+      title: "Make it easier to manage policies and claims.",
       description:
-        "Bring policies, claims, and customer details into one place so work stays organized.",
+        "Keep information organized, reduce handoffs, and give customers a smoother experience.",
       image: phoneTwo,
     },
     {
@@ -177,7 +177,7 @@ export default function FinancialSolution() {
         "Keep transactions flowing, reduce handoffs, and give partners a smoother experience.",
       image: phoneThree,
     },
-  ]
+  ];
 
   return (
     <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
@@ -213,21 +213,29 @@ export default function FinancialSolution() {
 
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#425466] sm:text-[20px]"
+                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
               >
                 Bridgesoft helps financial teams keep payments, customer work,
                 and daily operations moving without extra friction.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 flex flex-wrap gap-3"
+              >
                 <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
                   {hero.ctas?.[0]?.label ?? "Request a Demo"}
                 </PrimaryButton>
                 <SecondaryButton href="/products">See Products</SecondaryButton>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-                <InfoPill icon={RiShieldKeyholeLine}>Built for security</InfoPill>
+              <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-wrap gap-3"
+              >
+                <InfoPill icon={RiShieldKeyholeLine}>
+                  Built for security
+                </InfoPill>
                 <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
                 <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
               </motion.div>
@@ -244,7 +252,7 @@ export default function FinancialSolution() {
                   <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
                   <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
-                  <div className="ml-auto rounded-full bg-[#F6F9FC] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8898AA]">
+                  <div className="ml-auto rounded-full bg-[#F6F9FC] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0A2540]">
                     Financial teams
                   </div>
                 </div>
@@ -258,7 +266,7 @@ export default function FinancialSolution() {
                   </div>
                   <div className="grid gap-4">
                     <div className="rounded-[1.5rem] border border-[#EEF2F7] bg-white p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8898AA]">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0A2540]">
                         Clear view
                       </p>
                       <div className="mt-4 flex items-center gap-4">
@@ -271,9 +279,9 @@ export default function FinancialSolution() {
                           <p className="text-[15px] font-semibold text-[#0A2540]">
                             One place to see activity
                           </p>
-                          <p className="mt-1 text-[13px] leading-[1.6] text-[#425466]">
-                            Keep track of what is happening without bouncing
-                            between screens.
+                          <p className="mt-1 text-[13px] leading-[1.6] text-[#0A2540]">
+                            Keep track of payments, customer work, and daily
+                            operations without juggling multiple systems.
                           </p>
                         </div>
                       </div>
@@ -304,7 +312,11 @@ export default function FinancialSolution() {
                 transition={{ duration: 0.6, delay: 0.08 }}
                 className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
               >
-                <img src={featureOne} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={featureOne}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
 
               <motion.div
@@ -313,7 +325,11 @@ export default function FinancialSolution() {
                 transition={{ duration: 0.6, delay: 0.16 }}
                 className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
               >
-                <img src={featureTwo} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={featureTwo}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -345,7 +361,7 @@ export default function FinancialSolution() {
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-5 text-[17px] leading-[1.8] text-[#425466]"
+              className="mt-5 text-[17px] leading-[1.8] text-[#0A2540]"
             >
               Banks, fintechs, insurers, and payment companies all get a layout
               that feels tailored to how they work.
@@ -421,7 +437,6 @@ export default function FinancialSolution() {
           </motion.div>
         </div>
       </section>
-
     </main>
-  )
+  );
 }

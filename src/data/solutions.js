@@ -28,7 +28,7 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Legacy infrastructure is a liability for financial institutions.",
+      statement: "Banks, insurers, and fintechs need infrastructure that can keep up with their ambitions.",
       body:
         "Banks, insurers, and fintechs need to move fast but their infrastructure moves slow. Outdated systems can't handle modern workloads, create compliance risk, and make it hard to respond to customer needs. The problem isn't ambition it's the platform underneath. Financial institutions need infrastructure that is secure, reliable, and built for the workloads they actually run.",
     },

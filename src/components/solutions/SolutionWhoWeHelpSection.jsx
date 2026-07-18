@@ -18,7 +18,7 @@ export default function SolutionWhoWeHelpSection({
     <section className="border-t border-[#E6ECF5] bg-white py-20 lg:py-28">
       <div className="site-container">
         <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#635BFF]">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-[#0A2540]">
             {label}
           </p>
           <h2 className="mt-4 text-[28px] font-semibold tracking-tight sm:text-[36px]">

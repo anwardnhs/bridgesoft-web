@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   RiArrowRightLine,
   RiShipLine,
@@ -11,21 +11,21 @@ import {
   RiCheckboxCircleLine,
   RiGlobalLine,
   RiShieldCheckLine,
-} from "react-icons/ri"
-import { getSolutionBySlug } from "@/data/solutions"
-import { cn } from "@/lib/utils"
-import TrustStrip from "@/components/solutions/TrustStrip"
-import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection"
+} from "react-icons/ri";
+import { getSolutionBySlug } from "@/data/solutions";
+import { cn } from "@/lib/utils";
+import TrustStrip from "@/components/solutions/TrustStrip";
+import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection";
 
-import portGraphic from "@/assets/images/port.svg"
-import fleetGraphic from "@/assets/images/fleet.svg"
-import warehouseGraphic from "@/assets/images/warehouse.svg"
-import cargoGraphic from "@/assets/images/cargo.svg"
-import dashboardGraphic from "@/assets/images/dashboard.svg"
-import integrationGraphic from "@/assets/images/integration.svg"
-import deskGraphic from "@/assets/images/desk.svg"
+import portGraphic from "@/assets/images/ports.avif";
+import fleetGraphic from "@/assets/images/fleet.avif";
+import warehouseGraphic from "@/assets/images/warehouse.svg";
+import cargoGraphic from "@/assets/images/cargo.svg";
+import dashboardGraphic from "@/assets/images/track.avif";
+import integrationGraphic from "@/assets/images/cariiers.avif";
+import deskGraphic from "@/assets/images/desk.svg";
 
-const data = getSolutionBySlug("logistics")
+const data = getSolutionBySlug("logistics");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -34,55 +34,55 @@ const fadeUp = {
     y: 0,
     transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
   },
-}
+};
 
 const stagger = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.08 } },
-}
+};
 
 const whoWeHelp = [
   {
     title: "Ports and terminals",
     description:
-      "Digitize berth planning, cargo handling, and customs workflows with less friction.",
+      "Make berth planning, cargo handling, and handoffs easier to manage across busy terminals.",
     image:
-      "https://images.unsplash.com/photo-1494412519320-aa613dfb7738?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1722588427618-85e923eb7d97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bG9naXN0aWNzfGVufDB8fDB8fHww",
   },
   {
     title: "Warehouses and distribution",
     description:
-      "Keep inventory, pick lists, and fulfillment aligned across every site in your network.",
+      "Keep stock, pick lists, and orders aligned across every site and distribution center.",
     image:
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/vector-1762541812800-251916c76034?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FyZWhvdXNlfGVufDB8fDB8fHww",
   },
   {
     title: "Carriers and freight",
     description:
       "Plan routes, track fleets, and share updates with partners from port gate to final mile.",
     image:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682308476591-cf4a9bb73d15?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bG9naXN0aWNzJTIwdHJ1Y2t8ZW58MHx8MHx8fDA%3D",
   },
   {
     title: "Logistics platforms",
     description:
-      "Embed cloud, tracking, and integration tools into the software operators already use.",
+      "Bring carriers, warehouses, and ports into one cleaner flow of work for your customers.",
     image:
-      "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682308479640-19f534c5ff66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHN8ZW58MHx8MHx8fDA%3D",
   },
-]
+];
 
 function SectionLabel({ children, className }) {
   return (
     <p
       className={cn(
-        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#635BFF]",
+        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#0A2540]",
         className,
       )}
     >
       {children}
     </p>
-  )
+  );
 }
 
 function PrimaryButton({ children, href = "/contact", className }) {
@@ -96,7 +96,7 @@ function PrimaryButton({ children, href = "/contact", className }) {
     >
       {children}
     </Link>
-  )
+  );
 }
 
 function SecondaryButton({ children, href = "/products", className }) {
@@ -111,16 +111,16 @@ function SecondaryButton({ children, href = "/products", className }) {
       {children}
       <RiArrowRightLine className="h-4 w-4" />
     </Link>
-  )
+  );
 }
 
 function InfoPill({ icon: Icon, children }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
-      <Icon className="h-4 w-4 text-[#635BFF]" />
+      <Icon className="h-4 w-4 text-[#0A2540]" />
       {children}
     </div>
-  )
+  );
 }
 
 function FeatureCard({ icon: Icon, title, body, asset }) {
@@ -130,48 +130,50 @@ function FeatureCard({ icon: Icon, title, body, asset }) {
       className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#635BFF]">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
           <Icon className="h-5 w-5" />
         </div>
         <h3 className="text-[18px] font-semibold text-[#0A2540]">{title}</h3>
       </div>
       <div className="mt-5 grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <p className="text-[15px] leading-[1.75] text-[#425466]">{body}</p>
-        <div className="overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC] p-4">
-          <img src={asset} alt="" className="h-36 w-full object-contain" />
+        <p className="text-[15px] leading-[1.75] text-[#0A2540]">{body}</p>
+        <div className="aspect-[4/3] overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC]">
+          <img src={asset} alt="" className="h-full w-full object-cover" />
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
 
 function UseCaseTile({ title, description, image, eyebrow }) {
   return (
     <article className="group overflow-hidden rounded-[1.5rem] border border-[#E6ECF5] bg-white shadow-[0_14px_40px_rgba(10,37,64,0.05)] transition-all duration-300 hover:-translate-y-1">
       <div className="bg-[#F6F9FC] p-5">
-        <img
-          src={image}
-          alt={title}
-          className="h-56 w-full rounded-[1.1rem] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-        />
+        <div className="aspect-[4/3] w-full overflow-hidden rounded-[1.1rem]">
+          <img
+            src={image}
+            alt={title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          />
+        </div>
       </div>
       <div className="p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8898AA]">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0A2540]">
           {eyebrow}
         </p>
         <h3 className="mt-3 text-[20px] font-semibold tracking-tight text-[#0A2540]">
           {title}
         </h3>
-        <p className="mt-3 text-[15px] leading-[1.75] text-[#425466]">
+        <p className="mt-3 text-[15px] leading-[1.75] text-[#0A2540]">
           {description}
         </p>
       </div>
     </article>
-  )
+  );
 }
 
 export default function LogisticsSolution() {
-  const { hero, trustBar } = data
+  const { hero, trustBar } = data;
 
   const features = [
     {
@@ -192,7 +194,7 @@ export default function LogisticsSolution() {
       body: "Track shipments, delays, and throughput in one place so teams can act faster.",
       asset: dashboardGraphic,
     },
-  ]
+  ];
 
   const useCases = [
     {
@@ -216,7 +218,7 @@ export default function LogisticsSolution() {
         "Make cargo handling, customs tasks, and terminal workflows easier to coordinate.",
       image: cargoGraphic,
     },
-  ]
+  ];
 
   return (
     <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
@@ -258,15 +260,23 @@ export default function LogisticsSolution() {
                 keep updates flowing, and avoid costly delays.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 flex flex-wrap gap-3"
+              >
                 <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
                   {hero.ctas?.[0]?.label ?? "Request a Demo"}
                 </PrimaryButton>
                 <SecondaryButton href="/products">See Products</SecondaryButton>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-                <InfoPill icon={RiShieldCheckLine}>Built for reliability</InfoPill>
+              <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-wrap gap-3"
+              >
+                <InfoPill icon={RiShieldCheckLine}>
+                  Built for reliability
+                </InfoPill>
                 <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
                 <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
               </motion.div>
@@ -292,7 +302,7 @@ export default function LogisticsSolution() {
                     <img
                       src={hero.heroImage}
                       alt="Logistics illustration"
-                      className="aspect-[4/3] w-full rounded-[1.1rem] object-contain"
+                      className="aspect-[4/3] w-full rounded-[1.1rem] object-cover"
                     />
                   </div>
                   <div className="grid gap-4">
@@ -343,7 +353,11 @@ export default function LogisticsSolution() {
                 transition={{ duration: 0.6, delay: 0.08 }}
                 className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
               >
-                <img src={portGraphic} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={portGraphic}
+                  alt=""
+                  className="h-24 w-full object-cover"
+                />
               </motion.div>
 
               <motion.div
@@ -352,7 +366,11 @@ export default function LogisticsSolution() {
                 transition={{ duration: 0.6, delay: 0.16 }}
                 className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
               >
-                <img src={integrationGraphic} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={integrationGraphic}
+                  alt=""
+                  className="h-24 w-full object-cover"
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -451,5 +469,5 @@ export default function LogisticsSolution() {
         items={whoWeHelp}
       />
     </main>
-  )
+  );
 }

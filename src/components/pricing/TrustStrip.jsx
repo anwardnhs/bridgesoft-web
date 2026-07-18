@@ -35,14 +35,12 @@ const companies = [
   },
 ]
 
-const marqueeItems = [...companies, ...companies]
-
-const trackVariants = {
+const marqueeVariants = {
   hidden: { x: 0 },
   show: {
     x: ["0%", "-50%"],
     transition: {
-      duration: 22,
+      duration: 24,
       ease: "linear",
       repeat: Infinity,
       repeatType: "loop",
@@ -53,33 +51,39 @@ const trackVariants = {
 export default function TrustStrip() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-50px" })
+  const items = [...companies, ...companies]
 
   return (
-    <section
-      className="overflow-hidden border-b border-rule bg-white py-8"
-      aria-label="Trusted Companies"
-    >
-      <div className="site-container">
-        <div className="relative overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-white to-transparent md:w-28" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-white to-transparent md:w-28" />
+    <section className="border-y border-[#E6ECF5] bg-white py-8 lg:py-10" aria-label="Trusted Companies">
+      <div className="site-container" ref={ref}>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-[#635BFF]">
+            Trusted by institutions across financial services
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#425466] sm:text-base">
+            Trusted by teams that want software to feel steady, simple, and easy to run.
+          </p>
+        </div>
+
+        <div className="relative mt-8 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-24" />
 
           <motion.div
-            ref={ref}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            variants={trackVariants}
-            className="flex w-max items-center py-4"
+            variants={marqueeVariants}
+            className="flex w-max items-center py-2"
             style={{ willChange: "transform" }}
           >
-            {marqueeItems.map((company, index) => (
+            {items.map((company, index) => (
               <div
                 key={`${company.id}-${index}`}
-                className="flex shrink-0 items-center px-8 md:px-12 lg:px-16"
+                className="flex shrink-0 items-center px-6 sm:px-8 lg:px-10"
                 aria-hidden={index >= companies.length}
               >
                 <span
-                  className={`select-none whitespace-nowrap text-slate-400 transition-colors duration-300 hover:text-slate-900 ${company.className}`}
+                  className={`select-none whitespace-nowrap text-[18px] font-semibold tracking-tight text-[#0A2540] sm:text-[22px] lg:text-[24px] ${company.className}`}
                   title={company.name}
                 >
                   {company.name}

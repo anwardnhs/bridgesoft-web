@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   RiArrowRightLine,
   RiGovernmentLine,
@@ -12,20 +12,20 @@ import {
   RiTimeLine,
   RiMapPinLine,
   RiGlobalLine,
-} from "react-icons/ri"
-import { getSolutionBySlug } from "@/data/solutions"
-import { cn } from "@/lib/utils"
-import TrustStrip from "@/components/solutions/TrustStrip"
-import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection"
+} from "react-icons/ri";
+import { getSolutionBySlug } from "@/data/solutions";
+import { cn } from "@/lib/utils";
+import TrustStrip from "@/components/solutions/TrustStrip";
+import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection";
 
-import person3Illustration from "@/assets/images/person3.svg"
-import person2Illustration from "@/assets/images/person2.svg"
-import dashboardGraphic from "@/assets/images/dashboard.svg"
-import cloudGraphic from "@/assets/images/cloud.svg"
-import deskGraphic from "@/assets/images/desk.svg"
-import mapGraphic from "@/assets/images/map.svg"
+import person3Illustration from "@/assets/images/person3.svg";
+import person2Illustration from "@/assets/images/person2.svg";
+import dashboardGraphic from "@/assets/images/dashboard.svg";
+import cloudGraphic from "@/assets/images/cloud.svg";
+import deskGraphic from "@/assets/images/bank4.avif";
+import mapGraphic from "@/assets/images/lag.jpg";
 
-const data = getSolutionBySlug("public-sector")
+const data = getSolutionBySlug("public-sector");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -34,55 +34,55 @@ const fadeUp = {
     y: 0,
     transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
   },
-}
+};
 
 const stagger = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.08 } },
-}
+};
 
 const whoWeHelp = [
   {
     title: "State and local government",
     description:
-      "Modernize permits, licenses, payroll, and public services with less manual work.",
+      "Make public-facing services easier to reach, understand, and complete.",
     image:
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1722003185674-dd50f8ff460b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Universities and education",
     description:
-      "Make tuition, campus services, records, and donor work easier to manage.",
+      "Keep student records, applications, and programs organized across departments.",
     image:
-      "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682305954108-23bc99bbddd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHVuaXZlcnNpdHklMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Nonprofits and foundations",
     description:
       "Run grants, programs, and donor relationships with clearer reporting.",
     image:
-      "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682300668981-8a72e705d783?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9uJTIwcHJvZml0JTIwb3JnYW5pemF0aW9ufGVufDB8fDB8fHww",
   },
   {
     title: "Public-sector platforms",
     description:
-      "Embed cloud, data, and workflow tools into the software agencies already use.",
+      "Help governments and institutions run public-facing platforms with less friction.",
     image:
-      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1731488506688-9f4300f9e055?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHB1YmxpYyUyMHNlY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
-]
+];
 
 function SectionLabel({ children, className }) {
   return (
     <p
       className={cn(
-        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#635BFF]",
+        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#0A2540]",
         className,
       )}
     >
       {children}
     </p>
-  )
+  );
 }
 
 function PrimaryButton({ children, href = "/contact", className }) {
@@ -96,7 +96,7 @@ function PrimaryButton({ children, href = "/contact", className }) {
     >
       {children}
     </Link>
-  )
+  );
 }
 
 function SecondaryButton({ children, href = "/products", className }) {
@@ -111,16 +111,16 @@ function SecondaryButton({ children, href = "/products", className }) {
       {children}
       <RiArrowRightLine className="h-4 w-4" />
     </Link>
-  )
+  );
 }
 
 function InfoPill({ icon: Icon, children }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
-      <Icon className="h-4 w-4 text-[#635BFF]" />
+      <Icon className="h-4 w-4 text-[#0A2540]" />
       {children}
     </div>
-  )
+  );
 }
 
 function FeatureCard({ icon: Icon, title, body, asset }) {
@@ -130,7 +130,7 @@ function FeatureCard({ icon: Icon, title, body, asset }) {
       className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#635BFF]">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
           <Icon className="h-5 w-5" />
         </div>
         <h3 className="text-[18px] font-semibold text-[#0A2540]">{title}</h3>
@@ -142,7 +142,7 @@ function FeatureCard({ icon: Icon, title, body, asset }) {
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
 
 function UseCaseTile({ title, description, image, eyebrow }) {
@@ -162,16 +162,16 @@ function UseCaseTile({ title, description, image, eyebrow }) {
         <h3 className="mt-3 text-[20px] font-semibold tracking-tight text-[#0A2540]">
           {title}
         </h3>
-        <p className="mt-3 text-[15px] leading-[1.75] text-[#425466]">
+        <p className="mt-3 text-[15px] leading-[1.75] text-[#0A2540]">
           {description}
         </p>
       </div>
     </article>
-  )
+  );
 }
 
 export default function PublicSectorSolution() {
-  const { hero, trustBar } = data
+  const { hero, trustBar } = data;
 
   const features = [
     {
@@ -192,7 +192,7 @@ export default function PublicSectorSolution() {
       body: "Help departments and partners stay aligned without adding extra complexity.",
       asset: cloudGraphic,
     },
-  ]
+  ];
 
   const useCases = [
     {
@@ -200,7 +200,8 @@ export default function PublicSectorSolution() {
       eyebrow: "Public access",
       description:
         "Make permits, licenses, and public forms easier for people to navigate.",
-      image: person2Illustration,
+      image:
+        "https://plus.unsplash.com/premium_vector-1778966297309-216d23e8366b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpdGl6ZW58ZW58MHx8MHx8fDA%3D",
     },
     {
       title: "Payroll and treasury",
@@ -216,7 +217,7 @@ export default function PublicSectorSolution() {
         "Give leaders a clearer picture of activity across offices and regions.",
       image: mapGraphic,
     },
-  ]
+  ];
 
   return (
     <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
@@ -252,20 +253,26 @@ export default function PublicSectorSolution() {
 
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#425466] sm:text-[20px]"
+                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
               >
                 Bridgesoft helps governments and institutions keep work
                 organized, services easier to reach, and teams better aligned.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 flex flex-wrap gap-3"
+              >
                 <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
                   {hero.ctas?.[0]?.label ?? "Request a Demo"}
                 </PrimaryButton>
                 <SecondaryButton href="/products">See Products</SecondaryButton>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-wrap gap-3"
+              >
                 <InfoPill icon={RiShieldCheckLine}>Built for trust</InfoPill>
                 <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
                 <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
@@ -330,7 +337,7 @@ export default function PublicSectorSolution() {
                             for staff and citizens
                           </p>
                         </div>
-                        <RiGlobalLine className="h-8 w-8 text-[#9FB4FF]" />
+                        <RiGlobalLine className="h-8 w-8 text-[#0A2540]" />
                       </div>
                     </div>
                   </div>
@@ -343,7 +350,11 @@ export default function PublicSectorSolution() {
                 transition={{ duration: 0.6, delay: 0.08 }}
                 className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
               >
-                <img src={person2Illustration} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={person2Illustration}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
 
               <motion.div
@@ -352,7 +363,11 @@ export default function PublicSectorSolution() {
                 transition={{ duration: 0.6, delay: 0.16 }}
                 className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
               >
-                <img src={deskGraphic} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={deskGraphic}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -451,5 +466,5 @@ export default function PublicSectorSolution() {
         items={whoWeHelp}
       />
     </main>
-  )
+  );
 }

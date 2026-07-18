@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import {
   RiArrowRightLine,
   RiShieldKeyholeLine,
@@ -9,20 +9,20 @@ import {
   RiHospitalLine,
   RiFileList3Line,
   RiUserHeartLine,
-} from "react-icons/ri"
-import { getSolutionBySlug } from "@/data/solutions"
-import { cn } from "@/lib/utils"
-import TrustStrip from "@/components/solutions/TrustStrip"
-import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection"
+} from "react-icons/ri";
+import { getSolutionBySlug } from "@/data/solutions";
+import { cn } from "@/lib/utils";
+import TrustStrip from "@/components/solutions/TrustStrip";
+import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection";
 
-import doctorImage from "@/assets/images/doctor.jpg"
-import healthGraphic from "@/assets/images/health.svg"
-import heartGraphic from "@/assets/images/heart.svg"
-import brainGraphic from "@/assets/images/brain.svg"
-import aidGraphic from "@/assets/images/aid.svg"
-import hiconGraphic from "@/assets/images/hicon.svg"
+import doctorImage from "@/assets/images/doctor.jpg";
+import healthGraphic from "@/assets/images/health.svg";
+import heartGraphic from "@/assets/images/heart.svg";
+import brainGraphic from "@/assets/images/brain.svg";
+import aidGraphic from "@/assets/images/aid.svg";
+import hiconGraphic from "@/assets/images/hicon.svg";
 
-const data = getSolutionBySlug("healthcare")
+const data = getSolutionBySlug("healthcare");
 
 const fadeUp = {
   hidden: { opacity: 0, y: 22 },
@@ -31,12 +31,12 @@ const fadeUp = {
     y: 0,
     transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] },
   },
-}
+};
 
 const stagger = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.08 } },
-}
+};
 
 const whoWeHelp = [
   {
@@ -44,42 +44,42 @@ const whoWeHelp = [
     description:
       "Connect inpatient, outpatient, and emergency records so teams can see the full picture at every facility.",
     image:
-      "https://images.unsplash.com/photo-1580281657527-47e8b5f3c1bb?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682270087470-b1e5aac279d1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvc3BpdGFsfGVufDB8fDB8fHww",
   },
   {
     title: "Public health authorities",
     description:
       "Track capacity, wait times, and service delivery across districts with less back and forth.",
     image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682306895029-1c07dc2c0dfc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG9zcGl0YWx8ZW58MHx8MHx8fDA%3D",
   },
   {
     title: "Clinics and outpatient care",
     description:
       "Share referrals, results, and care plans between sites without duplicate work or paperwork.",
     image:
-      "https://images.unsplash.com/photo-1516575334481-f85287c2c82d?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1726062951813-9dc592ec3a79?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGhvc3BpdGFsJTIwYnVpbGRpbmd8ZW58MHx8MHx8fDA%3D",
   },
   {
     title: "Health tech platforms",
     description:
       "Embed the tools hospitals and partners already use into one cleaner workflow.",
     image:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=1200&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_vector-1682310608698-02d7ef747d95?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGhlYWx0aGNhcmV8ZW58MHx8MHx8fDA%3D",
   },
-]
+];
 
 function SectionLabel({ children, className }) {
   return (
     <p
       className={cn(
-        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#635BFF]",
+        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#0A2540]",
         className,
       )}
     >
       {children}
     </p>
-  )
+  );
 }
 
 function PrimaryButton({ children, href = "/contact", className }) {
@@ -93,7 +93,7 @@ function PrimaryButton({ children, href = "/contact", className }) {
     >
       {children}
     </Link>
-  )
+  );
 }
 
 function SecondaryButton({ children, href = "/products", className }) {
@@ -108,16 +108,16 @@ function SecondaryButton({ children, href = "/products", className }) {
       {children}
       <RiArrowRightLine className="h-4 w-4" />
     </Link>
-  )
+  );
 }
 
 function InfoPill({ icon: Icon, children }) {
   return (
     <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
-      <Icon className="h-4 w-4 text-[#635BFF]" />
+      <Icon className="h-4 w-4 text-[#0A2540]" />
       {children}
     </div>
-  )
+  );
 }
 
 function FeatureCard({ icon: Icon, title, body, asset }) {
@@ -127,7 +127,7 @@ function FeatureCard({ icon: Icon, title, body, asset }) {
       className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
     >
       <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#635BFF]">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
           <Icon className="h-5 w-5" />
         </div>
         <div>
@@ -135,17 +135,17 @@ function FeatureCard({ icon: Icon, title, body, asset }) {
         </div>
       </div>
       <div className="mt-5 grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-        <p className="text-[15px] leading-[1.75] text-[#425466]">{body}</p>
+        <p className="text-[15px] leading-[1.75] text-[#0A2540]">{body}</p>
         <div className="overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC] p-4">
           <img src={asset} alt="" className="h-36 w-full object-contain" />
         </div>
       </div>
     </motion.article>
-  )
+  );
 }
 
 export default function HealthcareSolution() {
-  const { hero, trustBar } = data
+  const { hero, trustBar } = data;
 
   const features = [
     {
@@ -166,7 +166,7 @@ export default function HealthcareSolution() {
       body: "Make it easier to track activity, review history, and keep the right people informed.",
       asset: brainGraphic,
     },
-  ]
+  ];
 
   return (
     <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
@@ -204,19 +204,28 @@ export default function HealthcareSolution() {
                 variants={fadeUp}
                 className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#425466] sm:text-[20px]"
               >
-                Bridgesoft helps hospitals, clinics, and public health teams keep
-                records clear, work aligned, and daily care easier to manage.
+                Bridgesoft helps hospitals, clinics, and public health teams
+                keep records clear, work aligned, and daily care easier to
+                manage.
               </motion.p>
 
-              <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 flex flex-wrap gap-3"
+              >
                 <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
                   {hero.ctas?.[0]?.label ?? "Request a Demo"}
                 </PrimaryButton>
                 <SecondaryButton href="/products">See Products</SecondaryButton>
               </motion.div>
 
-              <motion.div variants={fadeUp} className="mt-10 flex flex-wrap gap-3">
-                <InfoPill icon={RiShieldKeyholeLine}>Built for privacy</InfoPill>
+              <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-wrap gap-3"
+              >
+                <InfoPill icon={RiShieldKeyholeLine}>
+                  Built for privacy
+                </InfoPill>
                 <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
                 <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
               </motion.div>
@@ -293,7 +302,11 @@ export default function HealthcareSolution() {
                 transition={{ duration: 0.6, delay: 0.08 }}
                 className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
               >
-                <img src={aidGraphic} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={aidGraphic}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
 
               <motion.div
@@ -302,7 +315,11 @@ export default function HealthcareSolution() {
                 transition={{ duration: 0.6, delay: 0.16 }}
                 className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
               >
-                <img src={hiconGraphic} alt="" className="h-24 w-full object-contain" />
+                <img
+                  src={hiconGraphic}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
               </motion.div>
             </motion.div>
           </div>
@@ -334,7 +351,7 @@ export default function HealthcareSolution() {
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-5 text-[17px] leading-[1.8] text-[#425466]"
+              className="mt-5 text-[17px] leading-[1.8] text-[#0A2540] sm:text-[18px] sm:leading-[1.75]"
             >
               Less juggling, fewer handoffs, and a clearer view of what is
               happening across the day.
@@ -360,5 +377,5 @@ export default function HealthcareSolution() {
         items={whoWeHelp}
       />
     </main>
-  )
+  );
 }

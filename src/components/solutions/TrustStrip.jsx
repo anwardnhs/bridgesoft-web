@@ -1,81 +1,63 @@
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { cn } from "@/lib/utils"
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
-const wordmarkStyles = [
-  "font-serif font-semibold uppercase tracking-[-0.08em]",
-  "font-extrabold italic tracking-[-0.08em] uppercase",
-  "font-semibold tracking-[-0.05em] lowercase",
-  "font-medium tracking-[-0.03em]",
-]
-
-const trackVariants = {
+const marqueeVariants = {
   hidden: { x: 0 },
   show: {
     x: ["0%", "-50%"],
     transition: {
-      duration: 22,
+      duration: 24,
       ease: "linear",
       repeat: Infinity,
       repeatType: "loop",
     },
   },
-}
+};
 
 export default function TrustStrip({ headline, proofPoints = [] }) {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "-50px" })
-  const marqueeItems = [...proofPoints, ...proofPoints]
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const items = [...proofPoints, ...proofPoints];
 
   return (
-    <section className="overflow-hidden bg-slate-50 py-10 lg:py-14">
-      <div className="site-container">
+    <section className="border-y border-[#E6ECF5] bg-white py-8 lg:py-10">
+      <div className="site-container" ref={ref}>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-slate-500">
+          <p className="text-[11px] font-extrabold uppercase tracking-[0.34em] text-[#0A2540]">
             {headline}
           </p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight text-slate-950 sm:text-4xl">
-            Trusted performance that scales with your business.
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
-            Real results, clear metrics, and confident decisions - all built on
-            a foundation of reliability and transparency.
+          <p className="mx-auto mt-3 max-w-2xl text-sm  font-bold leading-6 text-[#425466] sm:text-base">
+            Proven by the world’s leading organizations, Bridgesoft is trusted
+            to deliver secure, reliable, and scalable solutions that help teams
+            work better together.
           </p>
         </div>
 
-        <div className="relative mt-10 overflow-hidden">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-slate-50 to-transparent md:w-28" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-slate-50 to-transparent md:w-28" />
+        <div className="relative mt-8 overflow-hidden">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent md:w-24" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent md:w-24" />
 
           <motion.div
-            ref={ref}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            variants={trackVariants}
-            className="flex w-max items-stretch py-2"
+            variants={marqueeVariants}
+            className="flex w-max items-center py-2"
             style={{ willChange: "transform" }}
           >
-            {marqueeItems.map((point, index) => (
+            {items.map((point, index) => (
               <div
                 key={`${point}-${index}`}
-                className="flex shrink-0 items-center px-4 md:px-6 lg:px-8"
+                className="flex shrink-0 items-center px-6 sm:px-8 lg:px-10"
                 aria-hidden={index >= proofPoints.length}
               >
-                <div className="rounded-[2rem] bg-white px-6 py-10 text-center shadow-[0_24px_60px_-32px_rgba(15,23,42,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_80px_-40px_rgba(15,23,42,0.18)] min-w-[220px]">
-                  <span
-                    className={cn(
-                      "block text-[28px] leading-none text-slate-950 sm:text-[32px] lg:text-[34px]",
-                      wordmarkStyles[index % wordmarkStyles.length],
-                    )}
-                  >
-                    {point}
-                  </span>
-                </div>
+                <span className="select-none whitespace-nowrap text-[18px] font-semibold tracking-tight text-[#0A2540] sm:text-[22px] lg:text-[24px]">
+                  {point}
+                </span>
               </div>
             ))}
           </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
