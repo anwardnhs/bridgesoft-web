@@ -56,11 +56,11 @@ export default function AboutHero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-slate-600 leading-[1.6] max-w-3xl mx-auto font-normal"
           >
-            Bridgesoft is Africa's leading enterprise cloud infrastructure
-            provider, delivering mission-critical solutions to the continent's
-            most demanding organizations. With a focus on reliability,
-            scalability, and innovation, we empower businesses to thrive in the
-            digital age.
+            Bridgesoft is a software development company that specializes in
+            building high-quality, scalable, and maintainable software solutions
+            for businesses of all sizes. Our team of experienced developers and
+            designers work together to create innovative products that drive
+            business growth and success.
           </motion.p>
         </motion.div>
       </div>

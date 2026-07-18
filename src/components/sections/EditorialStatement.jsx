@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // Make sure to import your new Handz asset here!
-import Handz from "@/assets/images/Handz.svg";
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
 const fadeUp = {
@@ -139,20 +138,6 @@ export default function EditorialStatement() {
             </div>
 
             {/* Right: The Handz Asset (Rotated and Pointing towards text) */}
-            <motion.div
-              variants={fadeUp}
-              className="hidden lg:flex lg:col-span-5 justify-end items-center relative z-0"
-            >
-              {/* 
-                -rotate-12 tilts the hands leftward, aiming them at the quote.
-                translate-x-8 pushes it slightly out of bounds so it doesn't crowd the text.
-              */}
-              <img
-                src={Handz}
-                alt="Human element in software"
-                className="w-full max-w-[500px] object-contain mix-blend-darken transform -rotate-0 translate-x-8 xl:translate-x-12 scale-[1.15] origin-bottom-right"
-              />
-            </motion.div>
           </div>
 
           {/* ── 3-Column Image Grid ── */}

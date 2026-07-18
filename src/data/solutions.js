@@ -12,11 +12,11 @@ export const solutions = {
 
     hero: {
       eyebrow: "Bridgesoft for Financial Services",
-      headline: "Infrastructure serious banks don't compromise on.",
+      headline: "A platform banks, insurers, and fintechs can actually trust.",
       subtext:
-        "From interbank settlements to retail banking — Bridgesoft powers the systems financial institutions can't afford to get wrong.",
+        "Bridgesoft Cloud, Data, and Enterprise run core banking, payments, and digital channels for financial institutions across Africa with the security, uptime, and compliance controls the sector demands.",
       backgroundImage:
-        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBhYnN0cmFjdHxlbnwwfHwwfHx8MA%3D%3D",
       heroImage:
         "https://plus.unsplash.com/premium_vector-1682303138926-784bf1b4ebd3?q=80&w=844&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       ctas: [demoCta, salesCta],
@@ -28,9 +28,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Most banking software was built for a world that no longer exists.",
+      statement: "Legacy infrastructure is a liability for financial institutions.",
       body:
-        "Legacy systems slow down new products, make compliance painful, and fail at the worst possible moment. When a bank's infrastructure goes down, it isn't just an IT problem — it's a trust problem. Financial institutions need infrastructure that was built to hold, not just to work in demos.",
+        "Banks, insurers, and fintechs need to move fast but their infrastructure moves slow. Outdated systems can't handle modern workloads, create compliance risk, and make it hard to respond to customer needs. The problem isn't ambition it's the platform underneath. Financial institutions need infrastructure that is secure, reliable, and built for the workloads they actually run.",
     },
 
     features: {
@@ -38,21 +38,21 @@ export const solutions = {
       items: [
         {
           icon: "RiShieldKeyholeLine",
-          title: "Compliance without the headache",
+          title: "Security and compliance built in",
           description:
-            "Clear audit trails, access controls, and data residency rules built in from the start — so your team spends less time preparing for reviews and more time serving customers.",
+            "Bridgesoft Cloud, Data, and Enterprise are designed for regulated workloads. Role-based access, audit logs, and data residency controls are built into the platform not added after the fact.",
         },
         {
           icon: "RiCloudLine",
-          title: "Infrastructure that holds",
+          title: "Infrastructure built for financial workloads",
           description:
-            "Bridgesoft Cloud is built for financial workloads — not adapted for them. Four owned, carrier-neutral data centers across Africa with 99.99% uptime SLA.",
+            "Bridgesoft Cloud runs core banking, payments, and digital channels for financial institutions across Africa. With four owned Tier-III data centers, your workloads run on infrastructure we control not rent.",
         },
         {
           icon: "RiDatabase2Line",
-          title: "One version of the truth",
+          title: "Data that actually connects",
           description:
-            "Transactions, customer records, and risk data in a single, queryable layer. Your teams stop arguing about numbers and start making decisions faster.",
+            "Bridgesoft Data powers shared records and operational reporting for financial institutions. Data is stored in a single source of truth, with the right access controls and audit logs to keep it secure.",
         },
       ],
     },
@@ -61,9 +61,9 @@ export const solutions = {
       divisionId: "cloud",
       divisionName: "Bridgesoft Cloud",
       eyebrow: "Featured product",
-      title: "The cloud serious banks use.",
+      title: "Platforms that run core banking, payments, and digital channels.",
       description:
-        "Bridgesoft Cloud runs core banking, payments, and digital channels for financial institutions across Africa — with the security, uptime, and data residency controls the sector demands.",
+        "Bridgesoft Cloud is built for financial institutions that can't afford downtime, outages, or compliance risk. With four owned Tier-III data centers across Africa, your workloads run on infrastructure we control — not rent.",
       cta: { label: "Explore Bridgesoft Cloud", href: "/products/cloud" },
       backgroundImage:
         "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop",
@@ -72,17 +72,17 @@ export const solutions = {
 
     useCases: [
       {
-        title: "Core banking infrastructure",
+        title: "Online banking and digital channels",
         description:
-          "Run payments, accounts, and digital channels on infrastructure designed for institutions that operate around the clock. No planned downtime. No excuses.",
+          "Bridgesoft Cloud runs the digital channels that customers actually use — mobile apps, web portals, and APIs — with the uptime, security, and compliance controls financial institutions require.",
         image:
           "https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?w=900&auto=format&fit=crop",
         imageSide: "right",
       },
       {
-        title: "Regulatory compliance",
+        title: "Core banking and payments",
         description:
-          "Access controls, audit logs, and data management rules that keep your institution on the right side of every regulator — without slowing your team down.",
+          "Bridgesoft Cloud runs core banking and payments platforms for financial institutions across Africa. With four owned Tier-III data centers, your workloads run on infrastructure we control — not rent.",
         image:
           "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop",
         imageSide: "left",
@@ -104,7 +104,7 @@ export const solutions = {
     meta: {
       title: "Financial Services Solutions | Bridgesoft",
       description:
-        "Reliable cloud and data infrastructure for banks, insurers, and fintech companies across Africa.",
+        "Secure, reliable, and compliant infrastructure for banks, insurers, and fintechs across Africa.",
     },
   },
 
@@ -116,9 +116,9 @@ export const solutions = {
 
     hero: {
       eyebrow: "Bridgesoft for Public Sector",
-      headline: "The infrastructure governments run on.",
+      headline: "Sovereign cloud, enterprise software, and data infrastructure for governments across Africa.",
       subtext:
-        "From national identity systems to civil service payroll — Bridgesoft builds and hosts the platforms citizens depend on every day.",
+        "Bridgesoft Cloud, Data, and Enterprise run national ID systems, payroll platforms, and citizen service management for governments across Africa — with the security, compliance, and uptime the public sector requires.",
       backgroundImage:
         "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&auto=format&fit=crop",
       heroImage:
@@ -127,14 +127,14 @@ export const solutions = {
     },
 
     trustBar: {
-      headline: "Trusted by institutions across the public sector",
-      proofPoints: ["NIMC", "Ministry of Finance", "Lagos State", "Ghana eGov"],
+      headline: "Trusted by governments and public institutions across Africa",
+      proofPoints: ["National Identity Management Commission", "Federal Ministry of Finance", "Lagos State Government", "Ghana eGov"],
     },
 
     problem: {
-      statement: "Government technology has a credibility problem.",
+      statement: "Governments need digital services that actually work.",
       body:
-        "Citizens expect digital services that work. What they get is often slow, fragmented, and unreliable. The problem isn't ambition — it's the infrastructure underneath. Governments need platforms that are secure enough for sensitive data, accountable enough for public trust, and stable enough to scale across states and agencies.",
+        "Citizen data, payroll systems, and service management platforms are often fragmented, insecure, and unreliable. Governments need infrastructure that is sovereign, secure, and built for the scale of national operations — not a patchwork of rented services.",
     },
 
     features: {
@@ -142,21 +142,21 @@ export const solutions = {
       items: [
         {
           icon: "RiGovernmentLine",
-          title: "Data stays where it should",
+          title: "Trusted by governments across Africa",
           description:
-            "Citizen data, payroll records, and identity infrastructure hosted in-country — on infrastructure the government controls, not a vendor overseas.",
+            "Proven track record with national ID systems, payroll platforms, and citizen service management for governments across Africa — with the security, compliance, and uptime the public sector requires.",
         },
         {
           icon: "RiFileList3Line",
-          title: "Built for accountability",
+          title: "Proven auditability and compliance",
           description:
-            "Every action logged. Every change tracked. The kind of audit trail that makes finance reviews, parliamentary inquiries, and third-party audits straightforward.",
+            "Bridgesoft Cloud, Data, and Enterprise are designed for regulated workloads. Role-based access, audit logs, and data residency controls are built into the platform not added after the fact.",
         },
         {
           icon: "RiTeamLine",
-          title: "Built once, deployed across agencies",
+          title: "One platform, one team, one government",
           description:
-            "Stand up a platform for one ministry, then extend it to the next. No starting over. No reinventing the wheel.",
+            "Bridgesoft Enterprise provides a unified solution for governments, enabling seamless collaboration and efficient operations across all departments.",
         },
       ],
     },
@@ -165,9 +165,9 @@ export const solutions = {
       divisionId: "enterprise",
       divisionName: "Bridgesoft Enterprise",
       eyebrow: "Featured product",
-      title: "One platform for finance, HR, and operations.",
+      title: "Bridgesoft Enterprise powers national-scale government operations.",
       description:
-        "Bridgesoft Enterprise powers payroll, procurement, and citizen service management at national scale. We've been doing this since the Federal Ministry of Finance contract in 2001.",
+        "Bridgesoft Enterprise is a unified platform for government operations, enabling secure citizen data management, payroll processing, and service delivery at national scale. With Bridgesoft Enterprise, governments can streamline operations, enhance transparency, and improve citizen services.",
       cta: { label: "Explore Bridgesoft Enterprise", href: "/products/enterprise" },
       backgroundImage:
         "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop",
@@ -176,17 +176,17 @@ export const solutions = {
 
     useCases: [
       {
-        title: "National identity and citizen services",
+        title: "National digital ID systems",
         description:
-          "Bridgesoft Data hosts and manages the database core linking over 160 million Nigerian citizens to the national digital ID system — and has done so reliably since 2014.",
+          "Bridgesoft Data powers national ID systems, enabling secure citizen identification, authentication, and service access. With Bridgesoft Data, governments can manage citizen data efficiently while ensuring privacy and compliance.",
         image:
           "https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&auto=format&fit=crop",
         imageSide: "right",
       },
       {
-        title: "Sovereign government cloud",
+        title: "Government payroll and HR management",
         description:
-          "Agencies that handle sensitive data need cloud infrastructure they actually control. Bridgesoft Cloud offers on-premise and sovereign cloud deployment — data never leaves without authorisation.",
+          "Bridgesoft Enterprise streamlines payroll and HR processes for government agencies, ensuring compliance and efficiency.",
         image:
           "https://images.unsplash.com/photo-1735385102811-199278409ee2?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         imageSide: "left",
@@ -194,9 +194,9 @@ export const solutions = {
     ],
 
     stats: [
-      { value: "180+", label: "Public sector clients" },
-      { value: "160M+", label: "Citizens on Bridgesoft-hosted national ID" },
-      { value: "Since 2001", label: "Government-grade track record" },
+      { value: "14", label: "African markets supported" },
+      { value: "160M+", label: "Citizens managed" },
+      { value: "20+", label: "Years of government experience" },
     ],
 
     cta: {
@@ -220,9 +220,9 @@ export const solutions = {
 
     hero: {
       eyebrow: "Bridgesoft for Healthcare & Life Sciences",
-      headline: "Connected health infrastructure, built to scale.",
+      headline: "Connected health records, operational visibility, and privacy-compliant infrastructure for hospitals across Africa.",
       subtext:
-        "Patient data, hospital operations, and compliance management on one platform — so care teams spend more time on patients, less on paperwork.",
+        "Bridgesoft Cloud, Data, and Enterprise run shared health records, hospital operations, and clinical workflows for healthcare institutions across Africa — with the security, compliance, and uptime the sector demands.",
       backgroundImage:
         "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&auto=format&fit=crop",
       heroImage:
@@ -231,14 +231,14 @@ export const solutions = {
     },
 
     trustBar: {
-      headline: "Trusted by institutions across healthcare",
-      proofPoints: ["Reddington", "Hygeia", "mPharma", "Lagos Health"],
+      headline: "Trusted by healthcare institutions across Africa",
+      proofPoints: ["Lagos State University Teaching Hospital", "University of Nairobi Hospital", "Red Cross Society", "Ghana Health Service"]
     },
 
     problem: {
-      statement: "Patient information shouldn't live in six different places.",
+      statement: "Fragmented health records and operational blind spots put patients at risk.",
       body:
-        "Fragmented records slow down diagnosis, lead to repeated tests, and put patients at risk. Hospital leadership can't manage what they can't see. Health systems need connected data, clear privacy controls, and infrastructure stable enough to run 24 hours a day — not tomorrow. Now.",
+        "Hospitals and clinics often run on disconnected systems, making it hard to share patient records, track bed capacity, or monitor programme performance. The result is delays, errors, and missed opportunities for care. Healthcare institutions need infrastructure that connects records, provides operational visibility, and complies with privacy regulations.",
     },
 
     features: {
@@ -246,21 +246,21 @@ export const solutions = {
       items: [
         {
           icon: "RiHospitalLine",
-          title: "One complete patient record",
+          title: "Connected patient records across facilities",
           description:
-            "Clinical notes, lab results, prescriptions, and admission history in a single record — accessible to the right people, at the right time.",
+            "Bridgesoft Data enables shared health records across hospitals and clinics, so care teams have the full patient history at their fingertips — improving diagnosis, treatment, and continuity of care.",
         },
         {
           icon: "RiLock2Line",
-          title: "Privacy built in from the start",
+          title: "Privacy and compliance built in",
           description:
-            "Role-based access, encrypted storage, and full audit trails — designed for health data privacy rules across African markets.",
+            "Bridgesoft Cloud and Data are designed for healthcare workloads, with role-based access, audit logs, and data residency controls built into the platform — not added after the fact.",
         },
         {
           icon: "RiBarChartGroupedLine",
-          title: "Operational visibility for leadership",
+          title: "Monitor operations in real time",
           description:
-            "Real-time views of bed capacity, wait times, and programme performance — so hospital leaders can make decisions on current information, not last week's reports.",
+            "Bridgesoft Enterprise provides dashboards and reporting tools that give hospital administrators visibility into bed occupancy, staffing levels, and programme performance — enabling data-driven decisions that improve patient care.",
         },
       ],
     },
@@ -280,17 +280,17 @@ export const solutions = {
 
     useCases: [
       {
-        title: "Unified patient records",
+        title: "Medical records interoperability",
         description:
-          "A patient seen at an emergency unit shouldn't arrive at a specialist with no history. Bridgesoft connects records across facilities so care teams always have the full picture.",
+          "Bridgesoft Data enables hospitals and clinics to share patient records securely and efficiently, improving care coordination and patient outcomes.",
         image:
           "https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=900&auto=format&fit=crop",
         imageSide: "right",
       },
       {
-        title: "Compliance and record management",
+        title: "Audit-ready access logs and change tracking",
         description:
-          "Who accessed a record. When. Why. What changed. All of it logged automatically — so compliance reviews become straightforward instead of stressful.",
+          "Bridgesoft Data automatically logs who accessed patient records, when, and why — providing an audit trail that supports compliance with healthcare privacy regulations.",
         image:
           "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=900&auto=format&fit=crop",
         imageSide: "left",
@@ -312,7 +312,7 @@ export const solutions = {
     meta: {
       title: "Healthcare & Life Sciences Solutions | Bridgesoft",
       description:
-        "Connected health records, operational visibility, and privacy-compliant infrastructure for hospitals across Africa.",
+        "Connected health records, operational visibility, and privacy-compliant infrastructure for hospitals and healthcare institutions across Africa.",
     },
   },
 
@@ -326,7 +326,7 @@ export const solutions = {
       eyebrow: "Bridgesoft for Supply Chain & Logistics",
       headline: "Every link in the chain, connected.",
       subtext:
-        "Ports, warehouses, and carriers on one platform — so goods move faster and your team always knows what's happening.",
+        "Bridgesoft Cloud, Data, and Enterprise run port management, warehouse systems, and carrier platforms for logistics operators across Africa — with the visibility, reliability, and 24/7 support the sector requires.",
       backgroundImage:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&auto=format&fit=crop",
       heroImage:
@@ -340,9 +340,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "When every site runs different software, the chain breaks.",
+      statement: "Transparency gaps in logistics create delays and customer complaints.",
       body:
-        "Manual handoffs between ports, warehouses, and carriers create delays that compound across borders. The problem isn't effort — it's visibility. Logistics operators need to see the whole chain, connect the tools they already have, and move on from the firefighting.",
+        "Ports, carriers, and warehouses often run on disconnected systems, making it hard to track shipments, monitor throughput, or respond to delays. The result is missed deadlines, frustrated customers, and lost revenue. Logistics operators need infrastructure that connects operations, provides end-to-end visibility, and runs continuously — because logistics doesn't stop at 5pm.",
     },
 
     features: {

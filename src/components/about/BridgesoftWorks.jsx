@@ -14,28 +14,28 @@ const facilities = [
     region: "West Africa",
     capacity: "22MW",
     focus: "Government & Public Sector",
-    desc: "Our flagship facility and the central physical anchor of the Group's proprietary infrastructure strategy.",
+    desc: "The flagship facility anchoring West African government enterprise clouds and sovereign data, designed for maximum resilience and security.",
   },
   {
     city: "Nairobi",
     region: "East Africa",
     capacity: "16MW",
     focus: "Enterprise & Cloud Services",
-    desc: "Architected specifically to anchor East African government enterprise clouds and secure public data.",
+    desc: "A high-performance data center supporting East African enterprises and cloud service providers, optimized for low-latency and high-throughput workloads.",
   },
   {
     city: "Johannesburg",
     region: "Southern Africa",
     capacity: "14MW",
     focus: "Financial Services",
-    desc: "The primary computational node supporting Southern African banking, fintech, and financial workflows.",
+    desc: "A secure, Tier-III certified facility catering to the financial services sector, ensuring compliance with regional regulations and industry standards.",
   },
   {
     city: "Cairo",
     region: "North Africa",
     capacity: "11MW",
     focus: "Enterprise Pipelines",
-    desc: "A state-of-the-art facility designed to support the growing demands of the North African enterprise sector.",
+    desc: "A state-of-the-art data center serving North African enterprises, providing robust infrastructure for mission-critical applications and data pipelines.",
   },
 ];
 
@@ -93,13 +93,11 @@ export default function BridgesoftWorks() {
                 variants={fadeUp}
                 className="text-[18px] text-[#425466] leading-[1.6]"
               >
-                With four strategically located, state-of-the-art data centers
-                across the continent, Bridgesoft Works is the physical backbone
-                of our enterprise cloud infrastructure. Each facility is
-                engineered to meet the highest standards of reliability,
-                security, and performance. Together, they form the critical
-                foundation that powers our clients' most demanding workloads and
-                enables seamless digital transformation across Africa.
+                Bridgesoft operates a proprietary network of Tier-III data
+                centers across Africa, providing a secure and resilient
+                foundation for enterprise operations. Our facilities are
+                designed to meet the most demanding requirements for uptime,
+                security, and performance.
               </motion.p>
             </div>
 

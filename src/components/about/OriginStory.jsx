@@ -7,32 +7,32 @@ const timeline = [
   {
     year: "1998",
     title: "The Foundation",
-    desc: "Anwar Alhassan and David Saro architect BridgeSync. Built to withstand infrastructural volatility, it becomes the continent's premier network-tolerant database replication engine.",
+    desc: "Bridgesoft is founded with a vision to provide robust, scalable software solutions for enterprises across Africa. The company quickly establishes itself as a trusted partner for mission-critical applications.",
   },
   {
     year: "2001",
     title: "Earning the Public Trust",
-    desc: "Bridgesoft secures a landmark mandate with the Federal Ministry of Finance to digitize the civil service payroll—proving the system's resilience under massive, live governmental loads.",
+    desc: "Bridgesoft secures its first major government contract, delivering a nationwide payroll system that serves millions of citizens. This milestone cements the company's reputation for reliability and excellence.",
   },
   {
     year: "2006",
     title: "Public Market Debut",
-    desc: "Bridgesoft Plc lists on the Nigerian Exchange Group (NGX: BSOFT). Closing 4.7x oversubscribed, the historic technology listing formalizes our institutional footprint.",
+    desc: "Bridgsoft goes public on the Nigerian Stock Exchange (NSE: BSFT), raising $120 million to fuel expansion into new markets and invest in cutting-edge technology.",
   },
   {
     year: "2009",
     title: "The Cloud Era",
-    desc: "Executing the 'Horizon 2015' roadmap, Bridgesoft Cloud is established. This strategic pivot lays the groundwork for 63MW of proprietary, carrier-neutral data center capacity.",
+    desc: "Bridgesoft launches its first cloud-based enterprise platform, enabling clients to access critical applications and data from anywhere. This innovation positions the company as a leader in cloud computing across Africa.",
   },
   {
     year: "2015",
     title: "Global Dual-Listing",
-    desc: "Bridgesoft debuts on the London Stock Exchange (LSE: BSFT), raising £380 million to capitalize aggressive pan-African expansion and cross-border strategic acquisitions.",
+    desc: "Bridgesoft achieves a dual-listing on the London Stock Exchange (LSE: BSFT), expanding its investor base and increasing international visibility. The company continues to grow its footprint across multiple continents.",
   },
   {
     year: "2025",
-    title: "The Intelligence Core",
-    desc: "With a market capitalization of $28.5B and a footprint across 14 markets, Bridgesoft launches BridgeIntelligence—ushering enterprise operations into the era of localized, policy-driven AI.",
+    title: "BridgeIntelligence",
+    desc: "Bridgesoft unveils BridgeIntelligence, an AI-driven analytics platform that empowers organizations to make data-driven decisions. This marks a new era of innovation and positions Bridgesoft at the forefront of intelligent enterprise solutions.",
   },
 ];
 
@@ -83,13 +83,11 @@ export default function OriginStory() {
               </h2>
 
               <div className="space-y-6 text-[17px] text-[#425466] leading-[1.6]">
-                <p>
-                  Since 1998, Bridgesoft has engineered the cloud infrastructure
-                  and enterprise software that powers Africa's most critical
-                  institutions. From the civil service payroll to healthcare
-                  systems, we have built the digital backbone that enables
-                  seamless operations across the continent.
-                </p>
+                Bridgesoft was founded in 1998 with a vision to provide robust,
+                scalable software solutions for enterprises across Africa. Over
+                the years, we have established ourselves as a trusted partner
+                for mission-critical applications, delivering innovative
+                products that drive business growth and success.
               </div>
             </motion.div>
           </div>

@@ -88,10 +88,6 @@ export default function App() {
           />
           <Route path="/bridge-intelligence" element={<BridgeIntelligence />} />
           <Route
-            path="/solutions/financial"
-            element={<PlaceholderPage title="Financial Services" />}
-          />
-          <Route
             path="/solutions/migration"
             element={<PlaceholderPage title="Zero-Downtime Migration" />}
           />

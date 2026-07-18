@@ -4,11 +4,9 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 
 // ─── The Institutional Statement ──────────────────────────────────────────────
 const statementLines = [
-  "Enterprise software fails when it ignores",
-  "the physical reality of its environment.",
-  "We engineered Bridgesoft to be resilient,",
-  "building a scalable foundation for how",
-  "African institutions actually operate.",
+  "Our mission is to provide enterprises with a scalable foundation for their critical operations.",
+  "We believe that robust, reliable software is the backbone of modern business success.",
+  "By delivering innovative solutions, we empower organizations to thrive in a rapidly evolving digital landscape.",
 ];
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
@@ -53,9 +51,11 @@ export default function MissionStatement() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Very subtle, light abstract art from Unsplash */}
         <img
-          src="https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=2564&auto=format&fit=crop"
-          alt="Soft minimal background"
+          src="https://source.unsplash.com/2564x1440/?abstract,art,gradient"
+          alt="Abstract background art"
           className="w-full h-full object-cover opacity-[0.15] grayscale-[30%]"
+          role="img"
+          aria-hidden="true"
         />
         {/* Heavy white gradient overlay to keep it feeling clean and SaaS-like */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white" />
