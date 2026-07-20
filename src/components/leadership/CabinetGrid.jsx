@@ -20,7 +20,7 @@ const cabinet = [
 
     fullName: "Mr. Tunde Adesanya",
     title: "Chief Executive Officer",
-    bio: "Setting the strategic vision and architecting the capital allocation required for continental scale.",
+    bio: "Visionary leader driving the strategic direction and growth of Bridgesoft across Africa.",
     image: tundeImg,
     colorTheme: "bg-[#0A2540]", // Navy
   },
@@ -29,7 +29,7 @@ const cabinet = [
 
     fullName: "Mr. Ovie Ejiro",
     title: "Chief Financial Officer",
-    bio: "Driving unit economics, managing capital efficiency, and scaling financial infrastructure.",
+    bio: "Steering financial strategy, capital allocation, and fiscal responsibility to ensure sustainable growth.",
     image: ovieImg,
     colorTheme: "bg-[#4338CA]", // Indigo
   },
@@ -38,7 +38,7 @@ const cabinet = [
 
     fullName: "Mr. Aarav Kumar Sharma",
     title: "Chief Operating Officer",
-    bio: "Overseeing global operations and ensuring 63MW of mission-critical infrastructure operates flawlessly.",
+    bio: "Overseeing operational excellence, process optimization, and cross-functional alignment to drive efficiency.",
     image: aaravImg,
     colorTheme: "bg-[#047857]", // Emerald
   },
@@ -47,7 +47,7 @@ const cabinet = [
 
     fullName: "Mr. Felix Onwudiwe",
     title: "Chief Technology Officer",
-    bio: "Architecting the proprietary cloud stack and leading the deployment of the BridgeIntelligence AI layer.",
+    bio: "Leading the technological vision, architecture, and innovation to ensure Bridgesoft remains at the forefront of enterprise solutions.",
     image: felixImg,
     colorTheme: "bg-[#B45309]", // Amber
   },
@@ -56,7 +56,7 @@ const cabinet = [
 
     fullName: "Mr. Emeka Osagie",
     title: "Chief Product Officer",
-    bio: "Defining the product roadmap and engineering the user experience across all enterprise software suites.",
+    bio: "Driving product strategy, user experience, and innovation to deliver world-class solutions that meet the evolving needs of our clients.",
     image: emekaImg,
     colorTheme: "bg-[#0369A1]", // Ocean Blue
   },
@@ -65,7 +65,7 @@ const cabinet = [
 
     fullName: "Mr. Sola Adegbite",
     title: "Chief Revenue Officer",
-    bio: "Accelerating continental expansion and leading strategic acquisition of eight-figure enterprise portfolios.",
+    bio: "Spearheading revenue growth, sales strategy, and market expansion to maximize Bridgesoft's commercial success.",
     image: solaImg,
     colorTheme: "bg-[#BE123C]", // Rose
   },
@@ -73,8 +73,8 @@ const cabinet = [
     id: "adamu",
 
     fullName: "Mr. Adamu Shafiu",
-    title: "General Counsel",
-    bio: "Navigating complex cross-border regulatory frameworks to ensure seamless, compliant expansion.",
+    title: "General Counsel & Corporate Secretary",
+    bio: "Ensuring legal compliance, corporate governance, and risk management to safeguard Bridgesoft's interests and reputation.",
     image: adamuImg,
     colorTheme: "bg-[#0F766E]", // Teal
   },
@@ -83,7 +83,7 @@ const cabinet = [
 
     fullName: "Ms. Angela Ikpeama",
     title: "Chief Communications Officer",
-    bio: "Controlling the corporate narrative and aligning external communications with long-term strategic goals.",
+    bio: "Leveraging strategic communications to amplify brand presence and foster stakeholder trust across Africa.",
     image: angelaImg,
     colorTheme: "bg-[#86198F]", // Fuchsia
   },
@@ -92,7 +92,7 @@ const cabinet = [
 
     fullName: "Mrs. Tomiye Alagoa",
     title: "Chief People Officer",
-    bio: "Scaling the human capital layer, acquiring top-tier engineering talent, and maintaining high-performance output.",
+    bio: "Championing talent development, organizational culture, and employee engagement to cultivate a high-performing workforce.",
     image: tomiyeImg,
     colorTheme: "bg-[#5B21B6]", // Deep Violet
   },
