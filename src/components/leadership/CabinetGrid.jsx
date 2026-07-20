@@ -81,7 +81,7 @@ const cabinet = [
   {
     id: "angela",
 
-    fullName: "Ms. Angela Aduradu",
+    fullName: "Ms. Angela Ikpeama",
     title: "Chief Communications Officer",
     bio: "Controlling the corporate narrative and aligning external communications with long-term strategic goals.",
     image: angelaImg,
