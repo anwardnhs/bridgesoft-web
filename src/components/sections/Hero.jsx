@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 pointer-events-none">
         {/* Dark, textured, ribbed glass/warm abstract image to match Planhat's vibe */}
         <img
-          src="https://images.unsplash.com/photo-1604871000636-074fa5117945?q=80&w=2787&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1777477446816-a6981a467314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D"
           alt="Dark textured background"
           className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
         />
@@ -54,7 +54,7 @@ export default function Hero() {
           {/* Subtle, highly tracked Eyebrow */}
           <motion.div variants={fadeUp} className="mb-8">
             <span className="text-[11px] sm:text-[12px] font-bold text-white/60 tracking-[0.2em] uppercase">
-              The Unified Enterprise Platform
+              Software & Infrastructure for Modern Institutions
             </span>
           </motion.div>
 

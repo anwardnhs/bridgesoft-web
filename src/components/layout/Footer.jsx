@@ -7,9 +7,9 @@ const footerLinks = [
   {
     title: "Platform",
     links: [
-      { label: "Cloud Infrastructure", href: "/products/cloud" },
+      { label: "Cloud", href: "/products/cloud" },
       { label: "Data & Analytics", href: "/products/data" },
-      { label: "Enterprise Suite", href: "/products/enterprise" },
+      { label: "Enterprise", href: "/products/enterprise" },
       { label: "BridgeIntelligence AI", href: "/bridge-intelligence" },
     ],
   },
@@ -54,7 +54,7 @@ export default function Footer() {
         <div className="bg-[#0A2540] rounded-none p-10 md:p-16 mb-20 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden border border-white/10">
           <div className="relative z-10 max-w-xl text-center md:text-left">
             <h2 className="text-[28px] md:text-[36px] font-black text-white leading-[1.1] tracking-tight mb-4">
-              Ready to upgrade your infrastructure?
+              Ready to build the future of your institution?
             </h2>
             <p className="text-[16px] text-white/70 leading-[1.6]">
               Join the leading institutions building their future on Bridgesoft.
@@ -92,8 +92,9 @@ export default function Footer() {
               <RiGlobalLine className="w-5 h-5 text-subtle" />
               English (NG)
             </button>
-            <p className="text-[13px] text-subtle leading-[1.6] max-w-[200px] mt-2 pl-3">
-              Building the software layer for modern institutions.
+            <p className="text-[13px] text-[#425466] leading-[1.6] max-w-[200px] mt-2 pl-3">
+              <span className="font-bold">Bridgesoft</span> is a registered
+              trademark of Bridgesoft Plc.
             </p>
           </div>
 
@@ -149,15 +150,15 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 bg-[#F6F9FC] border border-rule px-3 py-1.5 rounded-full text-[12px] font-mono font-bold text-[#425466] shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-800"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-800 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 "></span>
               </span>
               NGX: BSOFT
             </div>
             <div className="flex items-center gap-2 bg-[#F6F9FC] border border-rule px-3 py-1.5 rounded-full text-[12px] font-mono font-bold text-[#425466] shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-800"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#030e61] opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 "></span>
               </span>
               LSE: BSFT
             </div>

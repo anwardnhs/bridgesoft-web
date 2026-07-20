@@ -9,10 +9,10 @@ import brandMark from "@/assets/images/logo2.svg";
 const menuData = {
   products: {
     capabilities: [
-      { name: "Cloud Platform", href: "/products/cloud" },
-      { name: "Data Platform", href: "/products/data" },
-      { name: "Enterprise Apps", href: "/products/enterprise" },
-      { name: "Security & Compliance", href: "/products/security" },
+      { name: "Cloud", href: "/products/cloud" },
+      { name: "Data", href: "/products/data" },
+      { name: "Enterprise", href: "/products/enterprise" },
+      { name: "Consulting", href: "/products/security" },
     ],
     features: [{ name: "BridgeIntelligence AI", href: "/bridge-intelligence" }],
     spotlight: {
