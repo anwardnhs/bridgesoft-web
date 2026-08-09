@@ -2,6 +2,10 @@
   "name": "bridgesoft-web",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "npm@11.5.0",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
