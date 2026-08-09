@@ -14,7 +14,7 @@ export default function NewsCard({ story }) {
         <img
           src={story.image}
           alt={story.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb;"
         />
       </div>
 

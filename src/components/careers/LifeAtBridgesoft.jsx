@@ -85,13 +85,13 @@ export default function LifeAtBridgesoft() {
               key={item.id}
               variants={fadeUp}
               // The magic happens here: flex-1 transitions to flex-[3] on hover
-              className="group relative flex-1 md:hover:flex-[3] min-w-0 min-h-[200px] rounded-[32px] overflow-hidden cursor-pointer transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] shadow-sm hover:shadow-xl"
+              className="group relative flex-1 md:hover:flex-[3] min-w-0 min-h-[200px] rounded-[32px] overflow-hidden cursor-pointer transition-all duration-&lsqb;800ms&rsqb; ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb; shadow-sm hover:shadow-xl"
             >
               {/* Image Layer */}
               <img
                 src={item.src}
                 alt={item.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1000ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-&lsqb;1000ms&rsqb; ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb; group-hover:scale-105"
               />
 
               {/* Cinematic Gradient Overlay */}
@@ -99,7 +99,7 @@ export default function LifeAtBridgesoft() {
 
               {/* Text Content Overlay */}
               <div className="absolute inset-0 p-8 lg:p-10 flex flex-col justify-end">
-                <div className="md:opacity-0 md:translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] delay-100">
+                <div className="md:opacity-0 md:translate-y-8 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-&lsqb;800ms&rsqb; ease-&lsqb;cubic-bezier(0.16,1,0.3,1)&rsqb; delay-100">
                   <span className="inline-block px-3 py-1 mb-4 text-[12px] font-bold tracking-widest uppercase text-white bg-white/20 backdrop-blur-md rounded-full">
                     {item.subtitle}
                   </span>
