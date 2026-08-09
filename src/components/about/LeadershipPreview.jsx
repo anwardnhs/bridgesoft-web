@@ -4,9 +4,9 @@ import { motion, useInView } from "framer-motion";
 import { RiArrowRightLine } from "react-icons/ri";
 
 // ─── Image Imports (Using your specified .png assets) ───────────────────────
-import tundeImg from "@/assets/images/Tunde.png";
-import aaravImg from "@/assets/images/Aarav.png";
-import felixImg from "@/assets/images/Felix.png";
+import tundeImg from "@/assets/images/tunde.png";
+import aaravImg from "@/assets/images/aarav.png";
+import felixImg from "@/assets/images/felix.png";
 
 // ─── Executive Cabinet Data ───────────────────────────────────────────────────
 const executives = [
