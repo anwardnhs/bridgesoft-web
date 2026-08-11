@@ -28,9 +28,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Legacy infrastructure throttles financial innovation and introduces critical risk.",
+      statement: "Legacy systems slow down financial innovation and introduce critical risks.",
       body:
-        "Financial institutions face a dual mandate: accelerate digital transformation while maintaining zero-tolerance for downtime and security breaches. Outdated core systems struggle to handle high-frequency transaction loads and fail to meet evolving regulatory requirements. The bottleneck isn't strategy—it's the underlying architecture. The sector requires high-performance environments engineered specifically for sensitive transactional workloads.",
+        "Banks and financial companies need to move fast, but they can't afford to break. Old systems struggle to handle thousands of daily transactions and keep up with strict rules. The problem isn't strategy—it's the technology holding them back. The sector needs reliable, high-performance tools built specifically for important financial work.",
     },
 
     features: {
@@ -38,21 +38,21 @@ export const solutions = {
       items: [
         {
           icon: "RiShieldKeyholeLine",
-          title: "Institutional-grade security architecture",
+          title: "Bank-grade security",
           description:
-            "Bridgesoft Enterprise incorporates comprehensive role-based access, automated audit trails, and strict data residency protocols to secure sensitive financial records.",
+            "Our platform uses clear access rules and keeps your sensitive financial records safe, local, and easy to audit.",
         },
         {
           icon: "RiCloudLine",
-          title: "Dedicated environments for critical workloads",
+          title: "Reliable tools for your most important work",
           description:
-            "Deploy core banking and payment engines on Bridgesoft Cloud. We provide the robust compute and network throughput required for seamless, high-volume transaction processing.",
+            "Run your core banking and payment systems on Bridgesoft Cloud. We provide the power needed to process millions of transactions without a hitch.",
         },
         {
           icon: "RiDatabase2Line",
-          title: "Unified transactional intelligence",
+          title: "All your data in one place",
           description:
-            "Bridgesoft Data consolidates siloed account information into a single, highly available source of truth, enabling real-time analytics and precise regulatory reporting.",
+            "We bring scattered account information together, so you can easily understand your data and report it accurately.",
         },
       ],
     },
@@ -132,9 +132,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Fragmented civic systems compromise service delivery and national security.",
+      statement: "Disconnected government systems slow down services and risk citizen data.",
       body:
-        "Public administration often relies on disjointed, vulnerable legacy systems that obscure operational visibility. Managing citizen registries, payroll distribution, and tax collection across disparate databases leads to inefficiencies and data vulnerabilities. Modern governance requires sovereign, unified platforms capable of handling massive demographic scale while ensuring absolute data sovereignty and national security.",
+        "Government offices often use old, disconnected systems that make it hard to see what's going on. Managing citizen records, payroll, and taxes across different databases causes delays and security risks. Modern governance needs unified tools that can handle millions of people while keeping data safe and local.",
     },
 
     features: {
@@ -142,21 +142,21 @@ export const solutions = {
       items: [
         {
           icon: "RiGovernmentLine",
-          title: "Designed for national scale",
+          title: "Built for millions of citizens",
           description:
-            "Our architecture supports massive public databases, ensuring that national identity, census, and electoral systems remain responsive under extreme computing loads.",
+            "Our systems easily handle huge public databases, keeping national ID and census systems running smoothly no matter how many people use them.",
         },
         {
           icon: "RiFileList3Line",
-          title: "Transparent public finance",
+          title: "Clear and honest public spending",
           description:
-            "Implement transparent treasury management and civil service payroll systems with comprehensive auditability to eliminate leakage and ensure fiscal accountability.",
+            "Manage treasury and civil service payroll with clear tracking to prevent lost funds and keep spending accountable.",
         },
         {
           icon: "RiTeamLine",
-          title: "Inter-agency interoperability",
+          title: "Agencies working together",
           description:
-            "Bridgesoft Enterprise breaks down departmental silos, allowing secure, governed information sharing between ministries, departments, and agencies.",
+            "Our tools help different government departments share information securely and easily, breaking down traditional silos.",
         },
       ],
     },
@@ -236,9 +236,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Disconnected clinical data jeopardises patient outcomes and hospital efficiency.",
+      statement: "Disconnected data puts patient care and hospital efficiency at risk.",
       body:
-        "In medical environments, missing information can be catastrophic. When hospitals operate on isolated systems, care providers lack a complete view of patient history, and administrators cannot accurately gauge bed capacity or supply levels. The healthcare industry requires robust, interconnected platforms that centralise medical records and provide real-time operational insights without compromising patient confidentiality.",
+        "In hospitals, missing information can be dangerous. When clinics use systems that don't talk to each other, doctors can't see the full patient history, and administrators can't track bed availability or supplies. The healthcare industry needs connected, secure systems that keep all medical records in one place and provide clear insights without compromising patient privacy.",
     },
 
     features: {
@@ -246,21 +246,21 @@ export const solutions = {
       items: [
         {
           icon: "RiHospitalLine",
-          title: "Centralised Electronic Health Records",
+          title: "All patient records in one view",
           description:
-            "Consolidate patient histories, lab results, and imaging into unified profiles, granting authorised medical staff immediate access to critical diagnostic information.",
+            "We bring patient histories, lab results, and scans together, so doctors can quickly find what they need to help patients.",
         },
         {
           icon: "RiLock2Line",
-          title: "Strict medical data governance",
+          title: "Keep patient data private",
           description:
-            "Safeguard Protected Health Information (PHI) with advanced encryption and granular access controls, ensuring absolute compliance with medical privacy mandates.",
+            "We protect sensitive health information with strong security, making sure you meet all privacy rules and laws.",
         },
         {
           icon: "RiBarChartGroupedLine",
-          title: "Clinical resource optimisation",
+          title: "Use hospital resources smarter",
           description:
-            "Gain instant visibility into ward occupancy, equipment availability, and staff allocation to dynamically route resources where they are needed most.",
+            "Easily see bed availability, equipment, and staff schedules so you can direct help exactly where it's needed.",
         },
       ],
     },
@@ -340,9 +340,9 @@ export const solutions = {
     },
 
     problem: {
-      statement: "Blind spots in the supply chain result in cascading delays and lost margins.",
+      statement: "Blind spots in the supply chain cause delays and lost profits.",
       body:
-        "Modern logistics operates on razor-thin margins and strict schedules. When warehouse management, customs clearance, and freight tracking exist in silos, operators cannot proactively manage bottlenecks. The inability to track assets in transit leads to inventory distortion and customer dissatisfaction. Logistics providers need integrated, high-availability systems to synchronise physical movement with digital tracking.",
+        "The supply chain moves fast, and delays cost money. When warehouses, customs, and delivery trucks use different systems, it's hard to spot problems early. If you can't track goods as they move, you end up with inventory mistakes and unhappy customers. Logistics companies need connected, reliable systems to track physical goods digitally in real time.",
     },
 
     features: {
@@ -350,21 +350,21 @@ export const solutions = {
       items: [
         {
           icon: "RiShipLine",
-          title: "Terminal and yard management",
+          title: "Manage ports and yards easily",
           description:
-            "Coordinate vessel berthing, crane assignments, and container stacking with high-speed processing systems designed for the demands of continuous port operations.",
+            "Organize ships, cranes, and containers with fast tools built to handle busy, around-the-clock port operations.",
         },
         {
           icon: "RiLinksLine",
-          title: "Seamless enterprise integration",
+          title: "Connects to tools you already use",
           description:
-            "Our architecture smoothly interfaces with your existing ERP and WMS, bridging legacy systems to create a cohesive operational dashboard without full replacement.",
+            "Our tools plug right into your current systems, giving you one clear view of everything without needing to start over.",
         },
         {
           icon: "RiLineChartLine",
-          title: "Real-time asset tracking",
+          title: "Track everything in real time",
           description:
-            "Monitor fleet telemetry, container locations, and warehouse throughput instantly to anticipate disruptions and reroute assets dynamically before delays occur.",
+            "Keep an eye on trucks, containers, and warehouses instantly, so you can fix issues before they cause delays.",
         },
       ],
     },

@@ -43,33 +43,54 @@ const stagger = {
 
 const whoWeHelp = [
   {
-    title: "State & local government",
-    description: "Make public-facing services easier to reach, understand, and complete.",
-    image: "https://plus.unsplash.com/premium_vector-1722003185674-dd50f8ff460b?w=500&auto=format&fit=crop&q=60",
+    title: "State and local government",
+    description:
+      "Make public-facing services easier to reach, understand, and complete.",
+    image:
+      "https://plus.unsplash.com/premium_vector-1722003185674-dd50f8ff460b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
-    title: "Universities",
-    description: "Keep student records, applications, and programs organized across departments.",
-    image: "https://plus.unsplash.com/premium_vector-1682305954108-23bc99bbddd1?w=500&auto=format&fit=crop&q=60",
+    title: "Universities and education",
+    description:
+      "Keep student records, applications, and programs organized across departments.",
+    image:
+      "https://plus.unsplash.com/premium_vector-1682305954108-23bc99bbddd1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHVuaXZlcnNpdHklMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D",
   },
   {
-    title: "Nonprofits",
-    description: "Run grants, programs, and donor relationships with clearer reporting.",
-    image: "https://plus.unsplash.com/premium_vector-1682300668981-8a72e705d783?w=500&auto=format&fit=crop&q=60",
+    title: "Nonprofits and foundations",
+    description:
+      "Run grants, programs, and donor relationships with clearer reporting.",
+    image:
+      "https://plus.unsplash.com/premium_vector-1682300668981-8a72e705d783?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bm9uJTIwcHJvZml0JTIwb3JnYW5pemF0aW9ufGVufDB8fDB8fHww",
   },
   {
     title: "Public-sector platforms",
-    description: "Help governments and institutions run public-facing platforms with less friction.",
-    image: "https://plus.unsplash.com/premium_vector-1731488506688-9f4300f9e055?w=500&auto=format&fit=crop&q=60",
+    description:
+      "Help governments and institutions run public-facing platforms with less friction.",
+    image:
+      "https://plus.unsplash.com/premium_vector-1731488506688-9f4300f9e055?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHB1YmxpYyUyMHNlY3RvcnxlbnwwfHwwfHx8MA%3D%3D",
   },
 ];
+
+function SectionLabel({ children, className }) {
+  return (
+    <p
+      className={cn(
+        "text-[11px] font-semibold uppercase tracking-[0.34em] text-[#0A2540]",
+        className,
+      )}
+    >
+      {children}
+    </p>
+  );
+}
 
 function PrimaryButton({ children, href = "/contact", className }) {
   return (
     <Link
       to={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full bg-[#312E81] px-7 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-1 hover:bg-[#3730A3] hover:shadow-xl",
+        "inline-flex items-center justify-center gap-2 rounded-full bg-[#0A2540] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(10,37,64,0.14)] transition-all duration-200 hover:-translate-y-[1px] hover:bg-[#08223a]",
         className,
       )}
     >
@@ -78,12 +99,74 @@ function PrimaryButton({ children, href = "/contact", className }) {
   );
 }
 
-function InfoPill({ value, label }) {
+function SecondaryButton({ children, href = "/products", className }) {
   return (
-    <div className="flex flex-col border-l-2 border-[#6366F1] pl-4">
-      <span className="text-2xl font-bold text-[#312E81]">{value}</span>
-      <span className="text-sm font-medium text-[#4F46E5]">{label}</span>
+    <Link
+      to={href}
+      className={cn(
+        "inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-[#0A2540] ring-1 ring-[#E6ECF5] transition-all duration-200 hover:-translate-y-[1px] hover:bg-[#F6F9FC]",
+        className,
+      )}
+    >
+      {children}
+      <RiArrowRightLine className="h-4 w-4" />
+    </Link>
+  );
+}
+
+function InfoPill({ icon: Icon, children }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
+      <Icon className="h-4 w-4 text-[#0A2540]" />
+      {children}
     </div>
+  );
+}
+
+function FeatureCard({ icon: Icon, title, body, asset }) {
+  return (
+    <motion.article
+      variants={fadeUp}
+      className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
+    >
+      <div className="flex items-center gap-4">
+        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
+          <Icon className="h-5 w-5" />
+        </div>
+        <h3 className="text-[18px] font-semibold text-[#0A2540]">{title}</h3>
+      </div>
+      <div className="mt-5 grid gap-5 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <p className="text-[15px] leading-[1.75] text-[#425466]">{body}</p>
+        <div className="overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC] p-4">
+          <img src={asset} alt="" className="h-36 w-full object-contain" />
+        </div>
+      </div>
+    </motion.article>
+  );
+}
+
+function UseCaseTile({ title, description, image, eyebrow }) {
+  return (
+    <article className="group overflow-hidden rounded-[1.5rem] border border-[#E6ECF5] bg-white shadow-[0_14px_40px_rgba(10,37,64,0.05)] transition-all duration-300 hover:-translate-y-1">
+      <div className="relative bg-[#F6F9FC] p-5">
+        <img
+          src={image}
+          alt={title}
+          className="h-56 w-full rounded-[1.1rem] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        />
+      </div>
+      <div className="p-6">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8898AA]">
+          {eyebrow}
+        </p>
+        <h3 className="mt-3 text-[20px] font-semibold tracking-tight text-[#0A2540]">
+          {title}
+        </h3>
+        <p className="mt-3 text-[15px] leading-[1.75] text-[#0A2540]">
+          {description}
+        </p>
+      </div>
+    </article>
   );
 }
 
@@ -92,113 +175,294 @@ export default function PublicSectorSolution() {
 
   const features = [
     {
-      icon: RiShieldCheckLine,
-      title: "National identity systems",
-      body: "Deploy secure citizen identification and authentication at scale. Built on sovereign data infrastructure to ensure compliance with strict local data residency mandates.",
-    },
-    {
-      icon: RiFileList3Line,
-      title: "Government payroll and treasury",
-      body: "Process public sector salaries and treasury disbursements accurately and on time. Maintain auditable records that meet strict government procurement and accounting standards.",
-    },
-    {
       icon: RiGovernmentLine,
-      title: "Citizen service portals",
-      body: "Digitize public touchpoints. Provide citizens with intuitive online portals for permits, licenses, and registrations that they can actually complete without visiting an office.",
+      title: "Services people can actually use",
+      body: "Make everyday public services simpler to access, understand, and complete online.",
+      asset: person3Illustration,
+    },
+    {
+      icon: RiShieldCheckLine,
+      title: "Better oversight without the hassle",
+      body: "Keep records tidy, permissions clear, and reporting easy to review.",
+      asset: dashboardGraphic,
+    },
+    {
+      icon: RiTeamLine,
+      title: "A smoother way to work together",
+      body: "Help departments and partners stay aligned without adding extra complexity.",
+      asset: cloudGraphic,
+    },
+  ];
+
+  const useCases = [
+    {
+      title: "National citizen services",
+      eyebrow: "Public access",
+      description:
+        "Make permits, licenses, and public forms easier for people to navigate.",
+      image:
+        "https://plus.unsplash.com/premium_vector-1778966297309-216d23e8366b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpdGl6ZW58ZW58MHx8MHx8fDA%3D",
+    },
+    {
+      title: "Payroll and treasury",
+      eyebrow: "Back office",
+      description:
+        "Help finance and admin teams keep important records and payments in order.",
+      image: deskGraphic,
+    },
+    {
+      title: "Regional oversight",
+      eyebrow: "Leadership view",
+      description:
+        "Give leaders a clearer picture of activity across offices and regions.",
+      image: mapGraphic,
     },
   ];
 
   return (
-    <main className="bg-[#F8FAFC] font-sans text-[#1E293B] selection:bg-[#6366F1]/20">
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#EEF2FF] to-white pt-24 lg:pt-32">
-        <div className="site-container relative z-10 pb-20 text-center lg:pb-28">
+    <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
+      <section className="relative overflow-hidden bg-white pt-24 lg:pt-32">
+        <div className="pointer-events-none absolute inset-0">
+          <img
+            src={hero.backgroundImage}
+            alt=""
+            className="h-full w-full object-cover opacity-[0.14]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/92 to-white" />
+          <div className="absolute left-[-10%] top-[10%] h-[30rem] w-[30rem] rounded-full bg-[#635BFF]/8 blur-[120px]" />
+        </div>
+
+        <div className="site-container relative z-10 pb-16 lg:pb-20">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.92fr] lg:gap-16">
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={stagger}
+              className="max-w-2xl"
+            >
+              <motion.div variants={fadeUp} className="mb-6">
+                <SectionLabel>{hero.eyebrow}</SectionLabel>
+              </motion.div>
+
+              <motion.h1
+                variants={fadeUp}
+                className="text-[44px] font-semibold leading-[1.02] tracking-tight text-[#0A2540] sm:text-[58px] lg:text-[68px]"
+              >
+                Public services that feel easier to use.
+              </motion.h1>
+
+              <motion.p
+                variants={fadeUp}
+                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
+              >
+                Bridgesoft helps governments and institutions keep work
+                organized, services easier to reach, and teams better aligned.
+              </motion.p>
+
+              <motion.div
+                variants={fadeUp}
+                className="mt-8 flex flex-wrap gap-3"
+              >
+                <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
+                  {hero.ctas?.[0]?.label ?? "Request a Demo"}
+                </PrimaryButton>
+                <SecondaryButton href="/products">See Products</SecondaryButton>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                className="mt-10 flex flex-wrap gap-3"
+              >
+                <InfoPill icon={RiShieldCheckLine}>Built for trust</InfoPill>
+                <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
+                <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              className="relative mx-auto w-full max-w-[620px]"
+            >
+              <div className="rounded-[2rem] border border-[#E6ECF5] bg-white shadow-[0_28px_80px_rgba(10,37,64,0.12)]">
+                <div className="flex items-center gap-2 border-b border-[#EEF2F7] px-5 py-4">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
+                  <div className="ml-auto rounded-full bg-[#F6F9FC] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#8898AA]">
+                    Public teams
+                  </div>
+                </div>
+                <div className="grid gap-4 p-4 lg:grid-cols-[1.05fr_0.95fr]">
+                  <div className="overflow-hidden rounded-[1.5rem] bg-[#F6F9FC] p-4">
+                    <img
+                      src={person3Illustration}
+                      alt="Public sector illustration"
+                      className="aspect-[4/3] w-full rounded-[1.1rem] object-contain"
+                    />
+                  </div>
+                  <div className="grid gap-4">
+                    <div className="rounded-[1.5rem] border border-[#EEF2F7] bg-white p-5">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#8898AA]">
+                        Clear view
+                      </p>
+                      <div className="mt-4 flex items-center gap-4">
+                        <img
+                          src={dashboardGraphic}
+                          alt=""
+                          className="h-20 w-20 object-contain"
+                        />
+                        <div>
+                          <p className="text-[15px] font-semibold text-[#0A2540]">
+                            One place to see progress
+                          </p>
+                          <p className="mt-1 text-[13px] leading-[1.6] text-[#425466]">
+                            Keep track of forms, requests, and follow-ups
+                            without bouncing around.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="rounded-[1.5rem] border border-[#EEF2F7] bg-[#0A2540] p-5 text-white">
+                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/60">
+                        Simple work
+                      </p>
+                      <div className="mt-4 flex items-end justify-between gap-4">
+                        <div>
+                          <p className="text-[30px] font-semibold leading-none">
+                            Less back-and-forth
+                          </p>
+                          <p className="mt-2 text-[13px] text-white/70">
+                            for staff and citizens
+                          </p>
+                        </div>
+                        <RiGlobalLine className="h-8 w-8 text-[#0A2540]" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 18, rotate: -4 }}
+                animate={{ opacity: 1, y: 0, rotate: -4 }}
+                transition={{ duration: 0.6, delay: 0.08 }}
+                className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
+              >
+                <img
+                  src={person2Illustration}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 18, rotate: 5 }}
+                animate={{ opacity: 1, y: 0, rotate: 5 }}
+                transition={{ duration: 0.6, delay: 0.16 }}
+                className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
+              >
+                <img
+                  src={deskGraphic}
+                  alt=""
+                  className="h-24 w-full object-contain"
+                />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <TrustStrip
+        headline={trustBar.headline}
+        proofPoints={trustBar.proofPoints}
+      />
+
+      <section className="bg-white py-20 lg:py-28">
+        <div className="site-container">
           <motion.div
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mx-auto max-w-4xl"
+            className="mx-auto max-w-3xl text-center"
           >
+            <motion.div variants={fadeUp}>
+              <SectionLabel>What helps</SectionLabel>
+            </motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 text-[34px] font-semibold tracking-tight text-[#0A2540] sm:text-[44px]"
+            >
+              A simpler way to keep public work moving
+            </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mb-6 text-[12px] font-bold uppercase tracking-[0.2em] text-[#6366F1]"
+              className="mt-5 text-[17px] leading-[1.8] text-[#425466]"
             >
-              {hero.eyebrow}
+              Less juggling, fewer handoffs, and a clearer view of what is
+              happening across the day.
             </motion.p>
+          </motion.div>
 
-            <motion.h1
-              variants={fadeUp}
-              className="text-[42px] font-extrabold leading-[1.1] tracking-tight text-[#312E81] sm:text-[56px] lg:text-[72px]"
-            >
-              Sovereign infrastructure for the institutions that define a nation.
-            </motion.h1>
-
-            <motion.p
-              variants={fadeUp}
-              className="mx-auto mt-8 max-w-3xl text-[18px] leading-[1.8] text-[#475569] sm:text-[20px]"
-            >
-              Government IT faces unique challenges: legacy system migration, data sovereignty mandates, citizen service digitisation, and complex procurement requirements. Bridgesoft provides the secure, locally-hosted foundation.
-            </motion.p>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-10 flex items-center justify-center gap-4"
-            >
-              <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
-                Read the government deployment guide
-              </PrimaryButton>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              className="mx-auto mt-16 flex max-w-3xl flex-wrap justify-center gap-8 border-t border-[#E0E7FF] pt-8 sm:justify-between sm:gap-4"
-            >
-              <InfoPill value="14" label="African markets" />
-              <InfoPill value="160M+" label="Citizens managed" />
-              <InfoPill value="20+" label="Years gov experience" />
-            </motion.div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="mt-12 grid gap-6 lg:grid-cols-3"
+          >
+            {features.map((feature) => (
+              <FeatureCard key={feature.title} {...feature} />
+            ))}
           </motion.div>
         </div>
       </section>
 
-      <div className="bg-white">
-        <TrustStrip
-          headline={trustBar.headline}
-          proofPoints={trustBar.proofPoints}
-        />
-      </div>
-
-      <section className="bg-white py-20 lg:py-32">
+      <section className="border-y border-[#E6ECF5] bg-[#F6F9FC] py-20 lg:py-28">
         <div className="site-container">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-[36px] font-extrabold tracking-tight text-[#312E81] sm:text-[48px]">
-              From national ID to citizen services
-            </h2>
-            <p className="mt-6 text-[18px] leading-[1.8] text-[#475569]">
-              Modernize the critical workflows that keep society running, backed by local Tier-III data centers ensuring full data sovereignty.
-            </p>
-          </div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <motion.div variants={fadeUp}>
+              <SectionLabel>Use cases</SectionLabel>
+            </motion.div>
+            <motion.h2
+              variants={fadeUp}
+              className="mt-4 text-[34px] font-semibold tracking-tight text-[#0A2540] sm:text-[44px]"
+            >
+              Built for the whole institution
+            </motion.h2>
+            <motion.p
+              variants={fadeUp}
+              className="mt-5 text-[17px] leading-[1.8] text-[#425466]"
+            >
+              Governments, universities, and public platforms all get a layout
+              that feels specific to how they work.
+            </motion.p>
+          </motion.div>
 
-          <div className="mx-auto mt-20 max-w-5xl space-y-12">
-            {features.map((feature, idx) => (
-              <div key={feature.title} className="group relative flex flex-col gap-6 rounded-3xl bg-[#F8FAFC] p-8 transition-shadow hover:shadow-xl sm:flex-row sm:items-center sm:p-10">
-                <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-[#EEF2FF] text-[#4F46E5]">
-                  <span className="text-3xl font-black opacity-30">0{idx + 1}</span>
-                </div>
-                <div>
-                  <div className="mb-2 flex items-center gap-3">
-                    <feature.icon className="h-6 w-6 text-[#6366F1]" />
-                    <h3 className="text-2xl font-bold text-[#312E81]">{feature.title}</h3>
-                  </div>
-                  <p className="text-[17px] leading-relaxed text-[#475569]">{feature.body}</p>
-                </div>
-              </div>
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-80px" }}
+            variants={stagger}
+            className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {useCases.map((item) => (
+              <UseCaseTile key={item.title} {...item} />
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <SolutionWhoWeHelpSection
-        title="Serving state, local, and national institutions"
+        title="Serving governments, institutions, and platforms"
         items={whoWeHelp}
       />
     </main>
