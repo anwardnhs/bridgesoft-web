@@ -84,22 +84,22 @@ export default function EditorialStatement() {
 
   const columns = [
     {
-      title: "Built for regulated industries",
-      desc: "Banking, healthcare, and government have rules that generic software ignores. Ours doesn't.",
+      title: "Built for serious work",
+      desc: "Whether you run a bank, a hospital, or a government office, our tools adapt to your strict rules and needs.",
       bgImage:
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
       visual: <FloatingChat />,
     },
     {
-      title: "Your data stays sovereign",
-      desc: "Four Tier-III data centres. Your data lives in-country, on infrastructure Bridgesoft owns and operates.",
+      title: "Keep your data safe and local",
+      desc: "We own our own data centres right here in Africa. Your sensitive information stays secure and close to home.",
       bgImage:
         "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2574&auto=format&fit=crop",
       visual: <FloatingToggles />,
     },
     {
-      title: "Scale without starting over",
-      desc: "Add markets, divisions, or users without re-architecting. The platform grows as the institution grows.",
+      title: "Grow without the growing pains",
+      desc: "As your organization expands to new cities or countries, our systems seamlessly grow with you.",
       bgImage:
         "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2670&auto=format&fit=crop",
       visual: <FloatingChart />,
@@ -132,8 +132,7 @@ export default function EditorialStatement() {
                 variants={fadeUp}
                 className="text-[32px] sm:text-[40px] lg:text-[48px] font-medium text-[#0A2540] leading-[1.15] tracking-tight"
               >
-                Technology that earns the trust of Africa's most demanding
-                institutions.
+                Technology designed for the organizations that keep Africa moving.
               </motion.h2>
             </div>
 
