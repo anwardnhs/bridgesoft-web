@@ -84,22 +84,22 @@ export default function EditorialStatement() {
 
   const columns = [
     {
-      title: "Designed for People",
-      desc: "Software should adapt to how your team actually works, not the other way around.",
+      title: "Built for regulated industries",
+      desc: "Banking, healthcare, and government have rules that generic software ignores. Ours doesn't.",
       bgImage:
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
       visual: <FloatingChat />,
     },
     {
-      title: "Adapts to Your Rules",
-      desc: "Easily adjust permissions, workflows, and policies without writing a single line of code.",
+      title: "Your data stays sovereign",
+      desc: "Four Tier-III data centres. Your data lives in-country, on infrastructure Bridgesoft owns and operates.",
       bgImage:
         "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2574&auto=format&fit=crop",
       visual: <FloatingToggles />,
     },
     {
-      title: "Grows With You",
-      desc: "As your company expands to new markets, your underlying infrastructure scales instantly.",
+      title: "Scale without starting over",
+      desc: "Add markets, divisions, or users without re-architecting. The platform grows as the institution grows.",
       bgImage:
         "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2670&auto=format&fit=crop",
       visual: <FloatingChart />,
@@ -132,7 +132,7 @@ export default function EditorialStatement() {
                 variants={fadeUp}
                 className="text-[32px] sm:text-[40px] lg:text-[48px] font-medium text-[#0A2540] leading-[1.15] tracking-tight"
               >
-                Powerful infrastructure for Africa's most ambitious
+                Technology that earns the trust of Africa's most demanding
                 institutions.
               </motion.h2>
             </div>

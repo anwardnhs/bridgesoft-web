@@ -50,28 +50,28 @@ export default function ScaleBanner() {
       prefix: "$",
       suffix: "B",
       decimals: 1,
-      label: "in annual revenue processed (FY2025)",
+      label: "processed through our platforms in FY2025",
     },
     {
-      value: 14200,
+      value: 4,
       prefix: "",
-      suffix: "+",
+      suffix: "",
       decimals: 0,
-      label: "professionals powering our systems",
+      label: "Tier-III data centres owned and operated across Africa",
     },
     {
       value: 4300,
       prefix: "",
       suffix: "+",
       decimals: 0,
-      label: "active enterprise clients globally",
+      label: "enterprise clients across banking, health, and government",
     },
     {
       value: 14,
       prefix: "",
       suffix: "",
       decimals: 0,
-      label: "African markets with native footprint",
+      label: "African markets with on-the-ground teams",
     },
   ];
 
@@ -87,8 +87,8 @@ export default function ScaleBanner() {
           className="text-center mb-16"
         >
           <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-[#0A2540] leading-[1.05] tracking-tight">
-            The digital backbone <br className="hidden sm:block" />
-            of African enterprise
+            Infrastructure at the scale <br className="hidden sm:block" />
+            Africa's institutions demand
           </h2>
         </motion.div>
 

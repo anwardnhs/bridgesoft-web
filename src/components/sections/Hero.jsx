@@ -61,9 +61,9 @@ export default function Hero() {
           {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              Run your business <br className="hidden md:block" />
-              with confidence <br className="hidden md:block" />
-              across the globe.
+              The infrastructure <br className="hidden md:block" />
+              Africa's most important <br className="hidden md:block" />
+              institutions rely on.
             </h1>
           </motion.div>
 
@@ -72,8 +72,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
           >
-            Bridgesoft provides modern institutions with robust software and
-            infrastructure that deliver lifelong operational efficiency.
+            Four divisions. Four data centres. One mandate: technology that works for the organisations that cannot afford it not to.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
@@ -83,7 +82,7 @@ export default function Hero() {
               className="group inline-flex items-center gap-3 bg-white text-[#0A0A0A] px-8 py-4 rounded-sm transition-all duration-300 hover:bg-gray-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             >
               <span className="text-[13px] font-bold uppercase tracking-widest">
-                Request a Demo
+                Explore our platform
               </span>
               <RiArrowRightSLine className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
             </Link>

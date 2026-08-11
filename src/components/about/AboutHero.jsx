@@ -56,11 +56,7 @@ export default function AboutHero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-slate-600 leading-[1.6] max-w-3xl mx-auto font-normal"
           >
-            Bridgesoft is a software development company that specializes in
-            building high-quality, scalable, and maintainable software solutions
-            for businesses of all sizes. Our team of experienced developers and
-            designers work together to create innovative products that drive
-            business growth and success.
+            Bridgesoft is a technology company headquartered in Lagos, Nigeria. We own and operate four Tier-III data centres across Africa, providing sovereign cloud infrastructure, data platforms, and enterprise software to banks, insurers, governments, and healthcare institutions that need to know exactly where their data lives and who controls it.
           </motion.p>
         </motion.div>
       </div>

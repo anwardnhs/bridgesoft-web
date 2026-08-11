@@ -13,6 +13,7 @@ import {
 import { getSolutionBySlug } from "@/data/solutions";
 import { cn } from "@/lib/utils";
 import TrustStrip from "@/components/solutions/TrustStrip";
+import SolutionWhoWeHelpSection from "@/components/solutions/SolutionWhoWeHelpSection";
 
 import bankImage from "@/assets/images/bank2.jpg";
 import dashboardGraphic from "@/assets/images/dashboard.svg";
@@ -45,7 +46,7 @@ function SectionLabel({ children, className }) {
   return (
     <p
       className={cn(
-        "text-[11px] font-semibold uppercase tracking-[0.32em] text-[#0A2540]",
+        "text-[11px] font-bold uppercase tracking-[0.32em] text-[#C7973F]",
         className,
       )}
     >
@@ -59,7 +60,7 @@ function PrimaryButton({ children, href = "/contact", className }) {
     <Link
       to={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full bg-[#0A2540] px-6 py-3 text-sm font-medium text-white shadow-[0_10px_24px_rgba(10,37,64,0.14)] transition-all duration-200 hover:-translate-y-[1px] hover:bg-[#08223a]",
+        "inline-flex items-center justify-center gap-2 rounded-full bg-[#C7973F] px-7 py-3.5 text-[15px] font-semibold text-white shadow-[0_8px_20px_rgba(199,151,63,0.25)] transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#b08436]",
         className,
       )}
     >
@@ -73,7 +74,7 @@ function SecondaryButton({ children, href = "/products", className }) {
     <Link
       to={href}
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-[#0A2540] ring-1 ring-[#E6ECF5] transition-all duration-200 hover:-translate-y-[1px] hover:bg-[#F6F9FC]",
+        "inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3.5 text-[15px] font-semibold text-[#1B365D] border-2 border-[#1B365D]/10 transition-all duration-200 hover:-translate-y-[2px] hover:bg-[#F8FAFC]",
         className,
       )}
     >
@@ -83,28 +84,36 @@ function SecondaryButton({ children, href = "/products", className }) {
   );
 }
 
+function InfoPill({ icon: Icon, children }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-[#C7973F]/30 bg-[#C7973F]/5 px-4 py-2 text-[13px] font-semibold text-[#1B365D]">
+      <Icon className="h-4 w-4 text-[#C7973F]" />
+      {children}
+    </div>
+  );
+}
+
 function UseCaseCard({ title, description, image, eyebrow }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="group overflow-hidden rounded-[1.5rem] border border-[#E6ECF5] bg-white shadow-[0_14px_40px_rgba(10,37,64,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(10,37,64,0.08)]"
+      className="group overflow-hidden rounded-[1.5rem] border border-[#E6ECF5] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_55px_rgba(27,54,93,0.08)]"
     >
-      <div className="relative bg-[#F6F9FC] p-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-[#EEF4FF]" />
+      <div className="relative h-64 w-full bg-[#F8FAFC] p-6 flex items-center justify-center border-b border-[#E6ECF5]">
         <img
           src={image}
           alt={title}
-          className="relative z-10 h-64 w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+          className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="p-6">
-        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#0A2540]">
+      <div className="p-8">
+        <p className="text-[12px] font-bold uppercase tracking-widest text-[#C7973F]">
           {eyebrow}
         </p>
-        <h3 className="mt-3 text-[20px] font-semibold tracking-tight text-[#0A2540]">
+        <h3 className="mt-3 text-[22px] font-semibold text-[#1B365D]">
           {title}
         </h3>
-        <p className="mt-3 text-[15px] leading-[1.75] text-[#0A2540]">
+        <p className="mt-3 text-[16px] leading-[1.7] text-[#1B365D]/70">
           {description}
         </p>
       </div>
@@ -112,33 +121,25 @@ function UseCaseCard({ title, description, image, eyebrow }) {
   );
 }
 
-function InfoPill({ icon: Icon, children }) {
-  return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-[#E6ECF5] bg-white px-4 py-2 text-[13px] font-medium text-[#0A2540] shadow-sm">
-      <Icon className="h-4 w-4 text-[#0A2540]" />
-      {children}
-    </div>
-  );
-}
-
-function SimpleFeature({ icon: Icon, title, body, asset }) {
+function AlternatingFeature({ icon: Icon, title, body, asset, reverse }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="rounded-[1.5rem] border border-[#E6ECF5] bg-white p-6 shadow-[0_14px_40px_rgba(10,37,64,0.05)]"
+      className={cn(
+        "flex flex-col gap-10 lg:items-center py-16",
+        reverse ? "lg:flex-row-reverse" : "lg:flex-row"
+      )}
     >
-      <div className="flex items-center gap-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6F9FC] text-[#0A2540]">
-          <Icon className="h-5 w-5" />
+      <div className="flex-1 w-full lg:px-12">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#C7973F]/10 text-[#C7973F] mb-6">
+          <Icon className="h-7 w-7" />
         </div>
-        <div>
-          <h3 className="text-[18px] font-semibold text-[#0A2540]">{title}</h3>
-        </div>
+        <h3 className="text-[28px] font-semibold text-[#1B365D] mb-4 sm:text-[32px]">{title}</h3>
+        <p className="text-[17px] leading-[1.8] text-[#1B365D]/70">{body}</p>
       </div>
-      <div className="mt-5 grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <p className="text-[15px] leading-[1.75] text-[#0A2540]">{body}</p>
-        <div className="overflow-hidden rounded-[1.25rem] border border-[#EEF2F7] bg-[#FAFBFC] p-4">
-          <img src={asset} alt="" className="h-36 w-full object-contain" />
+      <div className="flex-1 w-full">
+        <div className="overflow-hidden rounded-[2rem] border border-[#E6ECF5] bg-white shadow-[0_20px_50px_rgba(27,54,93,0.08)] p-6">
+          <img src={asset} alt="" className="w-full h-[320px] object-contain rounded-xl" />
         </div>
       </div>
     </motion.article>
@@ -151,49 +152,39 @@ export default function FinancialSolution() {
   const useCases = [
     {
       eyebrow: "Commercial banks",
-      title: "A steadier system for payments and operations.",
+      title: "Core infrastructure for modern banking.",
       description:
-        "Keep customer work, internal operations, and payments flowing without the usual friction.",
+        "Manage wholesale and retail operations securely, while expanding your digital offerings without replacing legacy cores immediately.",
       image: bankImage,
     },
     {
-      eyebrow: "Fintech and neobanks",
-      title: "Move from idea to launch without the usual headaches.",
+      eyebrow: "Fintechs",
+      title: "Scale operations seamlessly.",
       description:
-        "Get to market faster with a platform that handles the complexity for you.",
+        "Access enterprise-grade infrastructure built for agility. Launch new lending, wallet, or remittance products in weeks.",
       image: phoneOne,
     },
     {
-      eyebrow: "Insurance and claims",
-      title: "Make it easier to manage policies and claims.",
+      eyebrow: "Insurance",
+      title: "Streamlined policy management.",
       description:
-        "Keep information organized, reduce handoffs, and give customers a smoother experience.",
+        "Connect underwriting, claims, and actuary data. Offer real-time quotes and automated payouts on a unified platform.",
       image: phoneTwo,
     },
     {
-      eyebrow: "Payment platforms",
-      title: "Move money without extra friction.",
+      eyebrow: "Payment processors",
+      title: "High-volume, sub-second routing.",
       description:
-        "Keep transactions flowing, reduce handoffs, and give partners a smoother experience.",
+        "Handle millions of transactions per second with built-in fraud prevention, smart routing, and robust ledgering.",
       image: phoneThree,
     },
   ];
 
   return (
-    <main className="bg-white font-sans text-[#0A2540] selection:bg-[#635BFF]/15">
-      <section className="relative overflow-hidden bg-white pt-24 lg:pt-32">
-        <div className="pointer-events-none absolute inset-0">
-          <img
-            src={hero.backgroundImage}
-            alt=""
-            className="h-full w-full object-cover opacity-[0.16]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/90 to-white" />
-          <div className="absolute right-[-10%] top-[12%] h-[28rem] w-[28rem] rounded-full bg-[#635BFF]/8 blur-[120px]" />
-        </div>
-
-        <div className="site-container relative z-10 pb-16 lg:pb-20">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+    <main className="bg-[#FAFCFF] font-sans text-[#1B365D] selection:bg-[#C7973F]/20">
+      <section className="relative overflow-hidden bg-white pt-24 lg:pt-32 border-b border-[#E6ECF5]">
+        <div className="site-container relative z-10 pb-16 lg:pb-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
             <motion.div
               initial="hidden"
               animate="show"
@@ -201,105 +192,85 @@ export default function FinancialSolution() {
               className="max-w-2xl"
             >
               <motion.div variants={fadeUp} className="mb-6">
-                <SectionLabel>{hero.eyebrow}</SectionLabel>
+                <SectionLabel>Institutional Finance</SectionLabel>
               </motion.div>
 
               <motion.h1
                 variants={fadeUp}
-                className="text-[44px] font-semibold leading-[1.02] tracking-tight text-[#0A2540] sm:text-[58px] lg:text-[68px]"
+                className="text-[44px] font-semibold leading-[1.1] tracking-tight text-[#1B365D] sm:text-[54px] lg:text-[62px]"
               >
-                Finance that feels easier to run.
+                Where Africa's financial institutions build their next chapter.
               </motion.h1>
 
               <motion.p
                 variants={fadeUp}
-                className="mt-6 max-w-xl text-[18px] leading-[1.8] text-[#0A2540] sm:text-[20px]"
+                className="mt-6 max-w-xl text-[18px] leading-[1.7] text-[#1B365D]/80"
               >
-                Bridgesoft helps financial teams keep payments, customer work,
-                and daily operations moving without extra friction.
+                Navigate regulatory pressures like KYC, AML, and Basel III with ease. Deliver real-time payment processing and consolidate multi-entity reporting across all your subsidiaries.
               </motion.p>
 
               <motion.div
                 variants={fadeUp}
-                className="mt-8 flex flex-wrap gap-3"
+                className="mt-10 flex flex-wrap gap-4"
               >
                 <PrimaryButton href={hero.ctas?.[0]?.href ?? "/contact"}>
-                  {hero.ctas?.[0]?.label ?? "Request a Demo"}
+                  See how banks use Bridgesoft
                 </PrimaryButton>
-                <SecondaryButton href="/products">See Products</SecondaryButton>
               </motion.div>
 
               <motion.div
                 variants={fadeUp}
-                className="mt-10 flex flex-wrap gap-3"
+                className="mt-12 flex flex-wrap gap-3"
               >
-                <InfoPill icon={RiShieldKeyholeLine}>
-                  Built for security
-                </InfoPill>
-                <InfoPill icon={RiTimeLine}>Made for busy teams</InfoPill>
-                <InfoPill icon={RiCheckboxCircleLine}>Clear records</InfoPill>
+                <InfoPill icon={RiShieldKeyholeLine}>99.99% uptime SLA</InfoPill>
+                <InfoPill icon={RiBankLine}>Data stays in-country</InfoPill>
+                <InfoPill icon={RiFileList3Line}>Audit-ready from day one</InfoPill>
               </motion.div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
               className="relative mx-auto w-full max-w-[620px]"
             >
-              <div className="rounded-[2rem] border border-[#E6ECF5] bg-white shadow-[0_28px_80px_rgba(10,37,64,0.12)]">
-                <div className="flex items-center gap-2 border-b border-[#EEF2F7] px-5 py-4">
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-[#D1D9E6]" />
-                  <div className="ml-auto rounded-full bg-[#F6F9FC] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#0A2540]">
-                    Financial teams
+              <div className="rounded-[2rem] border border-[#1B365D]/10 bg-[#1B365D] shadow-[0_30px_100px_rgba(27,54,93,0.25)] p-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[#244574] via-[#1B365D] to-[#12243e] opacity-80" />
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+                    <div className="flex gap-2">
+                      <span className="h-3 w-3 rounded-full bg-[#C7973F]" />
+                      <span className="h-3 w-3 rounded-full bg-white/20" />
+                      <span className="h-3 w-3 rounded-full bg-white/20" />
+                    </div>
+                    <div className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white/70">
+                      Live Dashboard
+                    </div>
                   </div>
-                </div>
-                <div className="grid gap-4 p-4 lg:grid-cols-2">
-                  <div className="overflow-hidden rounded-[1.5rem] bg-[#F6F9FC] p-4">
-                    <img
-                      src={bankImage}
-                      alt="Bank building"
-                      className="aspect-[4/3] w-full rounded-[1.1rem] object-cover"
-                    />
-                  </div>
+                  
                   <div className="grid gap-4">
-                    <div className="rounded-[1.5rem] border border-[#EEF2F7] bg-white p-5">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#0A2540]">
-                        Clear view
-                      </p>
-                      <div className="mt-4 flex items-center gap-4">
-                        <img
-                          src={dashboardGraphic}
-                          alt=""
-                          className="h-20 w-20 object-contain"
-                        />
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+                      <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-[15px] font-semibold text-[#0A2540]">
-                            One place to see activity
-                          </p>
-                          <p className="mt-1 text-[13px] leading-[1.6] text-[#0A2540]">
-                            Keep track of payments, customer work, and daily
-                            operations without juggling multiple systems.
-                          </p>
+                          <p className="text-[12px] font-medium text-white/50">Total Processed (NGN)</p>
+                          <p className="text-[28px] font-semibold text-white mt-1">₦ 452.8B</p>
+                        </div>
+                        <div className="h-12 w-12 rounded-full bg-[#C7973F]/20 flex items-center justify-center">
+                          <RiWallet3Line className="h-6 w-6 text-[#C7973F]" />
                         </div>
                       </div>
                     </div>
-                    <div className="rounded-[1.5rem] border border-[#EEF2F7] bg-[#0A2540] p-5 text-white">
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/60">
-                        Simple operations
-                      </p>
-                      <div className="mt-4 flex items-end justify-between gap-4">
-                        <div>
-                          <p className="text-[30px] font-semibold leading-none">
-                            Easier
-                          </p>
-                          <p className="mt-2 text-[13px] text-white/70">
-                            less back and forth for your team
-                          </p>
-                        </div>
-                        <RiArrowRightLine className="h-8 w-8 text-[#9FB4FF]" />
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+                        <RiShieldKeyholeLine className="h-6 w-6 text-[#C7973F] mb-3" />
+                        <p className="text-[12px] font-medium text-white/50">AML Screenings</p>
+                        <p className="text-[18px] font-medium text-white mt-1">100% Cleared</p>
+                      </div>
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md">
+                        <RiTimeLine className="h-6 w-6 text-[#C7973F] mb-3" />
+                        <p className="text-[12px] font-medium text-white/50">Avg Latency</p>
+                        <p className="text-[18px] font-medium text-white mt-1">42ms</p>
                       </div>
                     </div>
                   </div>
@@ -307,26 +278,13 @@ export default function FinancialSolution() {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, y: 18, rotate: -4 }}
-                animate={{ opacity: 1, y: 0, rotate: -4 }}
-                transition={{ duration: 0.6, delay: 0.08 }}
-                className="absolute -bottom-6 left-4 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] lg:block"
+                initial={{ opacity: 0, y: 18, rotate: -3 }}
+                animate={{ opacity: 1, y: 0, rotate: -3 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="absolute -bottom-10 -left-6 hidden w-48 rounded-[1.5rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(27,54,93,0.15)] lg:block"
               >
                 <img
                   src={featureOne}
-                  alt=""
-                  className="h-24 w-full object-contain"
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 18, rotate: 5 }}
-                animate={{ opacity: 1, y: 0, rotate: 5 }}
-                transition={{ duration: 0.6, delay: 0.16 }}
-                className="absolute -right-6 bottom-8 hidden w-44 rounded-[1.35rem] border border-[#E6ECF5] bg-white p-4 shadow-[0_20px_60px_rgba(10,37,64,0.12)] xl:block"
-              >
-                <img
-                  src={featureTwo}
                   alt=""
                   className="h-24 w-full object-contain"
                 />
@@ -341,7 +299,7 @@ export default function FinancialSolution() {
         proofPoints={trustBar.proofPoints}
       />
 
-      <section className="bg-white py-24 lg:py-32">
+      <section className="bg-[#FAFCFF] py-24 lg:py-32">
         <div className="site-container">
           <motion.div
             initial="hidden"
@@ -351,20 +309,19 @@ export default function FinancialSolution() {
             className="mx-auto max-w-3xl text-center"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>Use cases</SectionLabel>
+              <SectionLabel>From compliance to core banking</SectionLabel>
             </motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-4 text-[34px] font-semibold tracking-tight text-[#0A2540] sm:text-[44px]"
+              className="mt-4 text-[34px] font-semibold tracking-tight text-[#1B365D] sm:text-[44px]"
             >
-              Built for the whole institution
+              Enterprise architecture for regulated markets
             </motion.h2>
             <motion.p
               variants={fadeUp}
-              className="mt-5 text-[17px] leading-[1.8] text-[#0A2540]"
+              className="mt-5 text-[17px] leading-[1.8] text-[#1B365D]/70"
             >
-              Banks, fintechs, insurers, and payment companies all get a layout
-              that feels tailored to how they work.
+              Rely on a robust foundation designed specifically to meet the stringent demands of Africa's financial watchdogs.
             </motion.p>
           </motion.div>
 
@@ -373,40 +330,51 @@ export default function FinancialSolution() {
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mt-12 grid gap-6 md:grid-cols-2"
+            className="mt-16 flex flex-col divide-y divide-[#E6ECF5]"
           >
-            {useCases.map((item) => (
-              <UseCaseCard key={item.title} {...item} />
-            ))}
+            <AlternatingFeature
+              icon={RiFileList3Line}
+              title="Regulatory reporting"
+              body="Automate Basel III, IFRS 9, and CBN returns. Say goodbye to manual spreadsheet consolidation and ensure you are always audit-ready with perfectly reconciled data."
+              asset={recordGraphic}
+              reverse={false}
+            />
+            <AlternatingFeature
+              icon={RiTimeLine}
+              title="Real-time payments"
+              body="Achieve sub-second transaction processing. Bridge legacy cores to instant payment rails securely, providing your customers with the speed they demand."
+              asset={dashboardGraphic}
+              reverse={true}
+            />
+            <AlternatingFeature
+              icon={RiBankLine}
+              title="Multi-entity consolidation"
+              body="Streamline group reporting across all subsidiaries. Get a single pane of glass for real-time liquidity management, forex exposure, and capital adequacy."
+              asset={cloudGraphic}
+              reverse={false}
+            />
           </motion.div>
         </div>
       </section>
 
-      <section className="border-y border-[#E6ECF5] bg-[#F6F9FC] py-24 lg:py-32">
+      <section className="bg-white py-24 lg:py-32 border-t border-[#E6ECF5]">
         <div className="site-container">
           <motion.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mx-auto max-w-3xl text-center"
+            className="mb-16 max-w-3xl"
           >
             <motion.div variants={fadeUp}>
-              <SectionLabel>What teams get</SectionLabel>
+              <SectionLabel>Use Cases</SectionLabel>
             </motion.div>
             <motion.h2
               variants={fadeUp}
-              className="mt-4 text-[34px] font-semibold tracking-tight text-[#0A2540] sm:text-[44px]"
+              className="mt-4 text-[34px] font-semibold tracking-tight text-[#1B365D] sm:text-[42px]"
             >
-              A calmer way to run day-to-day work
+              Powering the ecosystem
             </motion.h2>
-            <motion.p
-              variants={fadeUp}
-              className="mt-5 text-[17px] leading-[1.8] text-[#425466]"
-            >
-              Less juggling, fewer handoffs, and a clearer view of what is
-              happening across the business.
-            </motion.p>
           </motion.div>
 
           <motion.div
@@ -414,26 +382,11 @@ export default function FinancialSolution() {
             whileInView="show"
             viewport={{ once: true, margin: "-80px" }}
             variants={stagger}
-            className="mt-12 grid gap-6 lg:grid-cols-3"
+            className="grid gap-8 md:grid-cols-2"
           >
-            <SimpleFeature
-              icon={RiBankLine}
-              title="Daily banking that feels easier"
-              body="Give teams a setup that helps them move money, answer questions, and keep the day on track."
-              asset={cloudGraphic}
-            />
-            <SimpleFeature
-              icon={RiSmartphoneLine}
-              title="A smoother experience for customers"
-              body="Make it easier for people to use your products on mobile and web without the usual friction."
-              asset={phoneOne}
-            />
-            <SimpleFeature
-              icon={RiFileList3Line}
-              title="Cleaner records and follow-up"
-              body="Keep information tidy so your teams can find what they need and follow up faster."
-              asset={recordGraphic}
-            />
+            {useCases.map((item) => (
+              <UseCaseCard key={item.title} {...item} />
+            ))}
           </motion.div>
         </div>
       </section>
