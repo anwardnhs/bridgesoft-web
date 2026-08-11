@@ -54,16 +54,16 @@ export default function Hero() {
           {/* Subtle, highly tracked Eyebrow */}
           <motion.div variants={fadeUp} className="mb-8">
             <span className="text-[11px] sm:text-[12px] font-bold text-white/60 tracking-[0.2em] uppercase">
-              Software & Infrastructure for Modern Institutions
+              Software & tools for modern businesses
             </span>
           </motion.div>
 
           {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              The infrastructure <br className="hidden md:block" />
+              The technology <br className="hidden md:block" />
               Africa's most important <br className="hidden md:block" />
-              institutions rely on.
+              businesses rely on.
             </h1>
           </motion.div>
 
@@ -72,7 +72,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
           >
-            Four divisions. Four data centres. One mandate: technology that works for the organisations that cannot afford it not to.
+            Four divisions. Four data centres. One goal: technology that simply works for the organizations that keep Africa moving.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}

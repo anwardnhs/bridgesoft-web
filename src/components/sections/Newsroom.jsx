@@ -7,8 +7,8 @@ const featuredStory = {
   tag: "Corporate",
   date: "Jun 10, 2026",
   title:
-    "Bridgesoft Cloud secures five-year government infrastructure mandate.",
-  desc: "Bridgesoft has been selected as the exclusive cloud infrastructure provider for a major government initiative, ensuring secure, scalable, and compliant digital services for citizens across multiple regions.",
+    "Bridgesoft Cloud chosen for five-year government project.",
+  desc: "Bridgesoft has been selected as the main cloud provider for a major government initiative, helping deliver secure and reliable digital services for citizens.",
   image:
     "https://images.unsplash.com/photo-1618828665011-0abd973f7bb8?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   href: "/news/cloud-mandate",

@@ -22,15 +22,15 @@ const impacts = [
     sector: "Banking & Finance",
     icon: RiBankLine,
     image: cloudImg,
-    headline: "Migrated core banking to Bridgesoft Cloud with zero customer-facing downtime.",
+    headline: "Moved core banking to Bridgesoft Cloud without any downtime for customers.",
     quote:
       "Our IT team used to spend most of their time keeping systems running. With Bridgesoft, they now spend that time building new products for our customers.",
     metric: "99.99%",
     metricLabel: "Uptime since migration",
     outcomes: [
-      "Core banking moved to sovereign cloud in 14 weeks",
-      "Full regulatory compliance across 3 African markets",
-      "70% reduction in infrastructure incidents",
+      "Core banking moved to our local cloud in 14 weeks",
+      "Met all strict rules across 3 African markets",
+      "70% fewer system crashes",
     ],
   },
   {
@@ -46,8 +46,8 @@ const impacts = [
     metricLabel: "Facilities connected",
     outcomes: [
       "Shared patient records across the hospital network",
-      "Real-time bed occupancy and resource dashboards",
-      "Audit-ready access logs for every record",
+      "Live updates on bed availability and resources",
+      "Clear tracking of who viewed every record",
     ],
   },
   {
@@ -56,15 +56,15 @@ const impacts = [
     sector: "Supply Chain & Ports",
     icon: RiBuilding4Line,
     image: entImg,
-    headline: "Reduced container dwell time by 30% with real-time port operations.",
+    headline: "Moved containers 30% faster with real-time port tracking.",
     quote:
       "Bridgesoft gave us visibility into every berth, every container, and every handoff. Delays we used to discover after the fact, we now catch in real time.",
     metric: "30%",
     metricLabel: "Faster container throughput",
     outcomes: [
-      "Real-time cargo tracking across 4 terminals",
-      "Integrated with existing ERP and customs systems",
-      "40% reduction in IT operating costs",
+      "Live cargo tracking across 4 terminals",
+      "Connected smoothly with existing customs systems",
+      "40% cheaper to run IT systems",
     ],
   },
   {
@@ -73,15 +73,15 @@ const impacts = [
     sector: "Public Sector",
     icon: RiGlobeLine,
     image: consImg,
-    headline: "Digitised payroll processing for 200,000+ civil servants across 14 states.",
+    headline: "Moved payroll online for 200,000+ civil servants across 14 states.",
     quote:
       "The system handles salary calculations, deductions, and disbursements that used to take our team weeks. Now it runs in hours, with a full audit trail.",
     metric: "200K+",
     metricLabel: "Civil servants on the platform",
     outcomes: [
       "Payroll accuracy improved from 87% to 99.6%",
-      "Sovereign hosting on Bridgesoft's Nigerian data centres",
-      "Complete audit trail for every transaction",
+      "Hosted safely on Bridgesoft's local data centres",
+      "Clear tracking for every transaction",
     ],
   },
 ];

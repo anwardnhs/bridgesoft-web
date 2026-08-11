@@ -57,14 +57,14 @@ export default function ScaleBanner() {
       prefix: "",
       suffix: "",
       decimals: 0,
-      label: "Tier-III data centres owned and operated across Africa",
+      label: "Data centres owned and operated across Africa",
     },
     {
       value: 4300,
       prefix: "",
       suffix: "+",
       decimals: 0,
-      label: "enterprise clients across banking, health, and government",
+      label: "clients across banking, health, and government",
     },
     {
       value: 14,

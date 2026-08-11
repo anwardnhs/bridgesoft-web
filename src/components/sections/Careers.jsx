@@ -50,7 +50,7 @@ export default function Careers() {
               </h2>
               <p className="text-[15px] text-[#0A2540] leading-relaxed mb-8 max-w-lg">
                 We are a team of builders, designers, and problem-solvers. If
-                you want to create infrastructure that runs modern institutions,
+                you want to build technology that helps important businesses run smoothly,
                 we want to meet you.
               </p>
               <div>
