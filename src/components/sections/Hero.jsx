@@ -65,7 +65,8 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
           >
-            Innovations, Platforms and Solutions.
+            Cloud Computing, Enterprise Software, Data Management, AI Solutions
+            and More.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
