@@ -135,7 +135,7 @@ export default function ImpactScroll() {
         >
           <div className="grid lg:grid-cols-[1.1fr_1fr]">
             {/* Image */}
-            <div className="relative h-[280px] overflow-hidden bg-[#F6F9FC] lg:h-auto lg:min-h-[420px]">
+            <div className="relative h-[280px] overflow-hidden bg-[#F6F9FC] lg:h-auto">
               <img
                 src={featured.image}
                 alt={`${featured.client} case study`}

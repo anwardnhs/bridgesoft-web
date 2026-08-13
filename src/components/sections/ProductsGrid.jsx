@@ -121,6 +121,7 @@ export default function ProductsGrid() {
 
         {/* Bento Grid */}
         <motion.div
+          ref={ref}
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
