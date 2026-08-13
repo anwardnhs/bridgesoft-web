@@ -65,10 +65,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
           >
-            We build software that empowers businesses to scale, innovate, and
-            thrive in the digital age. Our solutions are designed to streamline
-            operations, enhance customer experiences, and drive growth across
-            Africa and beyond.
+            Innovations, Platforms and Solutions.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
