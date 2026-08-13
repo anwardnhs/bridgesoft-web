@@ -52,17 +52,11 @@ export default function Hero() {
           className="max-w-[900px]"
         >
           {/* Subtle, highly tracked Eyebrow */}
-          <motion.div variants={fadeUp} className="mb-8">
-            <span className="text-[11px] sm:text-[12px] font-bold text-white/60 tracking-[0.2em] uppercase">
-              Bridging the gap between technology and business
-            </span>
-          </motion.div>
 
           {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              Software that powers Africa's most ambitious organizations and the
-              people who run them.
+              Transforming Business Through Technology
             </h1>
           </motion.div>
 
