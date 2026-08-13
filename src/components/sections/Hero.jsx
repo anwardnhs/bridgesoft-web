@@ -44,12 +44,12 @@ export default function Hero() {
         <div className="absolute top-1/4 right-[10%] w-[600px] h-[600px] bg-amber-600/10 rounded-full blur-[150px] mix-blend-overlay" />
       </div>
 
-      <div className="site-container relative z-10 w-full">
+      <div className="site-container relative z-10 w-full flex flex-col items-center text-center">
         <motion.div
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="max-w-[900px]"
+          className="max-w-[900px] flex flex-col items-center"
         >
           {/* Subtle, highly tracked Eyebrow */}
 
