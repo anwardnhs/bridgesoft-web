@@ -5,7 +5,6 @@ import {
   RiArrowRightLine,
   RiBankLine,
   RiBuilding4Line,
-  RiCheckLine,
   RiGlobeLine,
   RiHospitalLine,
 } from "react-icons/ri";
@@ -25,11 +24,6 @@ const impacts = [
     headline: "Moved core banking to Bridgesoft Cloud without any downtime for customers.",
     quote:
       "Our IT team used to spend most of their time keeping systems running. With Bridgesoft, they now spend that time building new products for our customers.",
-    outcomes: [
-      "Core banking moved to our local cloud in 14 weeks",
-      "Met all strict rules across 3 African markets",
-      "70% fewer system crashes",
-    ],
   },
   {
     id: "healthcare",
@@ -40,11 +34,6 @@ const impacts = [
     headline: "Connected patient records across 12 facilities into a single view.",
     quote:
       "For the first time, our doctors can see a patient's full history regardless of which facility they visited. That changes outcomes.",
-    outcomes: [
-      "Shared patient records across the hospital network",
-      "Live updates on bed availability and resources",
-      "Clear tracking of who viewed every record",
-    ],
   },
   {
     id: "logistics",
@@ -55,11 +44,6 @@ const impacts = [
     headline: "Moved containers 30% faster with real-time port tracking.",
     quote:
       "Bridgesoft gave us visibility into every berth, every container, and every handoff. Delays we used to discover after the fact, we now catch in real time.",
-    outcomes: [
-      "Live cargo tracking across 4 terminals",
-      "Connected smoothly with existing customs systems",
-      "40% cheaper to run IT systems",
-    ],
   },
   {
     id: "gov",
@@ -70,37 +54,30 @@ const impacts = [
     headline: "Moved payroll online for 200,000+ civil servants across 14 states.",
     quote:
       "The system handles salary calculations, deductions, and disbursements that used to take our team weeks. Now it runs in hours, with a full audit trail.",
-    outcomes: [
-      "Payroll accuracy improved from 87% to 99.6%",
-      "Hosted safely on Bridgesoft's local data centres",
-      "Clear tracking for every transaction",
-    ],
   },
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
 const stagger = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+  show: { opacity: 1, transition: { staggerChildren: 0.15 } },
 };
 
 export default function ImpactScroll() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const featured = impacts[0];
-  const rest = impacts.slice(1);
 
   return (
     <section
-      className="relative overflow-hidden bg-white py-24 font-sans lg:py-32"
+      className="relative overflow-hidden bg-[#FAFAFA] py-24 font-sans lg:py-32"
       aria-label="Customer Impact"
     >
       <div className="site-container relative z-10">
@@ -110,159 +87,72 @@ export default function ImpactScroll() {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           variants={fadeUp}
-          className="mb-16 max-w-3xl lg:mb-20"
+          className="mb-16 flex flex-col items-center text-center max-w-3xl mx-auto lg:mb-24"
         >
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A2540] shadow-sm">
             Proven results
           </span>
-          <h2 className="mt-6 text-[36px] font-semibold tracking-tight text-[#0A2540] sm:text-[48px] lg:text-[56px] leading-[1.08]">
-            The institutions we work with measure us in outcomes, not promises.
+          <h2 className="mt-6 text-[36px] font-medium tracking-tight text-[#0A2540] sm:text-[48px] lg:text-[56px] leading-[1.1]">
+            The technology Africa's institutions rely on.
           </h2>
-          <p className="mt-5 max-w-2xl text-[17px] leading-[1.7] text-[#425466] sm:text-[19px]">
+          <p className="mt-6 text-[17px] leading-[1.7] text-[#425466] sm:text-[19px]">
             Banks, hospitals, ports, and governments across Africa run
             their most important systems on Bridgesoft. Here is what that
             looks like in practice.
           </p>
         </motion.div>
 
-        {/* ── Featured Case Study (Large) ── */}
-        <motion.article
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
-          className="group relative mb-8 overflow-hidden rounded-[1.5rem] border border-[#E6ECF5] bg-white shadow-[0_12px_40px_rgba(10,37,64,0.06)] transition-all duration-300 hover:shadow-[0_20px_60px_rgba(10,37,64,0.1)]"
-        >
-          <div className="grid lg:grid-cols-[1.1fr_1fr]">
-            {/* Image */}
-            <div className="relative h-[280px] overflow-hidden bg-[#F6F9FC] lg:h-auto">
-              <img
-                src={featured.image}
-                alt={`${featured.client} case study`}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0A2540]/20 via-transparent to-transparent lg:bg-gradient-to-r" />
-              <div className="absolute bottom-5 left-5 z-10">
-                <div className="rounded-full border border-white/40 bg-white/90 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A2540] backdrop-blur-sm shadow-sm">
-                  Featured case study
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="flex flex-col justify-between p-8 sm:p-10 lg:p-12">
-              <div>
-                <div className="mb-6 flex items-center gap-3">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-[#F6F9FC] text-[#0A2540]">
-                    <featured.icon className="h-5 w-5" />
-                  </span>
-                  <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#8898AA]">
-                      {featured.sector}
-                    </p>
-                    <h3 className="text-[18px] font-semibold text-[#0A2540]">
-                      {featured.client}
-                    </h3>
-                  </div>
-                </div>
-
-                <h4 className="text-[22px] font-semibold leading-[1.3] tracking-tight text-[#0A2540] sm:text-[26px]">
-                  {featured.headline}
-                </h4>
-
-                <p className="mt-4 text-[16px] leading-[1.7] text-[#425466]">
-                  "{featured.quote}"
-                </p>
-
-                <ul className="mt-6 space-y-2.5">
-                  {featured.outcomes.map((outcome, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2.5 text-[14px] text-[#0A2540]"
-                    >
-                      <RiCheckLine className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
-                      {outcome}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-8 pt-6">
-                <Link
-                  to="/contact"
-                  className="group/btn inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#08223a] hover:shadow-md"
-                >
-                  See how banks use Bridgesoft
-                  <RiArrowRightLine className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </motion.article>
-
-        {/* ── Supporting Case Studies (3 Cards) ── */}
+        {/* ── 2x2 Grid of Customer Stories ── */}
         <motion.div
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-100px" }}
           variants={stagger}
-          className="grid gap-6 md:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2"
         >
-          {rest.map((impact) => (
+          {impacts.map((impact) => (
             <motion.article
               key={impact.id}
               variants={fadeUp}
-              className="group flex flex-col overflow-hidden rounded-[1.25rem] border border-[#E6ECF5] bg-white shadow-[0_8px_24px_rgba(10,37,64,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(10,37,64,0.08)]"
+              className="group flex flex-col overflow-hidden rounded-[2rem] bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] transition-all duration-500 hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] hover:-translate-y-2"
             >
-              {/* Image */}
-              <div className="relative h-[200px] overflow-hidden bg-[#F6F9FC]">
+              {/* Image Container */}
+              <div className="relative h-[260px] sm:h-[320px] w-full overflow-hidden">
                 <img
                   src={impact.image}
-                  alt={`${impact.client} case study`}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  alt={impact.client}
+                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60" />
+                
+                {/* Floating Tag over Image */}
+                <div className="absolute top-6 left-6 z-10 flex items-center gap-2 rounded-full bg-white/90 backdrop-blur-md px-4 py-2 text-[#0A2540] shadow-sm">
+                  <impact.icon className="h-4 w-4" />
+                  <span className="text-[11px] font-bold uppercase tracking-[0.15em]">
+                    {impact.sector}
+                  </span>
+                </div>
               </div>
 
-              {/* Content */}
-              <div className="flex flex-1 flex-col p-6">
-                <div className="mb-4 flex items-center gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#F6F9FC] text-[#0A2540]">
-                    <impact.icon className="h-4 w-4" />
-                  </span>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8898AA]">
-                      {impact.sector}
-                    </p>
-                    <h3 className="text-[15px] font-semibold text-[#0A2540]">
-                      {impact.client}
-                    </h3>
-                  </div>
-                </div>
-
-                <h4 className="text-[17px] font-semibold leading-[1.35] tracking-tight text-[#0A2540]">
+              {/* Content Container */}
+              <div className="flex flex-1 flex-col p-8 sm:p-10">
+                <p className="text-[12px] font-bold uppercase tracking-[0.2em] text-[#8898AA] mb-4">
+                  {impact.client}
+                </p>
+                <h3 className="text-[22px] sm:text-[26px] font-semibold leading-[1.3] tracking-tight text-[#0A2540] mb-6">
                   {impact.headline}
-                </h4>
-
-                <ul className="mt-4 space-y-2">
-                  {impact.outcomes.slice(0, 2).map((outcome, i) => (
-                    <li
-                      key={i}
-                      className="flex items-start gap-2 text-[13px] text-[#425466]"
-                    >
-                      <RiCheckLine className="mt-0.5 h-3.5 w-3.5 shrink-0 text-green-600" />
-                      {outcome}
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-auto flex items-center justify-between border-t border-[#E6ECF5] pt-5 mt-6">
+                </h3>
+                <p className="text-[16px] leading-[1.7] text-[#425466] italic mb-8">
+                  "{impact.quote}"
+                </p>
+                
+                <div className="mt-auto">
                   <Link
                     to="/contact"
-                    className="group/btn inline-flex items-center gap-2 text-[14px] font-semibold text-[#0A2540] transition-colors hover:text-accent"
+                    className="inline-flex items-center gap-2 text-[15px] font-semibold text-accent transition-colors hover:text-[#0A2540]"
                   >
                     Read case study
-                    <RiArrowRightLine className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                    <RiArrowRightLine className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -276,14 +166,14 @@ export default function ImpactScroll() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-16 flex justify-center"
         >
           <Link
             to="/newsroom"
-            className="group inline-flex items-center gap-2 text-[15px] font-semibold text-[#0A2540] transition-colors hover:text-accent"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#0A2540] px-8 py-4 text-[14px] font-bold uppercase tracking-widest text-white shadow-[0_8px_20px_rgb(10,37,64,0.15)] transition-all duration-300 hover:bg-accent hover:shadow-[0_12px_24px_rgb(10,37,64,0.25)] hover:-translate-y-1"
           >
-            See how institutions use Bridgesoft
-            <RiArrowRightLine className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+            View all stories
+            <RiArrowRightLine className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
       </div>
