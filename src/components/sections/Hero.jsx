@@ -56,7 +56,7 @@ export default function Hero() {
           {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              Transforming Business Through Technology
+              Building the platforms that keep Africa moving.
             </h1>
           </motion.div>
 
