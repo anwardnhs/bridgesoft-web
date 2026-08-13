@@ -118,27 +118,6 @@ export default function ProductsGrid() {
     >
       <div className="site-container relative z-10">
         {/* Section Header */}
-        <motion.div
-          ref={ref}
-          variants={container}
-          initial="hidden"
-          animate={inView ? "show" : "hidden"}
-          className="max-w-2xl mb-16 lg:mb-20"
-        >
-          <motion.h2
-            variants={fadeUp}
-            className="text-[32px] sm:text-[40px] font-black text-[#0A2540] leading-[1.1] tracking-[-0.03em] mb-4"
-          >
-            Our Products
-          </motion.h2>
-          <motion.p
-            variants={fadeUp}
-            className="text-[17px] text-[#425466] leading-[1.6]"
-          >
-            Software solutions that empower businesses to scale, innovate, and
-            thrive in the digital age.
-          </motion.p>
-        </motion.div>
 
         {/* Bento Grid */}
         <motion.div

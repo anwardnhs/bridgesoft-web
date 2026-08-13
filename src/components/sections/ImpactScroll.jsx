@@ -25,8 +25,6 @@ const impacts = [
     headline: "Moved core banking to Bridgesoft Cloud without any downtime for customers.",
     quote:
       "Our IT team used to spend most of their time keeping systems running. With Bridgesoft, they now spend that time building new products for our customers.",
-    metric: "99.99%",
-    metricLabel: "Uptime since migration",
     outcomes: [
       "Core banking moved to our local cloud in 14 weeks",
       "Met all strict rules across 3 African markets",
@@ -42,8 +40,6 @@ const impacts = [
     headline: "Connected patient records across 12 facilities into a single view.",
     quote:
       "For the first time, our doctors can see a patient's full history regardless of which facility they visited. That changes outcomes.",
-    metric: "12",
-    metricLabel: "Facilities connected",
     outcomes: [
       "Shared patient records across the hospital network",
       "Live updates on bed availability and resources",
@@ -59,8 +55,6 @@ const impacts = [
     headline: "Moved containers 30% faster with real-time port tracking.",
     quote:
       "Bridgesoft gave us visibility into every berth, every container, and every handoff. Delays we used to discover after the fact, we now catch in real time.",
-    metric: "30%",
-    metricLabel: "Faster container throughput",
     outcomes: [
       "Live cargo tracking across 4 terminals",
       "Connected smoothly with existing customs systems",
@@ -76,8 +70,6 @@ const impacts = [
     headline: "Moved payroll online for 200,000+ civil servants across 14 states.",
     quote:
       "The system handles salary calculations, deductions, and disbursements that used to take our team weeks. Now it runs in hours, with a full audit trail.",
-    metric: "200K+",
-    metricLabel: "Civil servants on the platform",
     outcomes: [
       "Payroll accuracy improved from 87% to 99.6%",
       "Hosted safely on Bridgesoft's local data centres",
@@ -99,19 +91,6 @@ const stagger = {
   hidden: { opacity: 0 },
   show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 };
-
-function MetricBadge({ value, label }) {
-  return (
-    <div className="flex items-center gap-4">
-      <span className="text-[36px] font-semibold leading-none tracking-tight text-[#0A2540] sm:text-[44px]">
-        {value}
-      </span>
-      <span className="text-[13px] font-medium leading-tight text-[#425466]">
-        {label}
-      </span>
-    </div>
-  );
-}
 
 export default function ImpactScroll() {
   const ref = useRef(null);
@@ -208,17 +187,13 @@ export default function ImpactScroll() {
                 </ul>
               </div>
 
-              <div className="mt-8 flex items-center justify-between border-t border-[#E6ECF5] pt-6">
-                <MetricBadge
-                  value={featured.metric}
-                  label={featured.metricLabel}
-                />
+              <div className="mt-8 pt-6">
                 <Link
                   to="/contact"
-                  className="group/btn inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-5 py-2.5 text-[13px] font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#08223a]"
+                  className="group/btn inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-6 py-3 text-[14px] font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#08223a] hover:shadow-md"
                 >
                   See how banks use Bridgesoft
-                  <RiArrowRightLine className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5" />
+                  <RiArrowRightLine className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </Link>
               </div>
             </div>
@@ -281,14 +256,14 @@ export default function ImpactScroll() {
                   ))}
                 </ul>
 
-                {/* Metric */}
-                <div className="mt-auto flex items-center gap-3 border-t border-[#E6ECF5] pt-5 mt-6">
-                  <span className="text-[28px] font-semibold leading-none tracking-tight text-[#0A2540]">
-                    {impact.metric}
-                  </span>
-                  <span className="text-[12px] font-medium leading-tight text-[#8898AA]">
-                    {impact.metricLabel}
-                  </span>
+                <div className="mt-auto flex items-center justify-between border-t border-[#E6ECF5] pt-5 mt-6">
+                  <Link
+                    to="/contact"
+                    className="group/btn inline-flex items-center gap-2 text-[14px] font-semibold text-[#0A2540] transition-colors hover:text-accent"
+                  >
+                    Read case study
+                    <RiArrowRightLine className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                  </Link>
                 </div>
               </div>
             </motion.article>
