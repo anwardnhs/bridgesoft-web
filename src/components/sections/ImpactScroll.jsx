@@ -22,67 +22,43 @@ const impacts = [
     sector: "Banking & Finance",
     icon: RiBankLine,
     image: cloudImg,
-    headline: "Moved core banking to Bridgesoft Cloud without any downtime for customers.",
+    headline:
+      "Migrated core banking to our local cloud in 14 weeks, cutting downtime and improving reliability.",
     quote:
-      "Our IT team used to spend most of their time keeping systems running. With Bridgesoft, they now spend that time building new products for our customers.",
-    metric: "99.99%",
-    metricLabel: "Uptime since migration",
-    outcomes: [
-      "Core banking moved to our local cloud in 14 weeks",
-      "Met all strict rules across 3 African markets",
-      "70% fewer system crashes",
-    ],
+      "Bridgesoft helped us move our core banking systems to a local cloud environment that meets strict regulatory requirements. The migration was fast, smooth, and has improved uptime and performance.  ",
   },
   {
     id: "healthcare",
-    client: "Lagos University Teaching Hospital",
+    client: "Kenya Medical Research Institute",
     sector: "Healthcare",
     icon: RiHospitalLine,
     image: dataImg,
-    headline: "Connected patient records across 12 facilities into a single view.",
+    headline:
+      "Connected 12 hospitals across Kenya to a single patient record system, improving care and reducing errors.",
     quote:
-      "For the first time, our doctors can see a patient's full history regardless of which facility they visited. That changes outcomes.",
-    metric: "12",
-    metricLabel: "Facilities connected",
-    outcomes: [
-      "Shared patient records across the hospital network",
-      "Live updates on bed availability and resources",
-      "Clear tracking of who viewed every record",
-    ],
+      "Bridgesoft's platform allowed us to connect multiple hospitals and clinics to a single patient record system. Doctors can now access patient histories in real time, reducing errors and improving care. ",
   },
   {
     id: "logistics",
-    client: "Kenya Port Authority",
+    client: "Nigerian Ports Authority",
     sector: "Supply Chain & Ports",
     icon: RiBuilding4Line,
     image: entImg,
-    headline: "Moved containers 30% faster with real-time port tracking.",
+    headline:
+      "Bridgesoft's platform enabled real-time tracking of cargo across 4 major ports, improving efficiency and reducing delays.",
     quote:
-      "Bridgesoft gave us visibility into every berth, every container, and every handoff. Delays we used to discover after the fact, we now catch in real time.",
-    metric: "30%",
-    metricLabel: "Faster container throughput",
-    outcomes: [
-      "Live cargo tracking across 4 terminals",
-      "Connected smoothly with existing customs systems",
-      "40% cheaper to run IT systems",
-    ],
+      "Bridgesoft's platform allowed us to track cargo in real time across multiple ports. This has improved efficiency, reduced delays, and provided better visibility for our clients.  ",
   },
   {
     id: "gov",
-    client: "Federal Ministry of Finance",
+    client: "Africa Finance Corporation",
     sector: "Public Sector",
     icon: RiGlobeLine,
     image: consImg,
-    headline: "Moved payroll online for 200,000+ civil servants across 14 states.",
+    headline:
+      "Bridgsoft's solutions has enabled the Africa Finance Corporation to manage its operations across 34 countries, improving transparency and accountability.  ",
     quote:
-      "The system handles salary calculations, deductions, and disbursements that used to take our team weeks. Now it runs in hours, with a full audit trail.",
-    metric: "200K+",
-    metricLabel: "Civil servants on the platform",
-    outcomes: [
-      "Payroll accuracy improved from 87% to 99.6%",
-      "Hosted safely on Bridgesoft's local data centres",
-      "Clear tracking for every transaction",
-    ],
+      " Bridgesoft's solutions have allowed us to manage our operations across multiple countries with greater transparency and accountability. The platform has improved our reporting and decision-making processes.    ",
   },
 ];
 
@@ -134,15 +110,17 @@ export default function ImpactScroll() {
           className="mb-16 max-w-3xl lg:mb-20"
         >
           <span className="inline-flex items-center gap-2 rounded-full bg-[#0A2540] px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white shadow-sm">
-            Proven results
+            Using Bridgesoft to power operations across Africa
           </span>
           <h2 className="mt-6 text-[36px] font-semibold tracking-tight text-[#0A2540] sm:text-[48px] lg:text-[56px] leading-[1.08]">
-            The institutions we work with measure us in outcomes, not promises.
+            Driving Digital Transformation Across Africa
           </h2>
           <p className="mt-5 max-w-2xl text-[17px] leading-[1.7] text-[#425466] sm:text-[19px]">
-            Banks, hospitals, ports, and governments across Africa run
-            their most important systems on Bridgesoft. Here is what that
-            looks like in practice.
+            From banking to healthcare, Bridgesoft's solutions are helping
+            organizations across Africa improve efficiency, reduce costs, and
+            deliver better services to their customers. Our platforms are
+            designed to scale with your business, enabling you to innovate and
+            grow in a rapidly changing digital landscape.
           </p>
         </motion.div>
 

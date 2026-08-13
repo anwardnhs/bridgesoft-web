@@ -49,9 +49,10 @@ export default function Careers() {
                 where everyone can do their best work and grow with us.
               </h2>
               <p className="text-[15px] text-[#0A2540] leading-relaxed mb-8 max-w-lg">
-                We are a team of builders, designers, and problem-solvers. If
-                you want to build technology that helps important businesses run smoothly,
-                we want to meet you.
+                At Bridgesoft, we believe that our people are our greatest
+                asset. We are committed to creating a diverse and inclusive
+                workplace where everyone can thrive. Join us and be part of a
+                team that is making a real impact across Africa.
               </p>
               <div>
                 <a

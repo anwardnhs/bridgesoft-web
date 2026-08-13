@@ -54,16 +54,15 @@ export default function Hero() {
           {/* Subtle, highly tracked Eyebrow */}
           <motion.div variants={fadeUp} className="mb-8">
             <span className="text-[11px] sm:text-[12px] font-bold text-white/60 tracking-[0.2em] uppercase">
-              Software & tools for modern businesses
+              Bridging the gap between technology and business
             </span>
           </motion.div>
 
           {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              The technology <br className="hidden md:block" />
-              Africa's most important <br className="hidden md:block" />
-              businesses rely on.
+              Software that powers Africa's most ambitious organizations and the
+              people who run them.
             </h1>
           </motion.div>
 
@@ -72,7 +71,10 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
           >
-            Four divisions. Four data centres. One goal: technology that simply works for the organizations that keep Africa moving.
+            We build software that empowers businesses to scale, innovate, and
+            thrive in the digital age. Our solutions are designed to streamline
+            operations, enhance customer experiences, and drive growth across
+            Africa and beyond.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}

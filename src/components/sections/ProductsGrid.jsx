@@ -129,15 +129,13 @@ export default function ProductsGrid() {
             variants={fadeUp}
             className="text-[32px] sm:text-[40px] font-black text-[#0A2540] leading-[1.1] tracking-[-0.03em] mb-4"
           >
-            Four divisions. <br className="hidden sm:block" />
-            One integrated platform.
+            Our Products
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="text-[17px] text-[#425466] leading-[1.6]"
           >
-            Cloud hosting, data tools, business software, and
-            expert advice — each built for the needs of serious
+            Our suite of products is designed to meet the unique needs of
             businesses across Africa.
           </motion.p>
         </motion.div>
@@ -167,7 +165,9 @@ export default function ProductsGrid() {
                     Bridgesoft Cloud
                   </h3>
                   <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
-                    Powerful cloud hosting on our own data centres across Africa. Your data stays local, safe, and entirely under our control.
+                    Powerful cloud hosting on our own data centres across
+                    Africa. Your data stays local, safe, and entirely under our
+                    control.
                   </p>
                   <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
                     Explore Cloud
@@ -195,7 +195,9 @@ export default function ProductsGrid() {
                     Bridgesoft Data
                   </h3>
                   <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
-                    Easy-to-use databases, real-time data sharing, and AI tools—built to give you clear answers instead of confusing charts.
+                    Advanced analytics and reporting tools to help you make
+                    data-driven decisions. Visualize trends, track performance,
+                    and gain insights that drive growth.
                   </p>
                   <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
                     Explore Data
@@ -227,7 +229,9 @@ export default function ProductsGrid() {
                   Bridgesoft Enterprise
                 </h3>
                 <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  All your business tools in one place—manage finance, HR, supply chain, and daily operations smoothly.
+                  Coming soon: A comprehensive suite of enterprise solutions
+                  designed to streamline operations, enhance collaboration, and
+                  drive growth for large organizations.
                 </p>
               </div>
             </div>
@@ -251,7 +255,9 @@ export default function ProductsGrid() {
                   Bridgesoft Consulting
                 </h3>
                 <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Expert advice and hands-on help to upgrade your tech. We help you build strategies that actually work in the real world.
+                  Coming soon: Expert consulting services to help businesses
+                  navigate the complexities of technology adoption, digital
+                  transformation, and operational efficiency.
                 </p>
               </div>
             </div>
@@ -275,14 +281,15 @@ export default function ProductsGrid() {
                   Bridgesoft Ventures
                 </h3>
                 <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Early-stage capital and operational support for Africa's
-                  next generation of technology companies.
+                  Coming soon: An investment arm focused on supporting
+                  innovative startups and ventures across Africa, providing
+                  funding, mentorship, and strategic guidance to help them
+                  succeed.
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* 🔥 ASSET #4: The Integrations Logo Cloud Banner */}
           <motion.div
             variants={cardVariant}
             className="md:col-span-12 mt-4 lg:mt-8"
@@ -292,7 +299,9 @@ export default function ProductsGrid() {
                 Connects with the systems you already run
               </h3>
               <p className="text-[15px] text-[#425466] mb-10 max-w-lg mx-auto">
-                Bridgesoft works seamlessly with the major payment systems, government tools, and business software you already use.
+                Bridgesoft products are designed to integrate seamlessly with
+                your existing software stack, ensuring smooth workflows and
+                enhanced productivity.
               </p>
               <img
                 src={logoCloud}

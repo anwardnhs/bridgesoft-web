@@ -84,22 +84,22 @@ export default function EditorialStatement() {
 
   const columns = [
     {
-      title: "Built for serious work",
-      desc: "Whether you run a bank, a hospital, or a government office, our tools adapt to your strict rules and needs.",
+      title: "Built for the organizations that keep Africa moving",
+      desc: "Our platforms are designed to help banks, hospitals, ports, and governments across Africa operate more efficiently and effectively.",
       bgImage:
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
       visual: <FloatingChat />,
     },
     {
-      title: "Keep your data safe and local",
-      desc: "We own our own data centres right here in Africa. Your sensitive information stays secure and close to home.",
+      title: "Your data stays local, where it belongs",
+      desc: "We host our platforms in local data centers across Africa, ensuring that your data remains secure and compliant with local regulations.  ",
       bgImage:
         "https://images.unsplash.com/photo-1557672172-298e090bd0f1?q=80&w=2574&auto=format&fit=crop",
       visual: <FloatingToggles />,
     },
     {
-      title: "Grow without the growing pains",
-      desc: "As your organization expands to new cities or countries, our systems seamlessly grow with you.",
+      title: "Seamless scalability for growing organizations",
+      desc: "Our platforms are built to scale with your business, ensuring that you can grow without worrying about infrastructure limitations.",
       bgImage:
         "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=2670&auto=format&fit=crop",
       visual: <FloatingChart />,
@@ -132,7 +132,8 @@ export default function EditorialStatement() {
                 variants={fadeUp}
                 className="text-[32px] sm:text-[40px] lg:text-[48px] font-medium text-[#0A2540] leading-[1.15] tracking-tight"
               >
-                Technology designed for the organizations that keep Africa moving.
+                Technology designed for the organizations that keep Africa
+                moving.
               </motion.h2>
             </div>
 

@@ -50,28 +50,31 @@ export default function ScaleBanner() {
       prefix: "$",
       suffix: "B",
       decimals: 1,
-      label: "processed through our platforms in FY2025",
+      label:
+        "Total value of transactions processed annually across our platforms",
     },
     {
-      value: 4,
+      value: 34,
       prefix: "",
       suffix: "",
       decimals: 0,
-      label: "Data centres owned and operated across Africa",
+      label: "countries where our solutions are deployed",
     },
     {
       value: 4300,
       prefix: "",
       suffix: "+",
       decimals: 0,
-      label: "clients across banking, health, and government",
+      label:
+        "Institutions and businesses using our platforms to drive growth and efficiency",
     },
     {
-      value: 14,
+      value: 15,
       prefix: "",
-      suffix: "",
+      suffix: "M",
       decimals: 0,
-      label: "African markets with on-the-ground teams",
+      label:
+        "Active users leveraging our solutions daily to power their operations",
     },
   ];
 
@@ -87,8 +90,7 @@ export default function ScaleBanner() {
           className="text-center mb-16"
         >
           <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-[#0A2540] leading-[1.05] tracking-tight">
-            Infrastructure at the scale <br className="hidden sm:block" />
-            Africa's institutions demand
+            Scaling Impact Across Africa
           </h2>
         </motion.div>
 
