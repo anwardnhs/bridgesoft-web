@@ -135,8 +135,8 @@ export default function ProductsGrid() {
             variants={fadeUp}
             className="text-[17px] text-[#425466] leading-[1.6]"
           >
-            Our suite of products is designed to meet the unique needs of
-            businesses across Africa.
+            Software solutions that empower businesses to scale, innovate, and
+            thrive in the digital age.
           </motion.p>
         </motion.div>
 
