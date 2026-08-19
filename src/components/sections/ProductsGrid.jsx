@@ -260,33 +260,36 @@ export default function ProductsGrid() {
               variants={cardVariant}
               className="md:col-span-4 h-[380px]"
             >
-              <SpotlightCard dark className="h-full w-full border-none">
-                {/* Background Image with dramatic overlay */}
+              <SpotlightCard
+                dark
+                className="h-full w-full border-none bg-slate-900"
+              >
+                {/* Background Image with lighter, softer overlay */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/80 to-transparent z-10 mix-blend-multiply" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/30 to-transparent z-10" />
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-70 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700 ease-out"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="relative z-20 flex flex-col justify-between h-full p-8">
                   <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 flex items-center justify-center text-white shadow-xl">
+                    <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 flex items-center justify-center text-white shadow-xl">
                       <item.icon className="w-5 h-5" />
                     </div>
-                    <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/10 rounded-full text-[11px] font-bold uppercase tracking-widest text-white/90">
+                    <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[11px] font-bold uppercase tracking-widest text-white/90">
                       Coming Soon
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight drop-shadow-sm">
                       Bridgesoft {item.title}
                     </h3>
-                    <p className="text-[15px] text-white/70 leading-relaxed font-medium group-hover:text-white/90 transition-colors">
+                    <p className="text-[15px] text-white/80 leading-relaxed font-medium group-hover:text-white transition-colors drop-shadow-sm">
                       {item.desc}
                     </p>
                   </div>
@@ -295,7 +298,7 @@ export default function ProductsGrid() {
             </motion.div>
           ))}
 
-          {/* ── ROW 3: REVERTED INTEGRATIONS SECTION ── */}
+          {/* ── ROW 3: INTEGRATIONS SECTION ── */}
           <motion.div
             variants={cardVariant}
             className="md:col-span-12 mt-4 lg:mt-8"
