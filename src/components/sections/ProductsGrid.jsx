@@ -156,7 +156,7 @@ export default function ProductsGrid() {
   return (
     <section className="relative bg-[#FAFAFA] py-24 lg:py-32 overflow-hidden font-sans">
       <div className="site-container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-        {/* Section Header (Optional/Placeholder based on original code) */}
+        {/* Section Header */}
         <div className="mb-16 md:mb-24 max-w-3xl">
           <h2 className="text-[13px] font-bold uppercase tracking-[0.2em] text-indigo-600 mb-4">
             Our Ecosystem
@@ -233,7 +233,7 @@ export default function ProductsGrid() {
             </SpotlightCard>
           </motion.div>
 
-          {/* ── ROW 2: COMING SOON (Dark Mode / Image Glassmorphism) ── */}
+          {/* ── ROW 2: COMING SOON ── */}
 
           {[
             {
@@ -295,33 +295,26 @@ export default function ProductsGrid() {
             </motion.div>
           ))}
 
-          {/* ── ROW 3: INTEGRATIONS ── */}
+          {/* ── ROW 3: REVERTED INTEGRATIONS SECTION ── */}
           <motion.div
             variants={cardVariant}
             className="md:col-span-12 mt-4 lg:mt-8"
           >
-            <SpotlightCard className="bg-slate-900 overflow-visible py-16 md:py-24 border-none text-center">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/40 via-slate-900 to-slate-950 pointer-events-none" />
-
-              <div className="relative z-20 flex flex-col items-center max-w-2xl mx-auto px-6">
-                <h3 className="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
-                  Connects with your stack.
-                </h3>
-                <p className="text-[16px] md:text-[18px] text-slate-400 mb-12">
-                  Bridgesoft integrates seamlessly into the tools you already
-                  rely on, ensuring smooth workflows out of the box.
-                </p>
-
-                <div className="relative w-full rounded-3xl p-4 bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl">
-                  {/* Note: Added invert and brightness to make the SVG pop on dark background, adjust as needed based on your SVG asset */}
-                  <img
-                    src={logoCloud}
-                    alt="Integrations"
-                    className="w-full max-w-[800px] mx-auto h-auto object-contain filter invert brightness-200 opacity-80 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700"
-                  />
-                </div>
-              </div>
-            </SpotlightCard>
+            <div className="w-full bg-[#F6F9FC] rounded-3xl border border-slate-200/60 p-10 md:p-16 flex flex-col items-center justify-center text-center overflow-hidden">
+              <h3 className="text-[24px] md:text-[32px] font-bold text-[#0A2540] mb-3 tracking-tight">
+                Connects with the systems you already run
+              </h3>
+              <p className="text-[15px] text-[#425466] mb-10 max-w-lg mx-auto">
+                Bridgesoft products are designed to integrate seamlessly with
+                your existing software stack, ensuring smooth workflows and
+                enhanced productivity.
+              </p>
+              <img
+                src={logoCloud}
+                alt="100+ Integrations"
+                className="w-fit max-w-4xl h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-105"
+              />
+            </div>
           </motion.div>
         </motion.div>
       </div>
