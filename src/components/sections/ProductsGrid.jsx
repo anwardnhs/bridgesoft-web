@@ -1,10 +1,17 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import {
+  motion,
+  useInView,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
 import {
   RiArrowRightLine,
   RiCloudWindyLine,
   RiDatabase2Line,
+  RiTerminalBoxLine,
+  RiBriefcase4Line,
 } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 
@@ -13,283 +20,421 @@ import entImg from "@/assets/images/joel-filipe-D1S4F_SKY2I-unsplash.jpg";
 import consImg from "@/assets/images/austin-distel-mpN7xjKQ_Ns-unsplash.jpg";
 import ventImg from "@/assets/images/lycs-architecture-U2BI3GMnSSE-unsplash.jpg";
 
-// ─── New Figma Assets (Make sure these match your filenames!) ───
+// ─── Figma Assets ───
 import cloud3d from "@/assets/images/product-data-graphic.svg";
 import logoCloud from "@/assets/images/product-growth-chart.svg";
 
-// ─── Animation Variants ────────────────────────────────────────────────────────
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
-};
+// ─── Utility Components ──────────────────────────────────────────────────────
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+// Subtle film-grain noise for premium tactile feel
+const Noise = () => (
+  <div className="pointer-events-none absolute inset-0 z-0 h-full w-full opacity-[0.015] mix-blend-overlay">
+    <svg
+      viewBox="0 0 200 200"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full"
+    >
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.85"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+  </div>
+);
 
-const cardVariant = {
-  hidden: { opacity: 0, y: 40, scale: 0.98 },
-  show: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
-  },
-};
+// Mouse-tracking spotlight card wrapper
+function SpotlightCard({ children, className, to, delay = 0 }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-// ─── Abstract Graphics for Cards ──────────────────────────────────────────────
-function CloudGraphic() {
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  const Wrapper = to ? Link : "div";
+  const props = to ? { to } : {};
+
   return (
-    <div className="absolute -right-10 -top-10 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-blue-50 to-indigo-50/30 rounded-full blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+    <motion.div
+      variants={{
+        hidden: { opacity: 0, y: 40 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay },
+        },
+      }}
+      className="relative flex h-full w-full"
+    >
+      <Wrapper
+        {...props}
+        onMouseMove={handleMouseMove}
+        className={cn(
+          "group relative flex h-full w-full flex-col overflow-hidden rounded-[2.5rem] bg-white border border-zinc-200/80 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1 duration-500",
+          className,
+        )}
+      >
+        <motion.div
+          className="pointer-events-none absolute -inset-px z-10 rounded-[2.5rem] opacity-0 transition duration-500 group-hover:opacity-100"
+          style={{
+            background: useMotionTemplate`
+              radial-gradient(
+                600px circle at ${mouseX}px ${mouseY}px,
+                rgba(120, 119, 198, 0.08),
+                transparent 80%
+              )
+            `,
+          }}
+        />
+        <Noise />
+        {children}
+      </Wrapper>
+    </motion.div>
   );
 }
+
+// ─── Custom Card UIs ─────────────────────────────────────────────────────────
 
 function CloudUI() {
   return (
-    <div className="pointer-events-none flex items-center justify-center transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
-      <img
-        src={cloud3d}
-        alt="Cloud Infrastructure"
-        className="w-full max-w-[520px] h-auto drop-shadow-2xl"
-      />
-    </div>
-  );
-}
+    <div className="relative flex h-full min-h-[300px] w-full items-center justify-center lg:min-h-full">
+      {/* Abstract background rings */}
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-700 group-hover:opacity-100">
+        <div className="absolute h-[300px] w-[300px] rounded-full border border-blue-100/50 mix-blend-multiply blur-[1px] animate-[spin_20s_linear_infinite]" />
+        <div className="absolute h-[400px] w-[400px] rounded-full border border-indigo-100/30 mix-blend-multiply blur-[1px] animate-[spin_30s_linear_infinite_reverse]" />
+      </div>
 
-function DataGraphic() {
-  return (
-    <div className="absolute -right-10 -bottom-10 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-gradient-to-tl from-sky-100/40 to-blue-50/20 rounded-full blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+      {/* Main Graphic with levitation */}
+      <motion.div
+        animate={{ y: [0, -12, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="relative z-10 w-full max-w-[480px] drop-shadow-[0_20px_40px_rgba(10,37,64,0.15)] transition-transform duration-700 ease-out group-hover:scale-105"
+      >
+        <img
+          src={cloud3d}
+          alt="Cloud Infrastructure"
+          className="h-auto w-full object-contain"
+        />
+      </motion.div>
+    </div>
   );
 }
 
 function DataUI() {
   return (
-    <div className="pointer-events-none flex h-[280px] w-full max-w-[520px] items-center justify-center transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
-      <div className="w-full h-full relative">
-        <div className="absolute top-0 left-10 w-12 h-12 bg-white rounded-2xl border border-rule shadow-lg flex items-center justify-center">
-          <RiDatabase2Line className="text-[#0A2540] w-5 h-5" />
-        </div>
-        <div className="absolute top-20 right-10 w-10 h-10 bg-[#0A2540] rounded-xl shadow-xl flex items-center justify-center">
-          <div className="w-2 h-2 bg-accent rounded-full" />
-        </div>
-        <div className="absolute bottom-0 left-20 w-14 h-14 bg-white rounded-2xl border border-rule shadow-lg flex items-center justify-center p-2">
-          <div className="w-full h-full bg-accent/10 rounded-lg border border-accent/20" />
-        </div>
-        <svg
-          className="absolute inset-0 w-full h-full -z-10"
-          overflow="visible"
-        >
+    <div className="relative flex h-full min-h-[350px] w-full max-w-[500px] items-center justify-center">
+      <div className="relative h-full w-full">
+        {/* Animated Circuit Grid */}
+        <svg className="absolute inset-0 h-full w-full" overflow="visible">
+          <defs>
+            <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#E2E8F0" />
+              <stop offset="50%" stopColor="#94A3B8" />
+              <stop offset="100%" stopColor="#E2E8F0" />
+            </linearGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+
+          {/* Base Paths */}
           <path
-            d="M 60 24 Q 150 24 200 90"
+            d="M 40 40 L 150 40 L 220 120 L 350 120"
             fill="none"
-            stroke="#E5E5EA"
-            strokeWidth="2"
+            stroke="url(#lineGrad)"
+            strokeWidth="1.5"
             strokeDasharray="4 4"
-            className="animate-[dash_20s_linear_infinite]"
+            className="opacity-40"
           />
           <path
-            d="M 80 180 Q 150 180 200 110"
+            d="M 80 280 L 150 280 L 220 180 L 320 180"
             fill="none"
-            stroke="#E5E5EA"
-            strokeWidth="2"
+            stroke="url(#lineGrad)"
+            strokeWidth="1.5"
           />
+
+          {/* Animated Pulses */}
+          <circle r="4" fill="#3B82F6" filter="url(#glow)">
+            <animateMotion
+              dur="4s"
+              repeatCount="indefinite"
+              path="M 40 40 L 150 40 L 220 120 L 350 120"
+            />
+          </circle>
+          <circle r="3" fill="#10B981" filter="url(#glow)">
+            <animateMotion
+              dur="5s"
+              repeatCount="indefinite"
+              path="M 80 280 L 150 280 L 220 180 L 320 180"
+            />
+          </circle>
         </svg>
+
+        {/* Floating Glass Panels */}
+        <motion.div
+          animate={{ y: [0, -8, 0] }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0,
+          }}
+          className="absolute left-4 top-4 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/60 bg-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md"
+        >
+          <RiDatabase2Line className="h-6 w-6 text-[#0A2540]" />
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute right-12 top-24 flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-[#0A2540] shadow-xl"
+        >
+          <div className="h-2.5 w-2.5 rounded-full bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)] animate-pulse" />
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 5.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
+          }}
+          className="absolute bottom-16 left-16 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/60 bg-white/40 p-3 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-md"
+        >
+          <div className="h-full w-full rounded-lg border border-blue-200 bg-blue-50/50" />
+        </motion.div>
       </div>
     </div>
   );
 }
 
 // ─── Main Component ───────────────────────────────────────────────────────────
+
 export default function ProductsGrid() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section
-      className="relative scroll-mt-24 overflow-hidden bg-white pb-24 pt-28 lg:pb-32 lg:pt-36"
+      className="relative overflow-hidden bg-[#FAFAFA] pb-24 pt-28 lg:pb-32 lg:pt-36"
       aria-label="Products"
     >
-      <div className="site-container relative z-10">
-        {/* Section Header */}
+      {/* Subtle Architectural Grid Background */}
+      <div className="pointer-events-none absolute inset-0 flex justify-center z-0">
+        <div className="h-full w-full max-w-7xl bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVsNDAtLjVWMG0tMzkuNSAwTD41IDM5LjUiIHN0cm9rZT0icmdiYSgwLDAsMCwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIi8+PC9zdmc+')] opacity-50 mask-image:linear-gradient(to_bottom,white,transparent)" />
+      </div>
 
-        {/* Bento Grid */}
+      <div className="site-container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Section Header (Optional/Placeholder based on your original code) */}
+        <div className="mb-16 text-center lg:mb-24">
+          <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-[#0A2540] md:text-5xl">
+            A unified suite for{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
+              modern scale.
+            </span>
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-slate-500">
+            Purpose-built infrastructure and tooling to help you move faster,
+            scale further, and retain total control.
+          </p>
+        </div>
+
         <motion.div
           ref={ref}
-          variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-12 gap-6"
+          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
+          className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-8"
         >
           {/* ── LIVE PRODUCTS (Top Row) ── */}
 
           {/* Bridgesoft Cloud */}
-          <motion.div variants={cardVariant} className="md:col-span-12">
-            <Link
+          <div className="lg:col-span-12">
+            <SpotlightCard
               to="/products/cloud"
-              className="group relative block w-full overflow-hidden rounded-3xl border border-rule bg-white transition-all duration-300 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(50,50,93,0.15),0_18px_36px_-18px_rgba(0,0,0,0.2)]"
+              className="bg-gradient-to-br from-white to-slate-50/50"
             >
-              <CloudGraphic />
-              <div className="relative z-10 grid grid-cols-1 items-center gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
-                <div className="flex flex-col">
-                  <span className="mb-4 text-[11px] font-mono uppercase tracking-widest text-subtle">
-                    Cloud Hosting
-                  </span>
-                  <h3 className="mb-3 text-[32px] font-bold tracking-tight text-[#0A2540]">
+              <div className="grid grid-cols-1 items-center gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:gap-16 lg:p-16">
+                <div className="relative z-10 flex flex-col">
+                  <div className="mb-6 inline-flex w-fit items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1">
+                    <span className="text-xs font-bold uppercase tracking-widest text-blue-700">
+                      Cloud Hosting
+                    </span>
+                  </div>
+                  <h3 className="mb-4 text-4xl font-extrabold tracking-tight text-[#0A2540] lg:text-5xl">
                     Bridgesoft Cloud
                   </h3>
-                  <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
+                  <p className="mb-8 max-w-md text-lg leading-relaxed text-slate-600">
                     Powerful cloud hosting on our own data centres across
                     Africa. Your data stays local, safe, and entirely under our
                     control.
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
-                    Explore Cloud
-                    <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  <div className="inline-flex items-center gap-3 font-semibold text-[#0A2540] group-hover:text-blue-600 transition-colors">
+                    Explore Infrastructure
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-100 transition-colors">
+                      <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
                 </div>
                 <CloudUI />
               </div>
-            </Link>
-          </motion.div>
+            </SpotlightCard>
+          </div>
 
           {/* Bridgesoft Data */}
-          <motion.div variants={cardVariant} className="md:col-span-12">
-            <Link
+          <div className="lg:col-span-12">
+            <SpotlightCard
               to="/products/data"
-              className="group relative block w-full overflow-hidden rounded-3xl border border-rule bg-white transition-all duration-300 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(50,50,93,0.15),0_18px_36px_-18px_rgba(0,0,0,0.2)]"
+              className="bg-gradient-to-tl from-white to-slate-50/50"
+              delay={0.1}
             >
-              <DataGraphic />
-              <div className="relative z-10 grid grid-cols-1 items-center gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
-                <div className="flex flex-col">
-                  <span className="mb-4 text-[11px] font-mono uppercase tracking-widest text-subtle">
-                    Data Tools
-                  </span>
-                  <h3 className="mb-3 text-[32px] font-bold tracking-tight text-[#0A2540]">
+              <div className="grid grid-cols-1 items-center gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:gap-16 lg:p-16">
+                <div className="order-2 lg:order-1">
+                  <DataUI />
+                </div>
+                <div className="relative z-10 flex flex-col order-1 lg:order-2">
+                  <div className="mb-6 inline-flex w-fit items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1">
+                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-700">
+                      Data & Analytics
+                    </span>
+                  </div>
+                  <h3 className="mb-4 text-4xl font-extrabold tracking-tight text-[#0A2540] lg:text-5xl">
                     Bridgesoft Data
                   </h3>
-                  <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
-                    Advanced analytics and reporting tools to help you make
-                    data-driven decisions. Visualize trends, track performance,
-                    and gain insights that drive growth.
+                  <p className="mb-8 max-w-md text-lg leading-relaxed text-slate-600">
+                    Advanced analytics pipelines to help you make data-driven
+                    decisions. Visualize trends in real-time and gain actionable
+                    insights.
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
-                    Explore Data
-                    <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  <div className="inline-flex items-center gap-3 font-semibold text-[#0A2540] group-hover:text-emerald-600 transition-colors">
+                    Explore Analytics
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-100 group-hover:bg-emerald-100 transition-colors">
+                      <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
                 </div>
-                <DataUI />
               </div>
-            </Link>
-          </motion.div>
+            </SpotlightCard>
+          </div>
 
           {/* ── COMING SOON PRODUCTS (Bottom Row) ── */}
 
-          {/* Bridgesoft Enterprise */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={entImg}
-                alt="Enterprise background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
-              />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiDatabase2Line className="text-subtle w-5 h-5" />
+          {[
+            {
+              title: "Enterprise",
+              img: entImg,
+              icon: RiTerminalBoxLine,
+              desc: "Comprehensive solutions engineered to streamline complex operations for large-scale organizations.",
+            },
+            {
+              title: "Consulting",
+              img: consImg,
+              icon: RiCloudWindyLine,
+              desc: "Expert guidance to help businesses navigate digital transformation and architecture adoption.",
+            },
+            {
+              title: "Ventures",
+              img: ventImg,
+              icon: RiBriefcase4Line,
+              desc: "Strategic funding and mentorship supporting the next generation of innovative African startups.",
+            },
+          ].map((item, idx) => (
+            <div key={item.title} className="lg:col-span-4 h-[420px]">
+              <SpotlightCard
+                delay={0.2 + idx * 0.1}
+                className="group border-0 p-0 shadow-lg"
+              >
+                <div className="absolute top-6 right-6 z-20">
+                  <span className="rounded-full bg-black/40 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white backdrop-blur-md border border-white/20">
+                    Coming Soon
+                  </span>
+                </div>
+
+                {/* Image with Grayscale to Color Reveal */}
+                <div className="absolute inset-0 z-0 overflow-hidden bg-[#0A2540]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="h-full w-full object-cover opacity-50 grayscale transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-70 group-hover:grayscale-0"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A2540] via-[#0A2540]/60 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-75" />
+                </div>
+
+                {/* Content Panel */}
+                <div className="relative z-10 mt-auto flex h-full flex-col justify-end p-8">
+                  <div className="translate-y-4 transition-transform duration-500 ease-out group-hover:translate-y-0">
+                    <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 border border-white/20 text-white backdrop-blur-md shadow-lg">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="mb-3 text-2xl font-bold text-white">
+                      Bridgesoft {item.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-300 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100">
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Enterprise
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: A comprehensive suite of enterprise solutions
-                  designed to streamline operations, enhance collaboration, and
-                  drive growth for large organizations.
-                </p>
-              </div>
+              </SpotlightCard>
             </div>
-          </motion.div>
+          ))}
 
-          {/* Bridgesoft Consulting */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={consImg}
-                alt="Consulting background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
+          {/* ── INTEGRATIONS BANNER ── */}
+
+          <div className="lg:col-span-12 mt-6 lg:mt-8">
+            <SpotlightCard
+              delay={0.5}
+              className="overflow-hidden bg-[#0A2540] border-[#0A2540]"
+            >
+              {/* Premium abstract mesh background for the dark card */}
+              <div
+                className="absolute inset-0 z-0 opacity-40 mix-blend-screen"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 50% 0%, #3B82F6 0%, transparent 60%)",
+                }}
               />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiCloudWindyLine className="text-subtle w-5 h-5" />
-                  </div>
+
+              <div className="relative z-10 flex flex-col items-center justify-center p-12 text-center lg:p-20">
+                <h3 className="mb-4 text-3xl font-extrabold tracking-tight text-white md:text-4xl">
+                  Connects with the systems you already run
+                </h3>
+                <p className="mx-auto mb-12 max-w-2xl text-lg text-slate-400">
+                  Our products are designed via API-first principles to
+                  integrate flawlessly with your existing software stack,
+                  eliminating silos instantly.
+                </p>
+
+                {/* Integration Logo display with premium presentation */}
+                <div className="relative flex w-full max-w-4xl items-center justify-center rounded-3xl bg-white/5 p-8 border border-white/10 shadow-2xl backdrop-blur-xl">
+                  {/* Glowing backdrop for the logos */}
+                  <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 blur-2xl" />
+
+                  <img
+                    src={logoCloud}
+                    alt="100+ Integrations"
+                    className="h-auto w-full object-contain brightness-0 invert opacity-90 transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
                 </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Consulting
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: Expert consulting services to help businesses
-                  navigate the complexities of technology adoption, digital
-                  transformation, and operational efficiency.
-                </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Bridgesoft Ventures */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={ventImg}
-                alt="Ventures background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
-              />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiArrowRightLine className="text-subtle w-5 h-5" />
-                  </div>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Ventures
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: An investment arm focused on supporting
-                  innovative startups and ventures across Africa, providing
-                  funding, mentorship, and strategic guidance to help them
-                  succeed.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={cardVariant}
-            className="md:col-span-12 mt-4 lg:mt-8"
-          >
-            <div className="w-full bg-[#F6F9FC] rounded-3xl border border-rule/50 p-10 md:p-16 flex flex-col items-center justify-center text-center overflow-hidden">
-              <h3 className="text-[24px] md:text-[32px] font-bold text-[#0A2540] mb-3 tracking-tight">
-                Connects with the systems you already run
-              </h3>
-              <p className="text-[15px] text-[#425466] mb-10 max-w-lg mx-auto">
-                Bridgesoft products are designed to integrate seamlessly with
-                your existing software stack, ensuring smooth workflows and
-                enhanced productivity.
-              </p>
-              <img
-                src={logoCloud}
-                alt="100+ Integrations"
-                className="w-fit max-w-4xl h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-          </motion.div>
+            </SpotlightCard>
+          </div>
         </motion.div>
       </div>
     </section>
