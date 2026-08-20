@@ -1,36 +1,13 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import {
-  RiArrowRightLine,
-  RiCloudWindyLine,
-  RiDatabase2Line,
-} from "react-icons/ri";
-import { cn } from "@/lib/utils";
-
-// ─── Background Images ───
-import entImg from "@/assets/images/joel-filipe-D1S4F_SKY2I-unsplash.jpg";
-import consImg from "@/assets/images/austin-distel-mpN7xjKQ_Ns-unsplash.jpg";
-import ventImg from "@/assets/images/lycs-architecture-U2BI3GMnSSE-unsplash.jpg";
-
-// ─── New Figma Assets (Make sure these match your filenames!) ───
-import cloud3d from "@/assets/images/product-data-graphic.svg";
-import logoCloud from "@/assets/images/product-growth-chart.svg";
+import { RiArrowRightLine } from "react-icons/ri";
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
 const container = {
   hidden: {},
   show: {
     transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
   },
 };
 
@@ -44,67 +21,54 @@ const cardVariant = {
   },
 };
 
-// ─── Abstract Graphics for Cards ──────────────────────────────────────────────
-function CloudGraphic() {
-  return (
-    <div className="absolute -right-10 -top-10 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-gradient-to-br from-blue-50 to-indigo-50/30 rounded-full blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-  );
-}
-
-function CloudUI() {
-  return (
-    <div className="pointer-events-none flex items-center justify-center transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
-      <img
-        src={cloud3d}
-        alt="Cloud Infrastructure"
-        className="w-full max-w-[520px] h-auto drop-shadow-2xl"
-      />
-    </div>
-  );
-}
-
-function DataGraphic() {
-  return (
-    <div className="absolute -right-10 -bottom-10 w-[300px] h-[300px] md:w-[400px] md:h-[400px] bg-gradient-to-tl from-sky-100/40 to-blue-50/20 rounded-full blur-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
-  );
-}
-
-function DataUI() {
-  return (
-    <div className="pointer-events-none flex h-[280px] w-full max-w-[520px] items-center justify-center transform transition-transform duration-500 ease-out group-hover:-translate-y-2">
-      <div className="w-full h-full relative">
-        <div className="absolute top-0 left-10 w-12 h-12 bg-white rounded-2xl border border-rule shadow-lg flex items-center justify-center">
-          <RiDatabase2Line className="text-[#0A2540] w-5 h-5" />
-        </div>
-        <div className="absolute top-20 right-10 w-10 h-10 bg-[#0A2540] rounded-xl shadow-xl flex items-center justify-center">
-          <div className="w-2 h-2 bg-accent rounded-full" />
-        </div>
-        <div className="absolute bottom-0 left-20 w-14 h-14 bg-white rounded-2xl border border-rule shadow-lg flex items-center justify-center p-2">
-          <div className="w-full h-full bg-accent/10 rounded-lg border border-accent/20" />
-        </div>
-        <svg
-          className="absolute inset-0 w-full h-full -z-10"
-          overflow="visible"
-        >
-          <path
-            d="M 60 24 Q 150 24 200 90"
-            fill="none"
-            stroke="#E5E5EA"
-            strokeWidth="2"
-            strokeDasharray="4 4"
-            className="animate-[dash_20s_linear_infinite]"
-          />
-          <path
-            d="M 80 180 Q 150 180 200 110"
-            fill="none"
-            stroke="#E5E5EA"
-            strokeWidth="2"
-          />
-        </svg>
-      </div>
-    </div>
-  );
-}
+// ─── Products Data ────────────────────────────────────────────────────────────
+const products = [
+  {
+    id: "cloud",
+    title: "Bridgesoft Cloud",
+    tags: ["PLATFORMS", "HOSTING", "+1"],
+    desc: "Powerful cloud hosting on our own data centres. Your data stays local, safe, and entirely under our control with massive scalability.",
+    link: "/products/cloud",
+    btnLabel: "Explore Cloud",
+    image: "https://media.istockphoto.com/id/2245861123/photo/aerial-view-data-center.jpg?s=612x612&w=0&k=20&c=rLNMn9kyObNZExi07J7I67yd94o8z-AK0k_pfnW8V4M="
+  },
+  {
+    id: "data",
+    title: "Bridgesoft Data",
+    tags: ["ANALYTICS", "REPORTING", "ETL"],
+    desc: "Advanced analytics and reporting tools to help you make data-driven decisions. Visualize trends, track performance, and gain insights that drive growth.",
+    link: "/products/data",
+    btnLabel: "Explore Data",
+    image: "https://media.istockphoto.com/id/2166973319/photo/aerial-view-of-luandas-coastline-and-urban-landscape-in-angola.jpg?s=612x612&w=0&k=20&c=Rkc9jq9q1l-YcPJLGc3fqhmAUuSTbG2-9EnEeB4e69Q="
+  },
+  {
+    id: "ai",
+    title: "Bridge Intelligence",
+    tags: ["AI", "MACHINE LEARNING", "LLMs"],
+    desc: "Give your teams fast, policy-safe AI summaries and automation so they can move from questions to decisions with unprecedented confidence.",
+    link: "/bridge-intelligence",
+    btnLabel: "Explore AI",
+    image: "https://media.istockphoto.com/id/2050780380/photo/hispanic-programmers-collaborating-on-software-development-in-a-modern-office-setting.jpg?s=612x612&w=0&k=20&c=NjcxyCS1vjVqqLl6yv6GyPveBGTTUMR5MRN799x7kVs="
+  },
+  {
+    id: "enterprise",
+    title: "Bridgesoft Enterprise",
+    tags: ["ERP", "OPERATIONS", "SCALE"],
+    desc: "A comprehensive suite of enterprise solutions designed to streamline complex operations, enhance collaboration, and drive growth for large organizations.",
+    link: "/products/enterprise",
+    btnLabel: "Explore Enterprise",
+    image: "https://media.istockphoto.com/id/1321495390/photo/onne-estate-camp-nigeria-orlean-invest-intels.jpg?s=612x612&w=0&k=20&c=dWkjiDCTSoFYnJ2DiVcwBzINewHeGFgRLCEurn6B2Fc="
+  },
+  {
+    id: "security",
+    title: "Bridgesoft Security",
+    tags: ["INFRASTRUCTURE", "ZERO-TRUST"],
+    desc: "Bank-grade security protocols, identity management, and real-time threat monitoring designed for the world's most critical institutions.",
+    link: "/products/security",
+    btnLabel: "Explore Security",
+    image: "https://media.istockphoto.com/id/1187179311/photo/overhead-view-of-modern-office.jpg?s=612x612&w=0&k=20&c=8eNP7IDSagdU0_rvGQtjf_irMmhItt5OLedz6tEoAKA="
+  }
+];
 
 // ─── Main Component ───────────────────────────────────────────────────────────
 export default function ProductsGrid() {
@@ -113,183 +77,66 @@ export default function ProductsGrid() {
 
   return (
     <section
-      className="relative scroll-mt-24 overflow-hidden bg-white pb-24 pt-28 lg:pb-32 lg:pt-36"
+      className="relative scroll-mt-24 overflow-hidden bg-[#FAFAFA] pb-24 pt-28 lg:pb-32 lg:pt-36"
       aria-label="Products"
     >
       <div className="site-container relative z-10">
-        {/* Section Header */}
-
-        {/* Bento Grid */}
         <motion.div
           ref={ref}
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-12 gap-6"
+          className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12"
         >
-          {/* ── LIVE PRODUCTS (Top Row) ── */}
-
-          {/* Bridgesoft Cloud */}
-          <motion.div variants={cardVariant} className="md:col-span-12">
-            <Link
-              to="/products/cloud"
-              className="group relative block w-full overflow-hidden rounded-3xl border border-rule bg-white transition-all duration-300 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(50,50,93,0.15),0_18px_36px_-18px_rgba(0,0,0,0.2)]"
+          {products.map((product) => (
+            <motion.div
+              key={product.id}
+              variants={cardVariant}
+              className="md:col-span-12 group"
             >
-              <CloudGraphic />
-              <div className="relative z-10 grid grid-cols-1 items-center gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
-                <div className="flex flex-col">
-                  <span className="mb-4 text-[11px] font-mono uppercase tracking-widest text-subtle">
-                    Cloud Hosting
-                  </span>
-                  <h3 className="mb-3 text-[32px] font-bold tracking-tight text-[#0A2540]">
-                    Bridgesoft Cloud
+              <div className="w-full bg-white rounded-[20px] lg:rounded-[32px] border border-rule/40 overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-all duration-500 min-h-[400px]">
+                
+                {/* ── Left Content (Wink Digital Style) ── */}
+                <div className="lg:w-[50%] p-10 md:p-16 lg:p-20 flex flex-col justify-center">
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {product.tags.map(tag => (
+                      <span key={tag} className="px-2.5 py-1 bg-white border border-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-[0.15em] rounded-[4px] shadow-sm">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <h3 className="text-[32px] md:text-[44px] font-medium text-slate-900 mb-6 tracking-tight leading-[1.1] uppercase">
+                    {product.title}
                   </h3>
-                  <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
-                    Powerful cloud hosting on our own data centres across
-                    Africa. Your data stays local, safe, and entirely under our
-                    control.
+                  
+                  <p className="text-[17px] leading-[1.6] text-slate-600 mb-10 max-w-[90%]">
+                    {product.desc}
                   </p>
-                  <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
-                    Explore Cloud
-                    <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                  
+                  <Link
+                    to={product.link}
+                    className="inline-flex items-center justify-center gap-2 bg-[#E5F339] text-[#0A0A0A] px-8 py-4 font-bold text-[14px] hover:bg-[#D4E22A] transition-colors rounded-sm w-fit group-hover:-translate-y-1 group-hover:shadow-lg duration-300"
+                  >
+                    {product.btnLabel}
+                    <RiArrowRightLine className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
                 </div>
-                <CloudUI />
-              </div>
-            </Link>
-          </motion.div>
 
-          {/* Bridgesoft Data */}
-          <motion.div variants={cardVariant} className="md:col-span-12">
-            <Link
-              to="/products/data"
-              className="group relative block w-full overflow-hidden rounded-3xl border border-rule bg-white transition-all duration-300 hover:border-transparent hover:shadow-[0_30px_60px_-15px_rgba(50,50,93,0.15),0_18px_36px_-18px_rgba(0,0,0,0.2)]"
-            >
-              <DataGraphic />
-              <div className="relative z-10 grid grid-cols-1 items-center gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
-                <div className="flex flex-col">
-                  <span className="mb-4 text-[11px] font-mono uppercase tracking-widest text-subtle">
-                    Data Tools
-                  </span>
-                  <h3 className="mb-3 text-[32px] font-bold tracking-tight text-[#0A2540]">
-                    Bridgesoft Data
-                  </h3>
-                  <p className="mb-8 max-w-[380px] text-[16px] leading-[1.6] text-[#425466]">
-                    Advanced analytics and reporting tools to help you make
-                    data-driven decisions. Visualize trends, track performance,
-                    and gain insights that drive growth.
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-slate-950">
-                    Explore Data
-                    <RiArrowRightLine className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
+                {/* ── Right Image (Edge to Edge) ── */}
+                <div className="lg:w-[50%] h-[300px] lg:h-auto overflow-hidden relative bg-slate-100">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                  />
+                  {/* Subtle inner shadow for depth */}
+                  <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.05)] pointer-events-none" />
                 </div>
-                <DataUI />
+                
               </div>
-            </Link>
-          </motion.div>
-
-          {/* ── COMING SOON PRODUCTS (Bottom Row) ── */}
-
-          {/* Bridgesoft Enterprise */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={entImg}
-                alt="Enterprise background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
-              />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiDatabase2Line className="text-subtle w-5 h-5" />
-                  </div>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Enterprise
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: A comprehensive suite of enterprise solutions
-                  designed to streamline operations, enhance collaboration, and
-                  drive growth for large organizations.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Bridgesoft Consulting */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={consImg}
-                alt="Consulting background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
-              />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiCloudWindyLine className="text-subtle w-5 h-5" />
-                  </div>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Consulting
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: Expert consulting services to help businesses
-                  navigate the complexities of technology adoption, digital
-                  transformation, and operational efficiency.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Bridgesoft Ventures */}
-          <motion.div variants={cardVariant} className="md:col-span-4">
-            <div className="group relative w-full h-full overflow-hidden rounded-3xl border border-rule/50 p-8 flex flex-col transition-opacity hover:opacity-100">
-              <img
-                src={ventImg}
-                alt="Ventures background"
-                className="absolute inset-0 w-full h-full object-cover opacity-60 brightness-95 contrast-[1.05] group-hover:opacity-75 transition-all duration-500"
-              />
-              <div className="relative z-10 flex flex-col h-full bg-white/90 backdrop-blur-sm p-6 rounded-[28px] shadow-sm">
-                <div className="flex items-center justify-between mb-8">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-rule flex items-center justify-center">
-                    <RiArrowRightLine className="text-subtle w-5 h-5" />
-                  </div>
-                </div>
-                <h3 className="text-[18px] font-extrabold text-slate-950 mb-2">
-                  Bridgesoft Ventures
-                </h3>
-                <p className="text-[15px] text-slate-700 leading-[1.7]">
-                  Coming soon: An investment arm focused on supporting
-                  innovative startups and ventures across Africa, providing
-                  funding, mentorship, and strategic guidance to help them
-                  succeed.
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={cardVariant}
-            className="md:col-span-12 mt-4 lg:mt-8"
-          >
-            <div className="w-full bg-[#F6F9FC] rounded-3xl border border-rule/50 p-10 md:p-16 flex flex-col items-center justify-center text-center overflow-hidden">
-              <h3 className="text-[24px] md:text-[32px] font-bold text-[#0A2540] mb-3 tracking-tight">
-                Connects with the systems you already run
-              </h3>
-              <p className="text-[15px] text-[#425466] mb-10 max-w-lg mx-auto">
-                Bridgesoft products are designed to integrate seamlessly with
-                your existing software stack, ensuring smooth workflows and
-                enhanced productivity.
-              </p>
-              <img
-                src={logoCloud}
-                alt="100+ Integrations"
-                className="w-fit max-w-4xl h-auto object-contain mix-blend-multiply transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-          </motion.div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

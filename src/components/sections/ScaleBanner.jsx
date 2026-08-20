@@ -79,30 +79,46 @@ export default function ScaleBanner() {
   ];
 
   return (
-    <section className="bg-white py-24 sm:py-32 font-sans overflow-hidden">
-      <div className="site-container flex flex-col items-center">
+    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 lg:py-48 font-sans">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen"
+        src="https://media.istockphoto.com/id/1426287841/video/futuristic-digital-grid-over-the-earth-sunrise-beautiful-view-from-space-satellite-abstract.mp4?s=mp4-480x480-is&k=20&c=5o_mTvtqFNqWgGjSzM0M2ciSJxgj6OC6ui_JA1y8YhQ="
+      />
+      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]" />
+      <div className="absolute inset-0 bg-accent/10 mix-blend-overlay" />
+
+      <div className="site-container relative z-10 flex flex-col items-center">
         {/* Centered Editorial Subheader */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-[#0A2540] leading-[1.05] tracking-tight">
-            Scaling Impact Across Africa
+          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[12px] font-mono uppercase tracking-widest text-white backdrop-blur-md border border-white/20 mb-6">
+            Proven at scale
+          </span>
+          <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight">
+            Built for a global economy.
           </h2>
         </motion.div>
 
         <div className="w-full max-w-[1200px] mx-auto">
           {/* Top Gradient Line */}
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0A2540]/10 to-transparent mb-12 lg:mb-16" />
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12 lg:mb-16" />
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 text-center px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 text-center px-4">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-start">
-                <div className="text-[44px] sm:text-[52px] lg:text-[60px] font-bold text-[#0A2540] leading-none tracking-tight mb-4">
+                <div className="text-[44px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-none tracking-tight mb-4 drop-shadow-lg">
                   <AnimatedNumber
                     value={stat.value}
                     prefix={stat.prefix}
@@ -110,7 +126,7 @@ export default function ScaleBanner() {
                     decimals={stat.decimals}
                   />
                 </div>
-                <p className="text-[15px] sm:text-[16px] text-[#425466] leading-[1.5] max-w-[200px]">
+                <p className="text-[15px] sm:text-[16px] text-white/70 leading-[1.5] max-w-[200px]">
                   {stat.label}
                 </p>
               </div>
@@ -118,7 +134,7 @@ export default function ScaleBanner() {
           </div>
 
           {/* Bottom Gradient Line */}
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0A2540]/10 to-transparent mt-12 lg:mt-16" />
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mt-12 lg:mt-16" />
         </div>
       </div>
     </section>

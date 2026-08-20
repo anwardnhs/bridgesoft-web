@@ -30,18 +30,21 @@ export default function Hero() {
     >
       {/* ─── Cinematic Background Layer ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Dark, textured, ribbed glass/warm abstract image to match Planhat's vibe */}
-        <img
-          src="https://images.unsplash.com/photo-1777477446816-a6981a467314?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDI5fGlVSXNuVnRqQjBZfHxlbnwwfHx8fHw%3D"
-          alt="Dark textured background"
-          className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+          src="https://media.istockphoto.com/id/1479844094/video/highlighted-dark-map-of-european-union-zooming-in-from-the-space-through-a-4k-photo-real.mp4?s=mp4-480x480-is&k=20&c=6wy4A8aF6Qc6ndsQ_Rmwal14DY_59j15Dg-8bYwRmU0="
         />
-        {/* Gradients to darken the image and create depth */}
+        {/* Gradients to darken the video and create depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
 
-        {/* Subtle warm glow injection (mimicking the lighting in your reference) */}
-        <div className="absolute top-1/4 right-[10%] w-[600px] h-[600px] bg-amber-600/10 rounded-full blur-[150px] mix-blend-overlay" />
+        {/* Subtle cool glow injection (matching the new tech/global vibe) */}
+        <div className="absolute top-1/4 left-[10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] mix-blend-overlay" />
       </div>
 
       <div className="site-container relative z-10 w-full flex flex-col items-center text-center">
@@ -49,24 +52,30 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="max-w-[900px] flex flex-col items-center"
+          className="max-w-[1000px] flex flex-col items-center"
         >
           {/* Subtle, highly tracked Eyebrow */}
+          <motion.div variants={fadeUp} className="mb-6">
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[12px] font-mono uppercase tracking-widest text-white backdrop-blur-md border border-white/20">
+              Global Scale
+            </span>
+          </motion.div>
 
-          {/* Massive, elegant typography (Using font-medium instead of black for sophistication) */}
+          {/* Massive, elegant typography */}
           <motion.div variants={fadeUp}>
             <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              Building the platforms that keep Africa moving.
+              Bridging <span className="text-blue-500">Innovation</span> and{" "}
+              <span className="text-blue-500">Intelligence</span>
             </h1>
           </motion.div>
 
           {/* Clean, readable subtext */}
           <motion.p
             variants={fadeUp}
-            className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[540px] mb-12"
+            className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[640px] mb-12"
           >
-            Cloud Computing, Enterprise Software, Data Management, AI Solutions
-            and More.
+            Cloud computing, data analytics, and enterprise intelligence
+            engineered to power seamless operations across borders.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
