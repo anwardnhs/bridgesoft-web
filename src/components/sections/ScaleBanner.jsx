@@ -102,9 +102,7 @@ export default function ScaleBanner() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[12px] font-mono uppercase tracking-widest text-white backdrop-blur-md border border-white/20 mb-6">
-            Proven at scale
-          </span>
+
           <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight">
             Built for a global economy.
           </h2>
