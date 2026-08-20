@@ -5,44 +5,15 @@ import { RiMenuLine, RiCloseLine, RiArrowRightSLine } from "react-icons/ri";
 import { cn } from "@/lib/utils";
 import brandMark from "@/assets/images/logo2.svg";
 
-// ─── Mega Menu Data ────────────────────────────────────────────────────────
+// ─── Simplified Menu Data ────────────────────────────────────────────────────────
 const menuData = {
-  products: {
-    capabilities: [
-      { name: "Cloud", href: "/products/cloud" },
-      { name: "Data", href: "/products/data" },
-      { name: "Enterprise", href: "/products/enterprise" },
-      { name: "Consulting", href: "/products/security" },
-    ],
-    features: [{ name: "BridgeIntelligence AI", href: "/bridge-intelligence" }],
-    spotlight: {
-      title: "BridgeIntelligence AI",
-      desc: "Discover how BridgeIntelligence powers enterprise workflows with real-time insights, automation, and predictive analytics.",
-      image:
-        "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
-      author: "Product Team",
-    },
-  },
-  solutions: {
-    industries: [
-      { name: "Financial Services", href: "/solutions/financial" },
-      { name: "Healthcare", href: "/solutions/healthcare" },
-      { name: "Public Sector", href: "/solutions/public-sector" },
-      { name: "Supply Chain", href: "/solutions/logistics" },
-    ],
-    useCases: [
-      { name: "Cloud Migration", href: "/solutions/migration" },
-      { name: "Data Compliance", href: "/solutions/compliance" },
-      { name: "AI Automation", href: "/solutions/automation" },
-    ],
-    spotlight: {
-      title: "Built for regulated institutions",
-      desc: "See how Bridgesoft helps organizations modernize infrastructure while staying compliant and in control.",
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=872&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      author: "Product Team",
-    },
-  },
+  products: [
+    { name: "Cloud", href: "/products/cloud" },
+    { name: "Data", href: "/products/data" },
+    { name: "Enterprise", href: "/products/enterprise" },
+    { name: "Security", href: "/products/security" },
+    { name: "BridgeIntelligence AI", href: "/bridge-intelligence" },
+  ],
   company: [
     { name: "About", href: "/about" },
     { name: "Leadership", href: "/leadership" },
@@ -70,8 +41,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   // The crucial "Lights On" logic: Navbar turns dark if not on the homepage,
-  // or if scrolled, or if a dropdown / mobile menu is open. This ensures the
-  // header remains visible on pages with light backgrounds immediately.
+  // or if scrolled, or if a dropdown / mobile menu is open.
   const isHome = location.pathname === "/";
   const isDarkTheme =
     !isHome || isScrolled || activeDropdown !== null || mobileMenuOpen;
@@ -106,7 +76,7 @@ export default function Navbar() {
           </Link>
 
           {/* ── DESKTOP LINKS ── */}
-          <nav className="hidden lg:flex items-center gap-8 h-full">
+          <nav className="hidden lg:flex items-center gap-10 h-full">
             {/* Products */}
             <div
               className="h-full flex items-center cursor-pointer"
@@ -121,23 +91,6 @@ export default function Navbar() {
                 )}
               >
                 Products {activeDropdown === "products" ? "-" : "+"}
-              </span>
-            </div>
-
-            {/* Solutions */}
-            <div
-              className="h-full flex items-center cursor-pointer"
-              onMouseEnter={() => setActiveDropdown("solutions")}
-            >
-              <span
-                className={cn(
-                  "text-[15px] font-medium transition-colors flex items-center gap-1",
-                  isDarkTheme
-                    ? "text-[#0A2540] hover:text-accent"
-                    : "text-white/90 hover:text-white",
-                )}
-              >
-                Solutions {activeDropdown === "solutions" ? "-" : "+"}
               </span>
             </div>
 
@@ -223,7 +176,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── FULL WIDTH MEGA MENUS ── */}
+        {/* ── SIMPLIFIED DROPDOWN MENUS ── */}
         <AnimatePresence>
           {activeDropdown === "products" && (
             <motion.div
@@ -231,140 +184,18 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 w-full bg-white border-b border-rule shadow-2xl overflow-hidden"
+              className="absolute top-full left-[40%] -translate-x-1/2 w-[260px] bg-white border border-rule shadow-2xl rounded-b-xl rounded-tl-xl overflow-hidden"
             >
-              <div className="site-container py-12 grid grid-cols-12 gap-8">
-                <div className="col-span-3 space-y-6">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest">
-                    Platform
-                  </h4>
-                  <ul className="space-y-4">
-                    {menuData.products.capabilities.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.href}
-                          className="text-[15px] font-medium text-[#0A2540] hover:text-accent transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="col-span-3 space-y-6">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest">
-                    Intelligence
-                  </h4>
-                  <ul className="space-y-4">
-                    {menuData.products.features.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.href}
-                          className="text-[15px] font-medium text-[#0A2540] hover:text-accent transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="col-span-6 pl-12 border-l border-rule">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest mb-6">
-                    Spotlight
-                  </h4>
-                  <div className="flex gap-6">
-                    <div className="flex-1 space-y-4">
-                      <h3 className="text-[20px] font-medium text-[#0A2540] leading-tight">
-                        {menuData.products.spotlight.title}
-                      </h3>
-                      <p className="text-[14px] text-[#425466] leading-relaxed">
-                        {menuData.products.spotlight.desc}
-                      </p>
-                    </div>
-                    <div className="w-[240px] shrink-0">
-                      <img
-                        src={menuData.products.spotlight.image}
-                        alt="Spotlight"
-                        className="w-full h-[140px] object-cover rounded-xl shadow-sm"
-                      />
-                      <p className="text-[12px] text-subtle mt-3 text-center">
-                        Featured · {menuData.products.spotlight.author}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-
-          {activeDropdown === "solutions" && (
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-0 w-full bg-white border-b border-rule shadow-2xl overflow-hidden"
-            >
-              <div className="site-container py-12 grid grid-cols-12 gap-8">
-                <div className="col-span-3 space-y-6">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest">
-                    By industry
-                  </h4>
-                  <ul className="space-y-4">
-                    {menuData.solutions.industries.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.href}
-                          className="text-[15px] font-medium text-[#0A2540] hover:text-accent transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="col-span-3 space-y-6">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest">
-                    By use case
-                  </h4>
-                  <ul className="space-y-4">
-                    {menuData.solutions.useCases.map((link) => (
-                      <li key={link.name}>
-                        <Link
-                          to={link.href}
-                          className="text-[15px] font-medium text-[#0A2540] hover:text-accent transition-colors"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="col-span-6 pl-12 border-l border-rule">
-                  <h4 className="text-[11px] font-bold text-subtle uppercase tracking-widest mb-6">
-                    Spotlight
-                  </h4>
-                  <div className="flex gap-6">
-                    <div className="flex-1 space-y-4">
-                      <h3 className="text-[20px] font-medium text-[#0A2540] leading-tight">
-                        {menuData.solutions.spotlight.title}
-                      </h3>
-                      <p className="text-[14px] text-[#425466] leading-relaxed">
-                        {menuData.solutions.spotlight.desc}
-                      </p>
-                    </div>
-                    <div className="w-[240px] shrink-0">
-                      <img
-                        src={menuData.solutions.spotlight.image}
-                        alt="Spotlight"
-                        className="w-full h-[140px] object-cover rounded-xl shadow-sm"
-                      />
-                      <p className="text-[12px] text-subtle mt-3 text-center">
-                        Case Study · {menuData.solutions.spotlight.author}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              <div className="p-4 flex flex-col gap-1">
+                {menuData.products.map((link) => (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    className="px-4 py-2.5 text-[15px] font-medium text-[#0A2540] hover:bg-[#F6F9FC] hover:text-accent rounded-lg transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           )}
@@ -407,7 +238,7 @@ export default function Navbar() {
                 <span className="text-[12px] font-bold text-subtle uppercase tracking-widest">
                   Products
                 </span>
-                {menuData.products.capabilities.map((item) => (
+                {menuData.products.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
@@ -424,20 +255,6 @@ export default function Navbar() {
                 >
                   Pricing
                 </Link>
-              </div>
-              <div className="flex flex-col gap-4">
-                <span className="text-[12px] font-bold text-subtle uppercase tracking-widest">
-                  Solutions
-                </span>
-                {menuData.solutions.industries.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="text-[18px] font-medium text-[#0A2540] border-b border-rule pb-3"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
               </div>
               <div className="flex flex-col gap-4">
                 <span className="text-[12px] font-bold text-subtle uppercase tracking-widest">
