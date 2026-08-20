@@ -83,7 +83,7 @@ export default function ScaleBanner() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80')",
+            "url('https://media.istockphoto.com/id/2259060510/vector/blue-purple-and-white-gradient-wave-abstract-background-design.jpg?s=612x612&w=0&k=20&c=vUH2JCf_6l-kWUYQPZhnVhhsX4sJYchfo4ZfUMheqE8=",
         }}
       />
       <div className="absolute inset-0 bg-slate-950/65" />
