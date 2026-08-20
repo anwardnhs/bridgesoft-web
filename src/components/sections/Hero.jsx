@@ -35,11 +35,11 @@ export default function Hero() {
           alt="Hero Background"
           className="absolute inset-0 w-full h-full object-cover opacity-100"
         />
-        {/* Gradients to gently darken the image for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+        {/* Radial gradient to gently darken the center behind the text while leaving edges bright */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-        {/* Subtle cool glow injection (matching the new tech/global vibe) */}
+        {/* Subtle cool glow injection */}
         <div className="absolute top-1/4 left-[10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] mix-blend-overlay" />
       </div>
 
@@ -48,7 +48,7 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="max-w-[1000px] flex flex-col items-center"
+          className="max-w-[1000px] flex flex-col items-center drop-shadow-2xl"
         >
 
 
