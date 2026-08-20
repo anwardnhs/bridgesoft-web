@@ -93,16 +93,6 @@ export default function ProductsGrid() {
                   <div className="group w-full bg-white rounded-[20px] lg:rounded-[32px] border border-rule/40 overflow-hidden flex flex-col lg:flex-row shadow-[0_4px_20px_rgb(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] transition-shadow duration-500 min-h-[500px]">
                     {/* ── Left Content (Wink Digital Style) ── */}
                     <div className="lg:w-[50%] p-10 md:p-16 lg:p-20 flex flex-col justify-center">
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {product.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2.5 py-1 bg-white border border-slate-200 text-slate-800 text-[10px] font-black uppercase tracking-[0.15em] rounded-[4px] shadow-sm"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
 
                       <h3 className="text-[32px] md:text-[44px] font-medium text-slate-900 mb-6 tracking-tight leading-[1.1] uppercase">
                         {product.title}
