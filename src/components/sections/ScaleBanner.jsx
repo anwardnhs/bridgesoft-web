@@ -79,7 +79,7 @@ export default function ScaleBanner() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-multiply"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww')",
+            "url('https://images.unsplash.com/photo-1604079628040-94301bb21b91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YWJzdHJhY3QlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww')",
         }}
       />
       {/* Soft gradient overlays for legibility */}
