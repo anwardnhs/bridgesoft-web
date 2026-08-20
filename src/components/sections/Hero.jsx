@@ -52,21 +52,28 @@ export default function Hero() {
         >
 
 
-          {/* Massive, elegant typography */}
-          <motion.div variants={fadeUp}>
-            <h1 className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-8">
-              Bridging <span className="text-blue-500">Innovation</span> and{" "}
-              <span className="text-blue-500">Intelligence</span>
-            </h1>
-          </motion.div>
+          {/* Massive, elegant typography with word-stagger animation */}
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+            }}
+            className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-6 flex flex-wrap justify-center gap-x-3 sm:gap-x-4"
+          >
+            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>Bridging</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }} className="text-blue-500">Innovation</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>and</motion.span>
+            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }} className="text-blue-500">Intelligence.</motion.span>
+          </motion.h1>
 
-          {/* Clean, readable subtext */}
+          {/* Clean, minimalist subtext */}
           <motion.p
             variants={fadeUp}
-            className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[640px] mb-12"
+            className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[500px] mb-12 font-light tracking-wide"
           >
-            Cloud computing, data analytics, and enterprise intelligence
-            engineered to power seamless operations across borders.
+            Global infrastructure engineered for seamless operations.
           </motion.p>
 
           {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
