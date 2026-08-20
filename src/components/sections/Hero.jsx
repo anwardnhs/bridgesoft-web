@@ -54,12 +54,7 @@ export default function Hero() {
           animate={inView ? "show" : "hidden"}
           className="max-w-[1000px] flex flex-col items-center"
         >
-          {/* Subtle, highly tracked Eyebrow */}
-          <motion.div variants={fadeUp} className="mb-6">
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-[12px] font-mono uppercase tracking-widest text-white backdrop-blur-md border border-white/20">
-              Global Scale
-            </span>
-          </motion.div>
+
 
           {/* Massive, elegant typography */}
           <motion.div variants={fadeUp}>
