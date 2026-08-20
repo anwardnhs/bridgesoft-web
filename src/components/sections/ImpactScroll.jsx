@@ -67,11 +67,10 @@ export default function ImpactScroll() {
           
           <div className="overflow-hidden w-full pb-8">
             <motion.div 
-              className="flex transition-transform duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
-              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              initial={{ opacity: 0, y: 40 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+              className="flex"
+              initial={{ opacity: 0, y: 40, x: "0%" }}
+              animate={inView ? { opacity: 1, y: 0, x: `-${currentIndex * 100}%` } : { opacity: 0, y: 40, x: "0%" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               {stories.map((story) => (
                 <div key={story.id} className="w-full flex-shrink-0 px-2 lg:px-4">
