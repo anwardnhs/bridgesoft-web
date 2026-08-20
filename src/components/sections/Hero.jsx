@@ -118,8 +118,7 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/70 leading-[1.6] max-w-[480px] mb-10 font-light tracking-wide"
           >
-            Provider of Cloud, Security, and AI solutions for businesses and
-            institutions worldwide.
+            Software, infrastructure, Solutions.
           </motion.p>
 
           {/* Stark, high-contrast button */}

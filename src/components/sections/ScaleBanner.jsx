@@ -43,32 +43,32 @@ function AnimatedNumber({ value, prefix = "", suffix = "", decimals = 0 }) {
 export default function ScaleBanner() {
   const stats = [
     {
-      value: 3.8,
-      prefix: "$",
-      suffix: "B",
+      value: 5.7,
+      prefix: "₦",
+      suffix: "T",
       decimals: 1,
-      label: "Processed securely for our users every year.",
+      label: "Processed securely every year.",
     },
     {
       value: 34,
       prefix: "",
       suffix: "",
       decimals: 0,
-      label: "Countries where our teams support local communities.",
+      label: "Countries supported by our teams.",
     },
     {
       value: 4300,
       prefix: "",
       suffix: "+",
       decimals: 0,
-      label: "Enterprises trusting us to run their operations.",
+      label: "Enterprises on our platform.",
     },
     {
       value: 15,
       prefix: "",
       suffix: "M",
       decimals: 0,
-      label: "People relying on our platforms every single day.",
+      label: "People using our platforms daily.",
     },
   ];
 
