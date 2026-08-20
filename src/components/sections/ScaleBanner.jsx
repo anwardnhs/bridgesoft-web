@@ -87,7 +87,7 @@ export default function ScaleBanner() {
         muted
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen"
-        src="https://media.istockphoto.com/id/1426287841/video/futuristic-digital-grid-over-the-earth-sunrise-beautiful-view-from-space-satellite-abstract.mp4?s=mp4-480x480-is&k=20&c=5o_mTvtqFNqWgGjSzM0M2ciSJxgj6OC6ui_JA1y8YhQ="
+        src="https://media.istockphoto.com/id/2259060510/vector/blue-purple-and-white-gradient-wave-abstract-background-design.jpg?s=612x612&w=0&k=20&c=vUH2JCf_6l-kWUYQPZhnVhhsX4sJYchfo4ZfUMheqE8="
       />
       {/* Dark overlay for contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]" />
@@ -102,7 +102,6 @@ export default function ScaleBanner() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-20"
         >
-
           <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight">
             Built for a global economy.
           </h2>

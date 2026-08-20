@@ -1,7 +1,10 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { RiArrowRightSLine } from "react-icons/ri";
+
+// Import the SVG asset
+import personSvg from "@/assets/images/person.svg";
 
 // ─── Animation Variants ────────────────────────────────────────────────────────
 const fadeUp = {
@@ -23,35 +26,30 @@ export default function Hero() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Parallax scroll effect
+  const { scrollY } = useScroll();
+  const yImage = useTransform(scrollY, [0, 1000], [0, 250]); // Moves down slower than scroll
+
   return (
     <section
       ref={ref}
-      className="relative w-full h-screen min-h-[700px] lg:min-h-[850px] flex items-center bg-[#0A0A0A] overflow-hidden"
+      className="relative w-full min-h-screen pt-32 pb-20 lg:pt-0 lg:pb-0 lg:h-screen flex items-center bg-[#0A0A0A] overflow-hidden"
     >
-      {/* ─── Cinematic Background Layer ─── */}
+      {/* ─── Background Subtle Glow ─── */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <img
-          src="https://media.istockphoto.com/id/2210258657/vector/concept-of-application-or-web-development-ui-ux-design-group-of-designers-and-developers.jpg?s=612x612&w=0&k=20&c=hdPiXoerUM6-HKKTrCL0loNuzVcO74sG4CG6Wszj1T4="
-          alt="Hero Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-100"
-        />
-        {/* Radial gradient to gently darken the center behind the text while leaving edges bright */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black/80 via-black/30 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-
-        {/* Subtle cool glow injection */}
         <div className="absolute top-1/4 left-[10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] mix-blend-overlay" />
+        <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-indigo-900/10 rounded-full blur-[200px]" />
       </div>
 
-      <div className="site-container relative z-10 w-full flex flex-col items-center text-center">
+      <div className="site-container relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center h-full">
+        
+        {/* ─── Left Column (Text & Button) ─── */}
         <motion.div
           variants={container}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
-          className="max-w-[1000px] flex flex-col items-center drop-shadow-2xl"
+          className="lg:col-span-5 flex flex-col items-start text-left pt-10 lg:pt-0"
         >
-
-
           {/* Massive, elegant typography with word-stagger animation */}
           <motion.h1
             initial="hidden"
@@ -60,7 +58,7 @@ export default function Hero() {
               hidden: {},
               show: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
             }}
-            className="text-[52px] sm:text-[72px] lg:text-[88px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-6 flex flex-wrap justify-center gap-x-3 sm:gap-x-4"
+            className="text-[48px] sm:text-[64px] lg:text-[76px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-6 flex flex-wrap justify-start gap-x-3"
           >
             <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>Bridging</motion.span>
             <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }} className="text-blue-500">Innovation</motion.span>
@@ -71,12 +69,12 @@ export default function Hero() {
           {/* Clean, minimalist subtext */}
           <motion.p
             variants={fadeUp}
-            className="text-[18px] sm:text-[22px] text-white/80 leading-[1.5] max-w-[500px] mb-12 font-light tracking-wide"
+            className="text-[18px] sm:text-[22px] text-white/70 leading-[1.6] max-w-[480px] mb-10 font-light tracking-wide"
           >
             Global infrastructure engineered for seamless operations.
           </motion.p>
 
-          {/* Stark, high-contrast button (Planhat style: White bg, uppercase, sharp) */}
+          {/* Stark, high-contrast button */}
           <motion.div variants={fadeUp}>
             <Link
               to="/contact"
@@ -89,6 +87,25 @@ export default function Hero() {
             </Link>
           </motion.div>
         </motion.div>
+
+        {/* ─── Right Column (Parallax SVG Image) ─── */}
+        <div className="lg:col-span-7 h-[50vh] lg:h-full relative flex items-center justify-center">
+          <motion.div 
+            style={{ y: yImage }}
+            className="relative w-full h-full flex items-center justify-center pt-10 lg:pt-0"
+          >
+            {/* The SVG Image */}
+            <motion.img
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+              src={personSvg}
+              alt="Bridge Intelligence Platform"
+              className="w-full h-full object-contain max-h-[600px] lg:max-h-[800px] drop-shadow-2xl"
+            />
+          </motion.div>
+        </div>
+
       </div>
     </section>
   );
