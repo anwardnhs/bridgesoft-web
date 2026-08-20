@@ -77,17 +77,17 @@ export default function ScaleBanner() {
   ];
 
   return (
-    <section className="relative overflow-hidden  py-32 lg:py-48 font-sans">
-      {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen"
-        src="https://media.istockphoto.com/id/2259060510/vector/blue-purple-and-white-gradient-wave-abstract-background-design.jpg?s=612x612&w=0&k=20&c=vUH2JCf_6l-kWUYQPZhnVhhsX4sJYchfo4ZfUMheqE8="
+    <section className="relative overflow-hidden py-32 lg:py-48 font-sans">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80')",
+        }}
       />
-      {/* Dark overlay for contrast */}
+      <div className="absolute inset-0 bg-slate-950/65" />
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/50 to-slate-950/80" />
 
       <div className="site-container relative z-10 flex flex-col items-center">
         {/* Centered Editorial Subheader */}
@@ -98,7 +98,7 @@ export default function ScaleBanner() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-20"
         >
-          <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight">
+          <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_16px_rgba(15,23,42,0.7)]">
             Built for a global economy.
           </h2>
         </motion.div>
