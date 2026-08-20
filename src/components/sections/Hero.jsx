@@ -33,11 +33,11 @@ export default function Hero() {
         <img
           src="https://media.istockphoto.com/id/2210258657/vector/concept-of-application-or-web-development-ui-ux-design-group-of-designers-and-developers.jpg?s=612x612&w=0&k=20&c=hdPiXoerUM6-HKKTrCL0loNuzVcO74sG4CG6Wszj1T4="
           alt="Hero Background"
-          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
+          className="absolute inset-0 w-full h-full object-cover opacity-90"
         />
-        {/* Gradients to darken the image and create depth */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
+        {/* Gradients to gently darken the image for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
         {/* Subtle cool glow injection (matching the new tech/global vibe) */}
         <div className="absolute top-1/4 left-[10%] w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] mix-blend-overlay" />
