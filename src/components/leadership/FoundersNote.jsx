@@ -73,13 +73,21 @@ export default function FoundersNote() {
               </div>
 
               <div className="relative">
-                <h2 className="text-[28px] sm:text-[36px] font-medium text-[#0A2540] leading-[1.2] tracking-tight mb-8">
-                  bridgesoft was born from a simple but powerful vision: to
-                  build the software that would power Africa's digital
-                  transformation. We believed that by creating resilient,
-                  scalable infrastructure, we could help African businesses
-                  leapfrog traditional barriers and compete on the global stage.
+                <RiDoubleQuotesL
+                  className="absolute -left-2 -top-7 text-[52px] text-[#0A2540]/10"
+                  aria-hidden="true"
+                />
+                <h2 className="text-[28px] sm:text-[36px] font-medium text-[#0A2540] leading-[1.2] tracking-tight mb-6 max-w-[18ch]">
+                  Building lasting value through smart technology and trusted
+                  partnerships.
                 </h2>
+                <p className="text-[16px] sm:text-[18px] leading-8 text-[#334155] max-w-[60ch]">
+                  At Bridgesoft, we believe technology should create clarity,
+                  momentum, and measurable growth for the businesses we serve.
+                  Our mission is to help organizations modernize with
+                  confidence, solve complex challenges with practical insight,
+                  and turn bold ideas into resilient digital experiences.
+                </p>
               </div>
             </motion.div>
           </div>
