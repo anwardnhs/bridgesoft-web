@@ -77,7 +77,7 @@ export default function ScaleBanner() {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0A] py-32 lg:py-48 font-sans">
+    <section className="relative overflow-hidden  py-32 lg:py-48 font-sans">
       {/* Video Background */}
       <video
         autoPlay
