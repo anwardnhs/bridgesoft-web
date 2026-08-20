@@ -50,8 +50,7 @@ export default function ScaleBanner() {
       prefix: "$",
       suffix: "B",
       decimals: 1,
-      label:
-        "Total value of transactions processed annually across our platforms",
+      label: "Total Annual Transaction Volume.",
     },
     {
       value: 34,
@@ -66,15 +65,14 @@ export default function ScaleBanner() {
       suffix: "+",
       decimals: 0,
       label:
-        "Institutions and businesses using our platforms to drive growth and efficiency",
+        "Global businesses and institutions leveraging our solutions to drive growth and innovation",
     },
     {
       value: 15,
       prefix: "",
       suffix: "M",
       decimals: 0,
-      label:
-        "Active users leveraging our solutions daily to power their operations",
+      label: "Total number of users across all our platforms and services",
     },
   ];
 
@@ -90,8 +88,6 @@ export default function ScaleBanner() {
         src="https://media.istockphoto.com/id/2259060510/vector/blue-purple-and-white-gradient-wave-abstract-background-design.jpg?s=612x612&w=0&k=20&c=vUH2JCf_6l-kWUYQPZhnVhhsX4sJYchfo4ZfUMheqE8="
       />
       {/* Dark overlay for contrast */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/40 to-[#0A0A0A]" />
-      <div className="absolute inset-0 bg-accent/10 mix-blend-overlay" />
 
       <div className="site-container relative z-10 flex flex-col items-center">
         {/* Centered Editorial Subheader */}
@@ -109,7 +105,6 @@ export default function ScaleBanner() {
 
         <div className="w-full max-w-[1200px] mx-auto">
           {/* Top Gradient Line */}
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mb-12 lg:mb-16" />
 
           {/* Stats Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 text-center px-4">

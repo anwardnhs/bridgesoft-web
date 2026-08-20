@@ -42,7 +42,6 @@ export default function Hero() {
       </div>
 
       <div className="site-container relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center h-full">
-        
         {/* ─── Left Column (Text & Button) ─── */}
         <motion.div
           variants={container}
@@ -56,14 +55,62 @@ export default function Hero() {
             animate="show"
             variants={{
               hidden: {},
-              show: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+              show: {
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+              },
             }}
             className="text-[48px] sm:text-[64px] lg:text-[76px] font-medium text-white leading-[1.05] tracking-[-0.03em] mb-6 flex flex-wrap justify-start gap-x-3"
           >
-            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>Bridging</motion.span>
-            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }} className="text-blue-500">Innovation</motion.span>
-            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }}>and</motion.span>
-            <motion.span variants={{ hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } }} className="text-blue-500">Intelligence.</motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
+            >
+              Bridging
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
+              className="text-blue-500"
+            >
+              Innovation
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
+            >
+              and
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                },
+              }}
+              className="text-blue-500"
+            >
+              Intelligence.
+            </motion.span>
           </motion.h1>
 
           {/* Clean, minimalist subtext */}
@@ -71,7 +118,8 @@ export default function Hero() {
             variants={fadeUp}
             className="text-[18px] sm:text-[22px] text-white/70 leading-[1.6] max-w-[480px] mb-10 font-light tracking-wide"
           >
-            Global infrastructure engineered for seamless operations.
+            Provider of Cloud, Security, and AI solutions for businesses and
+            institutions worldwide.
           </motion.p>
 
           {/* Stark, high-contrast button */}
@@ -90,7 +138,7 @@ export default function Hero() {
 
         {/* ─── Right Column (Parallax SVG Image) ─── */}
         <div className="lg:col-span-7 h-[50vh] lg:h-full relative flex items-center justify-center">
-          <motion.div 
+          <motion.div
             style={{ y: yImage }}
             className="relative w-full h-full flex items-center justify-center pt-10 lg:pt-0"
           >
@@ -105,7 +153,6 @@ export default function Hero() {
             />
           </motion.div>
         </div>
-
       </div>
     </section>
   );
