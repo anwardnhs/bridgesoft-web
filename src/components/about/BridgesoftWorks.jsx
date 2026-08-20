@@ -93,11 +93,11 @@ export default function BridgesoftWorks() {
                 variants={fadeUp}
                 className="text-[18px] text-[#425466] leading-[1.6]"
               >
-                Bridgesoft operates a proprietary network of Tier-III data
-                centers across Africa, providing a secure and resilient
-                foundation for enterprise operations. Our facilities are
-                designed to meet the most demanding requirements for uptime,
-                security, and performance.
+                Bridgesoft operates a proprietary network of data centers across
+                Africa, providing a secure and resilient foundation for
+                enterprise operations. Our facilities are designed to meet the
+                most demanding requirements for uptime, security, and
+                performance.
               </motion.p>
             </div>
 

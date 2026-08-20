@@ -78,16 +78,32 @@ export default function OriginStory() {
               </div>
 
               <h2 className="text-[36px] sm:text-[48px] font-medium text-[#0A2540] leading-[1.1] tracking-tight mb-8">
-                A foundation, <br className="hidden lg:block" />
-                not a feature.
+                From Humble Beginnings to Global Impact
               </h2>
 
               <div className="space-y-6 text-[17px] text-[#425466] leading-[1.6]">
-                Bridgesoft was founded in 1998 with a vision to provide robust,
-                scalable software solutions for enterprises across Africa. Over
-                the years, we have established ourselves as a trusted partner
-                for mission-critical applications, delivering innovative
-                products that drive business growth and success.
+                <p>
+                  Bridgesoft was founded in 1998 with a vision to provide
+                  robust, scalable software solutions for enterprises across
+                  Africa. Over the years, we have grown into a trusted partner
+                  for mission-critical applications, serving banks, insurers,
+                  governments, and healthcare institutions.
+                </p>
+                <p>
+                  Our journey has been marked by innovation, integrity, and a
+                  commitment to excellence. From securing our first major
+                  government contract in 2001 to launching our AI-driven
+                  analytics platform, BridgeIntelligence, in 2025, we have
+                  consistently pushed the boundaries of technology to empower
+                  organizations worldwide.
+                </p>
+                <p>
+                  Today, Bridgesoft stands as a testament to what can be
+                  achieved with vision, dedication, and a relentless pursuit of
+                  quality. We continue to build software solutions that not only
+                  meet the needs of our clients but also drive meaningful impact
+                  across industries.
+                </p>
               </div>
             </motion.div>
           </div>

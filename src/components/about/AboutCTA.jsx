@@ -51,8 +51,9 @@ export default function AboutCTA() {
           </h2>
 
           <p className="text-[18px] text-[#A3B8CC] leading-[1.6] mb-10 max-w-xl">
-            Join the leading institutions across 14 markets running their
-            critical operations and sovereign data on Bridgesoft.
+            Join the leading institutions across Africa that trust Bridgesoft to
+            power their critical operations. Our team is ready to help you
+            achieve your goals with clarity, care, and purpose.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">

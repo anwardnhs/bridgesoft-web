@@ -4,9 +4,7 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 
 // ─── The Institutional Statement ──────────────────────────────────────────────
 const statementLines = [
-  "Our mission is to provide enterprises with a scalable foundation for their critical operations.",
-  "We believe that robust, reliable software is the backbone of modern business success.",
-  "By delivering innovative solutions, we empower organizations to thrive in a rapidly evolving digital landscape.",
+  "We are building a company people can trust to help institutions move faster, work smarter, and serve communities with clarity, care, and purpose.",
 ];
 
 // ─── Animation Variants ───────────────────────────────────────────────────────

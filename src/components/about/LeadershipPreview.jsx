@@ -81,7 +81,7 @@ export default function LeadershipPreview() {
                 to="/leadership"
                 className="group inline-flex items-center gap-2 text-[15px] font-bold text-[#0A2540] hover:text-accent transition-colors"
               >
-                View full Board & Cabinet
+                View full Board & Leadership
                 <RiArrowRightLine className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </motion.div>
