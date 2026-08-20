@@ -11,7 +11,6 @@ export default function Leadership() {
       <BoardGrid />
       <FoundersNote />
       <CabinetGrid />
-      <SubsidiaryList />
       <LeadershipCTA />
     </main>
   );
