@@ -6,9 +6,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { cn } from "@/lib/utils";
 
-// ─── Custom Animated Counter Component ─────────────────────────────────────────
 function AnimatedNumber({ value, prefix = "", suffix = "", decimals = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
@@ -42,7 +40,6 @@ function AnimatedNumber({ value, prefix = "", suffix = "", decimals = 0 }) {
   );
 }
 
-// ─── ScaleBanner Component ────────────────────────────────────────────────────
 export default function ScaleBanner() {
   const stats = [
     {
@@ -50,44 +47,43 @@ export default function ScaleBanner() {
       prefix: "$",
       suffix: "B",
       decimals: 1,
-      label: "Total Annual Transaction Volume.",
+      label: "Processed securely for our users every year.",
     },
     {
       value: 34,
       prefix: "",
       suffix: "",
       decimals: 0,
-      label: "countries where our solutions are deployed",
+      label: "Countries where our teams support local communities.",
     },
     {
       value: 4300,
       prefix: "",
       suffix: "+",
       decimals: 0,
-      label:
-        "Global businesses and institutions leveraging our solutions to drive growth and innovation",
+      label: "Enterprises trusting us to run their operations.",
     },
     {
       value: 15,
       prefix: "",
       suffix: "M",
       decimals: 0,
-      label: "Total number of users across all our platforms and services",
+      label: "People relying on our platforms every single day.",
     },
   ];
 
   return (
     <section className="relative overflow-hidden py-32 lg:py-48 font-sans">
-      {/* Background image */}
+      {/* Background image - White Texture */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-multiply"
         style={{
           backgroundImage:
-            "url('https://media.istockphoto.com/id/2259060510/vector/blue-purple-and-white-gradient-wave-abstract-background-design.jpg?s=612x612&w=0&k=20&c=vUH2JCf_6l-kWUYQPZhnVhhsX4sJYchfo4ZfUMheqE8=",
+            "url('https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww')",
         }}
       />
-      <div className="absolute inset-0 bg-slate-950/65" />
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-900/50 to-slate-950/80" />
+      {/* Soft gradient overlays for legibility */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white/90" />
 
       <div className="site-container relative z-10 flex flex-col items-center">
         {/* Centered Editorial Subheader */}
@@ -96,21 +92,19 @@ export default function ScaleBanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center mb-20"
+          className="text-center mb-24"
         >
-          <h2 className="text-[36px] sm:text-[48px] lg:text-[56px] font-medium text-white leading-[1.05] tracking-tight drop-shadow-[0_2px_16px_rgba(15,23,42,0.7)]">
-            Built for a global economy.
+          <h2 className="text-[36px] sm:text-[48px] lg:text-[64px] font-medium text-slate-900 leading-[1.05] tracking-tight">
+            Technology built for people.
           </h2>
         </motion.div>
 
         <div className="w-full max-w-[1200px] mx-auto">
-          {/* Top Gradient Line */}
-
           {/* Stats Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 text-center px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-8 text-center px-4">
             {stats.map((stat, i) => (
               <div key={i} className="flex flex-col items-center justify-start">
-                <div className="text-[44px] sm:text-[52px] lg:text-[60px] font-bold text-white leading-none tracking-tight mb-4 drop-shadow-lg">
+                <div className="text-[52px] sm:text-[64px] lg:text-[76px] font-bold text-slate-900 leading-none tracking-tighter mb-6">
                   <AnimatedNumber
                     value={stat.value}
                     prefix={stat.prefix}
@@ -118,15 +112,15 @@ export default function ScaleBanner() {
                     decimals={stat.decimals}
                   />
                 </div>
-                <p className="text-[15px] sm:text-[16px] text-white/70 leading-[1.5] max-w-[200px]">
+                <p className="text-[16px] sm:text-[18px] text-slate-600 leading-[1.6] max-w-[220px] font-medium">
                   {stat.label}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* Bottom Gradient Line */}
-          <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent mt-12 lg:mt-16" />
+          {/* Bottom subtle divider line */}
+          <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent mt-20 lg:mt-24" />
         </div>
       </div>
     </section>
